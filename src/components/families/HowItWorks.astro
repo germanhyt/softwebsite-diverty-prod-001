@@ -1,0 +1,35 @@
+---
+import { howItWorks } from "../../data/familiesHome";
+
+const palette: Record<string, string> = {
+  sky: "bg-sky-200 text-primary",
+  green: "bg-emerald-500 text-white",
+  orange: "bg-accent-orange text-white",
+  blue: "bg-primary text-white",
+  pink: "bg-pink-400 text-primary",
+};
+---
+
+<section class="bg-surface-cream pb-16 pt-4 md:pb-24" aria-labelledby="how-title">
+  <div class="container">
+    <h2 id="how-title" class="mb-10 text-center text-3xl text-primary sm:mb-12 sm:text-4xl">
+      ¿Cómo funciona?
+    </h2>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {
+        howItWorks.map((step) => (
+          <article
+            class:list={["flex min-h-[200px] flex-col rounded-2xl p-5 shadow-card sm:min-h-[240px]", palette[step.palette] ?? "bg-white text-primary"]}
+          >
+            <div class="mb-2 text-xs font-bold uppercase tracking-wide opacity-80">Paso {step.key}</div>
+            <h3 class="mb-2 text-lg font-bold leading-snug">{step.title}</h3>
+            <p class="text-sm leading-relaxed opacity-95">{step.body}</p>
+            {step.image && (
+              <img src={step.image.src} alt={step.image.alt} width={280} height={180} class="mt-auto w-full rounded-xl object-cover pt-3" loading="lazy" />
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

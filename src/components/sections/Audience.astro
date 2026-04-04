@@ -1,0 +1,60 @@
+---
+import { audience } from "../../data/estrategia";
+
+const fullBleed = "usePhotoBackground" in audience && audience.usePhotoBackground === true;
+---
+
+<section id="publico" class="scroll-mt-28 pb-16 pt-4 md:pb-24" aria-labelledby="audience-title">
+  {
+    fullBleed ? (
+      <div class="relative min-h-[380px] md:min-h-[460px]">
+        <img
+          src={audience.photo.src}
+          alt=""
+          class="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
+        />
+        <div class="absolute inset-0 bg-primary/50" aria-hidden="true" />
+        <div class="container relative flex min-h-[380px] items-center py-12 md:min-h-[460px] md:py-16">
+          <div class="max-w-xl rounded-3xl bg-accent-orange/95 p-8 text-white shadow-card backdrop-blur-sm sm:p-10">
+            <h2 id="audience-title" class="mb-4 text-2xl leading-snug sm:text-3xl">
+              {audience.highlight}
+            </h2>
+            <ul class="list-inside list-disc space-y-2 text-base sm:text-lg">
+              {audience.roles.map((r) => (
+                <li>{r}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    ) : (
+      <div class="bg-surface-cream">
+        <div class="container">
+          <div class="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-14">
+            <div class="flex flex-col justify-center rounded-3xl bg-accent-orange p-8 text-white shadow-card sm:p-10">
+              <h2 id="audience-title" class="mb-4 text-2xl leading-snug sm:text-3xl">
+                {audience.highlight}
+              </h2>
+              <ul class="list-inside list-disc space-y-2 text-base sm:text-lg">
+                {audience.roles.map((r) => (
+                  <li>{r}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <img
+                src={audience.photo.src}
+                alt={audience.photo.alt}
+                width={1000}
+                height={750}
+                class="h-full min-h-[280px] w-full rounded-3xl object-cover shadow-card lg:min-h-[360px]"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+</section>

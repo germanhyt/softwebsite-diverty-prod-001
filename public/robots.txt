@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sincronizar el dominio con src/config/site.config.ts (origin)
+Sitemap: https://www.diverty.pe/sitemap-index.xml

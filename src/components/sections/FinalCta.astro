@@ -1,0 +1,15 @@
+---
+import CtaAgenda from "../react/CtaAgenda";
+import { siteConfig } from "../../config/site.config";
+import { finalCta } from "../../data/estrategia";
+---
+
+<section class="bg-surface-cream pb-20 pt-4 text-center md:pb-28" aria-labelledby="final-cta-title">
+  <div class="container max-w-3xl">
+    <h2 id="final-cta-title" class="mb-4 text-3xl text-primary sm:text-4xl">
+      {finalCta.title}
+    </h2>
+    <p class="mb-10 text-lg text-primary/85">{finalCta.subtitle}</p>
+    <CtaAgenda email={siteConfig.contact.email} phone={siteConfig.contact.phone} label={finalCta.button} client:load />
+  </div>
+</section>

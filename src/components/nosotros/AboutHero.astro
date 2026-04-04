@@ -1,0 +1,52 @@
+---
+import { aboutHero } from "../../data/nosotrosPage";
+---
+
+<section
+  class="relative bg-[#1B593D] pb-16 pt-10 text-white md:pb-20 md:pt-14"
+  aria-labelledby="about-hero-heading"
+>
+  <div class="container">
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 lg:items-center">
+      <div class="max-w-xl lg:pr-4">
+        <p class="mb-2 text-sm font-bold uppercase tracking-wide text-white/80">Quiénes somos</p>
+        <h1 id="about-hero-heading" class="mb-6 text-3xl leading-tight sm:text-4xl lg:text-5xl">
+          {aboutHero.title}
+        </h1>
+        <p class="text-lg leading-relaxed text-white/95">
+          {aboutHero.body}
+        </p>
+      </div>
+
+      <!-- Carrusel sin React: evita problemas de layout con astro-island (display:contents) + Swiper -->
+      <div class="relative w-full">
+        <div
+          class="nosotros-hero-scroll flex snap-x snap-mandatory overflow-x-auto scroll-smooth rounded-2xl shadow-xl ring-2 ring-white/30 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          tabindex="0"
+          aria-roledescription="carousel"
+          aria-label="Imágenes destacadas"
+        >
+          {
+            aboutHero.slides.map((s, i) => (
+              <figure class="w-full shrink-0 snap-center snap-always">
+                <img
+                  src={s.src}
+                  alt={s.alt}
+                  width={1100}
+                  height={750}
+                  class="aspect-[4/3] w-full object-cover md:aspect-[16/11]"
+                  loading={i === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                />
+              </figure>
+            ))
+          }
+        </div>
+        <div class="pointer-events-none absolute bottom-4 left-0 right-0 flex justify-center gap-2" aria-hidden="true">
+          {aboutHero.slides.map(() => <span class="h-2 w-2 rounded-full bg-white/45" />)}
+        </div>
+        <p class="mt-2 text-center text-xs text-white/70 md:hidden">Desliza para ver más fotos</p>
+      </div>
+    </div>
+  </div>
+</section>

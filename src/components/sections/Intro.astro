@@ -1,0 +1,28 @@
+---
+import { intro } from "../../data/estrategia";
+---
+
+<section id="estrategia" class="scroll-mt-28 bg-surface-cream py-16 md:py-24" aria-labelledby="intro-title">
+  <div class="container">
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div class="order-2 lg:order-1">
+        <img
+          src={intro.illustration.src}
+          alt={intro.illustration.alt}
+          width={900}
+          height={700}
+          class="mx-auto w-full max-w-lg rounded-2xl object-cover shadow-card lg:mx-0"
+          loading="lazy"
+        />
+      </div>
+      <div class="order-1 lg:order-2">
+        <h2 id="intro-title" class="mb-6 text-3xl text-primary sm:text-4xl">
+          {intro.title}
+        </h2>
+        <p class="text-lg leading-relaxed text-primary/90 sm:text-xl">
+          {intro.body}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

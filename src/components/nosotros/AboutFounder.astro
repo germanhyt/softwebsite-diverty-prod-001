@@ -1,0 +1,37 @@
+---
+import { founder } from "../../data/nosotrosPage";
+---
+
+<section class="border-t border-primary/10 bg-surface-cream py-16 md:py-24" aria-labelledby="founder-title">
+  <div class="container">
+    <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+      <div class="flex flex-col justify-center rounded-3xl bg-surface-card p-8 shadow-card lg:bg-transparent lg:p-0 lg:shadow-none">
+        <h2 id="founder-title" class="mb-6 text-3xl text-primary sm:text-4xl">
+          {founder.title}
+        </h2>
+        {
+          founder.paragraphs.map((p) => (
+            <p class="mb-4 text-lg leading-relaxed text-primary/90">{p}</p>
+          ))
+        }
+        <p class="mb-8 text-xl font-bold text-primary">{founder.name}</p>
+        <a
+          href="/#contacto"
+          class="inline-flex w-fit rounded-full bg-primary px-8 py-3 font-bold text-white shadow-md transition hover:bg-primary-dark"
+        >
+          Contáctanos
+        </a>
+      </div>
+      <div class="flex justify-center lg:justify-end">
+        <img
+          src={founder.portrait.src}
+          alt={founder.portrait.alt}
+          width={700}
+          height={1000}
+          class="w-full max-w-sm rounded-3xl object-cover shadow-card ring-1 ring-primary/10 lg:max-w-md"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+---
+import { benefits } from "../../data/estrategia";
+
+const icons: Record<string, { path: string; viewBox: string }> = {
+  cert: {
+    viewBox: "0 0 24 24",
+    path: "M4 4h16v12H4V4zm2 2v8h12V6H6zm4 14h4v2H10v-2zm-2 4h8v2H8v-2zM9 3h6v2H9V3z",
+  },
+  practice: {
+    viewBox: "0 0 24 24",
+    path: "M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 0 1 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.79 3.16-2.15 4.1z",
+  },
+  growth: {
+    viewBox: "0 0 24 24",
+    path: "M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z",
+  },
+};
+---
+
+<section class="bg-surface-cream py-16 md:py-20" aria-labelledby="benefits-title">
+  <div class="container">
+    <h2 id="benefits-title" class="mb-12 text-center text-3xl text-primary sm:mb-14 sm:text-4xl">
+      Beneficios de capacitarte con nosotros
+    </h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      {
+        benefits.map((b) => (
+          <article class="rounded-2xl bg-surface-card p-8 text-center shadow-card">
+            <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+              <svg class="h-8 w-8" viewBox={icons[b.key].viewBox} aria-hidden="true">
+                <path d={icons[b.key].path} fill="currentColor" />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl text-primary">{b.title}</h3>
+            <p class="text-base leading-relaxed text-primary/85">{b.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

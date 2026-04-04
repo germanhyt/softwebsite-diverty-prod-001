@@ -1,0 +1,13 @@
+---
+import CourseTabs from "../react/CourseTabs";
+import { familyPrograms } from "../../data/familiesHome";
+---
+
+<section id="programas" class="scroll-mt-28 bg-primary py-16 text-white md:py-24" aria-labelledby="programs-title">
+  <div class="container">
+    <h2 id="programs-title" class="mb-10 text-center text-3xl sm:mb-12 sm:text-4xl">
+      Nuestros programas
+    </h2>
+    <CourseTabs courses={familyPrograms} client:visible />
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+import HeroSwiper from "../react/HeroSwiper";
+import { siteConfig } from "../../config/site.config";
+import { heroSlides } from "../../data/estrategia";
+---
+
+<section id="inicio" class="bg-primary pb-16 pt-8 text-white md:pb-24 md:pt-10" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+      <div>
+        <h1 id="hero-title" class="mb-6 text-3xl leading-tight sm:text-4xl lg:text-5xl">
+          {siteConfig.tagline}
+        </h1>
+        <p class="max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
+          Únete a profesionales que ya aplican lo aprendido en Diverty: sesiones en vivo, práctica guiada y certificación
+          con respaldo.
+        </p>
+      </div>
+      <div class="w-full">
+        <HeroSwiper slides={heroSlides} client:load />
+      </div>
+    </div>
+  </div>
+</section>

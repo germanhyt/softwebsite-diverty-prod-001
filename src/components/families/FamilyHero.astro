@@ -1,0 +1,41 @@
+---
+import { familyHero } from "../../data/familiesHome";
+---
+
+<section id="inicio" class="relative overflow-hidden bg-accent-orange pb-28 pt-10 text-white md:pb-36 md:pt-14" aria-labelledby="family-hero-title">
+  <div class="container relative z-10">
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+      <div class="order-2 lg:order-1">
+        <img
+          src={familyHero.image.src}
+          alt={familyHero.image.alt}
+          width={900}
+          height={750}
+          class="mx-auto w-full max-w-xl rounded-2xl object-cover shadow-xl lg:mx-0"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="relative order-1 lg:order-2 lg:pl-4">
+        <div class="absolute -left-4 top-1/2 hidden -translate-y-1/2 text-7xl font-black text-white/40 lg:block" aria-hidden="true">
+          ←
+        </div>
+        <h1 id="family-hero-title" class="mb-6 text-3xl leading-tight sm:text-4xl lg:text-5xl">
+          {familyHero.title}
+        </h1>
+        <p class="max-w-xl text-lg leading-relaxed text-white/95">
+          {familyHero.body}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 text-surface-cream" aria-hidden="true">
+    <svg class="block h-14 w-full md:h-20" viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path
+        fill="currentColor"
+        d="M0,32L80,37C160,42,320,53,480,48C640,43,800,21,960,16C1120,11,1280,21,1360,26.7L1440,32L1440,80L1360,80C1280,80,1120,80,960,80C800,80,640,80,480,80C320,80,160,80,80,80L0,80Z"
+      ></path>
+    </svg>
+  </div>
+</section>

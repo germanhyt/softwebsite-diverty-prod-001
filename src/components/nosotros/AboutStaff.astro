@@ -1,0 +1,42 @@
+---
+import { staff } from "../../data/nosotrosPage";
+---
+
+<section
+  class="border-t border-primary/10 bg-surface-cream pb-32 pt-12 md:pb-40 md:pt-16"
+  aria-labelledby="staff-title"
+>
+  <div class="container">
+    <h2 id="staff-title" class="mb-12 text-center text-3xl text-primary sm:mb-14 sm:text-4xl">
+      Nuestro staff
+    </h2>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+      {
+        staff.map((m) => (
+          <article class="flex flex-col overflow-hidden rounded-2xl bg-surface-card shadow-card ring-1 ring-primary/10">
+            <img
+              src={m.photo.src}
+              alt={m.photo.alt}
+              width={400}
+              height={480}
+              class="h-56 w-full object-cover sm:h-64"
+              loading="lazy"
+            />
+            <div class="flex flex-1 flex-col p-6 text-center">
+              <h3 class="text-lg font-bold text-primary">{m.name}</h3>
+              <p class="mt-1 text-sm text-primary/75">{m.role}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    <div class="mt-12 text-center">
+      <a
+        href="/#contacto"
+        class="inline-flex rounded-full bg-primary px-10 py-3 text-lg font-bold text-white shadow-md transition hover:bg-primary-dark"
+      >
+        Contáctanos
+      </a>
+    </div>
+  </div>
+</section>

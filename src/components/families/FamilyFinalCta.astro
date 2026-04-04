@@ -1,0 +1,15 @@
+---
+import CtaAgenda from "../react/CtaAgenda";
+import { siteConfig } from "../../config/site.config";
+import { familyFinalCta } from "../../data/familiesHome";
+---
+
+<section class="bg-surface-cream pb-24 pt-8 text-center md:pb-28" aria-labelledby="family-cta-title">
+  <div class="container max-w-3xl">
+    <h2 id="family-cta-title" class="mb-4 text-3xl text-primary sm:text-4xl">
+      {familyFinalCta.title}
+    </h2>
+    <p class="mb-10 text-lg text-primary/85">{familyFinalCta.subtitle}</p>
+    <CtaAgenda email={siteConfig.contact.email} phone={siteConfig.contact.phone} label={familyFinalCta.button} client:load />
+  </div>
+</section>

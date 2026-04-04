@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-cream font-impact text-primary antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Swiper — hero sobre fondo azul */
+.hero-swiper .swiper-pagination-bullet {
+  background: rgb(255 255 255 / 45%);
+  opacity: 1;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+/* Testimonios — fondo crema */
+.testimonials-swiper .swiper-pagination-bullet {
+  background: rgb(0 112 192 / 30%);
+  opacity: 1;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: #0070c0;
+}
+
+.about-hero-swiper .swiper-pagination-bullet {
+  background: rgb(255 255 255 / 45%);
+  opacity: 1;
+}
+
+.about-hero-swiper .swiper-pagination-bullet-active {
+  background: #fff;
+}

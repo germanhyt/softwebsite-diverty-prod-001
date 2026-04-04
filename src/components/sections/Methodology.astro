@@ -1,0 +1,25 @@
+---
+import { methodology } from "../../data/estrategia";
+---
+
+<section class="bg-accent-orange py-16 text-white md:py-24" aria-labelledby="method-title">
+  <div class="container">
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+      <div>
+        <h2 id="method-title" class="mb-6 text-3xl sm:text-4xl">
+          {methodology.title}
+        </h2>
+        <p class="mb-6 text-lg leading-relaxed text-white/95">{methodology.body}</p>
+        <p class="text-lg font-semibold leading-relaxed text-white">{methodology.highlight}</p>
+      </div>
+      <img
+        src={methodology.illustration.src}
+        alt={methodology.illustration.alt}
+        width={900}
+        height={600}
+        class="w-full rounded-2xl object-cover shadow-xl ring-4 ring-white/20"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+---
+import { benefitsKids } from "../../data/familiesHome";
+---
+
+<section class="bg-surface-cream py-16 md:py-20" aria-labelledby="benefits-kids-title">
+  <div class="container">
+    <h2 id="benefits-kids-title" class="mb-12 text-center text-3xl text-primary sm:text-4xl">
+      Beneficios para tu hijo
+    </h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      {
+        benefitsKids.map((b) => (
+          <article class="overflow-hidden rounded-2xl bg-surface-card shadow-card">
+            <img src={b.image.src} alt={b.image.alt} width={600} height={360} class="h-44 w-full object-cover sm:h-52" loading="lazy" />
+            <div class="p-6">
+              <h3 class="mb-2 text-xl text-primary">{b.title}</h3>
+              <p class="text-base leading-relaxed text-primary/85">{b.text}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    <div class="mt-12 text-center">
+      <a
+        href="/#contacto"
+        class="inline-flex rounded-full bg-primary px-10 py-3 text-lg font-bold text-white shadow-md transition hover:bg-primary-dark"
+      >
+        Agenda una sesión →
+      </a>
+    </div>
+  </div>
+</section>

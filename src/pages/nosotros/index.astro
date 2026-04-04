@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import AboutHero from "../../components/nosotros/AboutHero.astro";
+import AboutEssence from "../../components/nosotros/AboutEssence.astro";
+import AboutImpact from "../../components/nosotros/AboutImpact.astro";
+import AboutFounder from "../../components/nosotros/AboutFounder.astro";
+import AboutStaff from "../../components/nosotros/AboutStaff.astro";
+import { nosotrosSeo } from "../../config/seoConfig";
+---
+
+<Layout seo={nosotrosSeo}>
+  <Header active="nosotros" ctaLabel="Contáctanos" />
+  <main class="relative">
+    <AboutHero />
+    <AboutEssence />
+    <AboutImpact />
+    <AboutFounder />
+    <AboutStaff />
+  </main>
+  <Footer
+    overlapLogo
+    mission="Historias y personas detrás de Diverty y Perú Learn Easy."
+    overlapLead="Agenda una sesión de evaluación sin compromiso y conoce nuestro enfoque personalizado."
+  />
+</Layout>

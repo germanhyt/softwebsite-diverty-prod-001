@@ -1,0 +1,22 @@
+---
+import { parentsTestimonials } from "../../data/familiesHome";
+---
+
+<section id="testimonios-padres" class="bg-surface-cream py-16 md:py-24" aria-labelledby="parents-testimonials-title">
+  <div class="container">
+    <h2 id="parents-testimonials-title" class="mb-12 text-center text-3xl text-primary sm:text-4xl">
+      Lo que dicen los padres
+    </h2>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      {
+        parentsTestimonials.map((t) => (
+          <article class="rounded-2xl bg-surface-card p-8 shadow-card">
+            <p class="mb-6 text-sm leading-relaxed text-primary/90 sm:text-base">“{t.quote}”</p>
+            <div class="font-bold text-primary">{t.name}</div>
+            <div class="text-sm text-primary/70">{t.child}</div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

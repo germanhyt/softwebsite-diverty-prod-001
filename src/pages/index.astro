@@ -1,11 +1,33 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FamilyHero from "../components/families/FamilyHero.astro";
+import FamilyNeuro from "../components/families/FamilyNeuro.astro";
+import HowItWorks from "../components/families/HowItWorks.astro";
+import FamilyPrograms from "../components/families/FamilyPrograms.astro";
+import FamilyDomicilio from "../components/families/FamilyDomicilio.astro";
+import FamilyBenefitsKids from "../components/families/FamilyBenefitsKids.astro";
+import FamilyStory from "../components/families/FamilyStory.astro";
+import FamilyParentsTestimonials from "../components/families/FamilyParentsTestimonials.astro";
+import FamilyFinalCta from "../components/families/FamilyFinalCta.astro";
+import { familiesHomeSeo } from "../config/seoConfig";
 ---
 
-<Layout>
-	<Welcome />
+<Layout seo={familiesHomeSeo}>
+  <Header active="inicio" ctaLabel="Agenda una sesión →" />
+  <main>
+    <FamilyHero />
+    <FamilyNeuro />
+    <HowItWorks />
+    <FamilyPrograms />
+    <FamilyDomicilio />
+    <FamilyBenefitsKids />
+    <FamilyStory />
+    <FamilyParentsTestimonials />
+    <FamilyFinalCta />
+  </main>
+  <Footer
+    mission="Acompañamiento en neurodesarrollo y Montessori para familias. Terapias, programas y visitas a domicilio."
+  />
 </Layout>
