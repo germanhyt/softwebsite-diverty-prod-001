@@ -26,14 +26,8 @@ export default {
         },
       },
       fontFamily: {
-        impact: [
-          "Impact",
-          "Haettenschweiler",
-          "Franklin Gothic Medium",
-          "Arial Narrow Bold",
-          "Arial",
-          "sans-serif",
-        ],
+        /** Poppins: familia única de los prototipos (sans geométrico; mocks también se asemejan a Montserrat). */
+        sans: ["Poppins", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
       },
       colors: {
         primary: {

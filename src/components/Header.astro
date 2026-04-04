@@ -24,7 +24,7 @@ const links: { href: string; label: string; id: NavActive }[] = [
       aria-label="Principal"
     >
     <div class="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-start">
-      <a href="/" class="shrink-0 text-xl font-bold tracking-tight text-primary md:text-2xl">
+      <a href="/" class="shrink-0 text-xl font-extrabold tracking-tight text-primary md:text-2xl">
         {siteConfig.name}
       </a>
       <a
@@ -35,7 +35,7 @@ const links: { href: string; label: string; id: NavActive }[] = [
       </a>
     </div>
 
-    <ul class="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-xs font-bold text-primary xs:text-sm md:flex-nowrap md:gap-2 md:text-base lg:gap-3">
+    <ul class="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-xs font-extrabold text-primary xs:text-sm md:flex-nowrap md:gap-2 md:text-base lg:gap-3">
       {
         links.map(({ href, label, id }) => {
           const isActive = active === id;

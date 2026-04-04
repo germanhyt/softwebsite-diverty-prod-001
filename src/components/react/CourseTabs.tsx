@@ -28,8 +28,8 @@ export default function CourseTabs({ courses }: Props) {
               onClick={() => setActiveId(c.id)}
               className={
                 isActive
-                  ? "rounded-2xl bg-accent-orange px-4 py-3 text-left text-sm font-bold text-white shadow-card sm:text-base"
-                  : "rounded-2xl bg-white px-4 py-3 text-left text-sm font-bold text-primary shadow-sm ring-1 ring-primary/15 transition hover:ring-primary/40 sm:text-base"
+                  ? "rounded-2xl bg-accent-orange px-4 py-3 text-left text-sm font-extrabold text-white shadow-card sm:text-base"
+                  : "rounded-2xl bg-white px-4 py-3 text-left text-sm font-extrabold text-primary shadow-sm ring-1 ring-primary/15 transition hover:ring-primary/40 sm:text-base"
               }
             >
               {c.label}
@@ -52,7 +52,7 @@ export default function CourseTabs({ courses }: Props) {
         >
           <h3 className="mb-4 text-2xl text-primary sm:text-3xl">{active.title}</h3>
           <p className="mb-6 max-w-2xl text-base leading-relaxed text-primary/90 sm:text-lg">{active.detail}</p>
-          <div className="mb-2 text-lg font-bold text-accent-orange">Beneficios</div>
+          <div className="mb-2 text-lg font-extrabold text-accent-orange">Beneficios</div>
           <ul className="mb-8 max-w-xl list-inside list-disc space-y-2 text-primary/90">
             {active.benefits.map((b) => (
               <li key={b}>{b}</li>

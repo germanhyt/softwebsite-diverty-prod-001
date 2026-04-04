@@ -8,7 +8,20 @@
   }
 
   body {
-    @apply bg-surface-cream font-impact text-primary antialiased;
+    @apply bg-surface-cream font-sans text-primary antialiased;
+  }
+
+  /* Titulares al estilo prototipo: mucho peso, interletraje ligeramente cerrado */
+  h1 {
+    @apply font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply font-bold tracking-tight;
+  }
+
+  h3 {
+    @apply font-bold tracking-tight;
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -43,7 +43,8 @@ Sitio educativo **Diverty**. Prototipos UI (imágenes) en `src/assets/prototypes
 
 ## Tipografía
 
-- **Impact** para títulos y cuerpo de texto según PLANNER; registrar en `fontFamily` de Tailwind y cargar la fuente de forma que no bloquee el render (font-face o estrategia del proyecto).
+- **Poppins** (Google Fonts) como única familia sans para todo el sitio, acorde a los prototipos en `src/assets/prototypes` (sans geométrico). Cargar en `Layout.astro` con `preconnect` + `display=swap`; en Tailwind usar `fontFamily.sans` → `font-sans` en `global.css` sobre `body`.
+- Jerarquía de peso (Poppins): cuerpo **400**; UI **500–600**; **H1** **900** (`font-black`), **H2** **800** (`font-extrabold`), **H3** **800** — definido en `global.css` `@layer base`; fuente cargada hasta 900.
 
 ## Responsive — breakpoints Tailwind
 

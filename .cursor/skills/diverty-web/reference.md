@@ -63,7 +63,17 @@ export default {
           "2xl": "6rem",
         },
       },
-      fontFamily: {},
+      fontFamily: {
+        sans: [
+          "Poppins",
+          "system-ui",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
+      },
       colors: {
         primary: {},
         text: {},

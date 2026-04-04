@@ -22,7 +22,7 @@ const palette: Record<string, string> = {
             class:list={["flex min-h-[200px] flex-col rounded-2xl p-5 shadow-card sm:min-h-[240px]", palette[step.palette] ?? "bg-white text-primary"]}
           >
             <div class="mb-2 text-xs font-bold uppercase tracking-wide opacity-80">Paso {step.key}</div>
-            <h3 class="mb-2 text-lg font-bold leading-snug">{step.title}</h3>
+            <h3 class="mb-2 text-lg leading-snug">{step.title}</h3>
             <p class="text-sm leading-relaxed opacity-95">{step.body}</p>
             {step.image && (
               <img src={step.image.src} alt={step.image.alt} width={280} height={180} class="mt-auto w-full rounded-xl object-cover pt-3" loading="lazy" />

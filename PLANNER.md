@@ -15,8 +15,10 @@ Helpers
 Para el gestor de depndencias:
 - yarn
 
-Fuentes o tipografías:
-- Títulos y textos: IMPACT 
+Fuentes o tipografías (alineado a prototipos JPG en `src/assets/prototypes`):
+- Familia única para UI: **Poppins** (Google Fonts), `font-display: swap` vía enlace en layout.
+- Pesos en maquetación: **400** cuerpo, **500–600** párrafos de apoyo; **700–800** subtítulos y UI; titulares **H1** en **900** (`font-black`), **H2** en **800** (`font-extrabold`), **H3** en **800** — vía capa `@layer base` en `global.css` + Poppins cargada hasta **900**.
+- Los mocks también recuerdan a **Montserrat**; el proyecto standardiza en Poppins para no duplicar cargas de fuente.
 Para responsive: Adaptar los anchos, espaciados, tamaños de fuentes y mejroas para los tamaños de pantallas siguientes
     screens: {
     xs: "375px",
