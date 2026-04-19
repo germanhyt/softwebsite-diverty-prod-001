@@ -15,7 +15,9 @@ export default function FinalCtaSection() {
           {familyFinalCta.title}
         </h2>
         <p className="mb-10 text-lg text-primary/85">{familyFinalCta.subtitle}</p>
-        <a
+
+
+        {/* <a
           href={siteConfig.contact.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
@@ -41,7 +43,30 @@ export default function FinalCtaSection() {
               />
             </svg>
           </span>
-        </a>
+        </a> */}
+
+        <div className="mt-12 text-center md:mt-20">
+          <a
+            href="/#contacto"
+            className="group inline-flex items-center gap-3 rounded-full bg-[#0A518D] px-10 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-[#084579] hover:shadow-2xl"
+          >
+            Comunicate con una asesora
+            <svg
+              className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+
       </div>
     </section>
   );

@@ -2,8 +2,8 @@ import { ourStory, brandPillars } from "../../data/familiesHome";
 
 export default function StorySection() {
   return (
-    <section className="bg-surface-peach py-16 md:py-24" aria-labelledby="story-title">
-      <div className="container">
+    <section className=" " aria-labelledby="story-title">
+      <div className="container bg-surface-peach py-16 md:py-24 rounded-[1.75rem]">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Historia */}
           <div className="relative">
