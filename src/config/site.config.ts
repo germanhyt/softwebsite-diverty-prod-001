@@ -5,14 +5,16 @@ export const siteConfig = {
   /** URL canónica sin barra final */
   origin: "https://www.diverty.pe",
   name: "DIVERTY",
+  /** Línea bajo el logo en el header (marca). */
   tagline: "Cursos de capacitación profesional con enfoque práctico.",
   locale: "es",
   lang: "es-PE" as const,
   contact: {
-    email: "diverty.p@gmail.com",
-    phone: "+51 999 999 999",
-    /** URL completa wa.me para el ícono de WhatsApp en footer */
-    whatsapp: "https://wa.me/51999999999",
+    email: "perulearneasy@gmail.com",
+    phone: "987 654 321",
+    /** Para enlaces `tel:` y wa.me */
+    phoneE164: "+51987654321",
+    whatsapp: "https://wa.me/51987654321",
   },
   social: {
     linkedin: "https://www.linkedin.com/company/diverty",

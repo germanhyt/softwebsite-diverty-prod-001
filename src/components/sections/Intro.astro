@@ -1,5 +1,6 @@
 ---
-import { intro } from "../../data/estrategia";
+import { siteConfig } from "../../config/site.config";
+import { intro } from "../../data/nosotrosTraining";
 ---
 
 <section id="estrategia" class="scroll-mt-28 bg-surface-cream py-16 md:py-24" aria-labelledby="intro-title">
@@ -22,6 +23,18 @@ import { intro } from "../../data/estrategia";
         <p class="text-lg leading-relaxed text-primary/90 sm:text-xl">
           {intro.body}
         </p>
+        {
+          intro.cta ? (
+            <a
+              href={siteConfig.contact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-8 inline-flex rounded-full bg-primary px-8 py-3.5 text-sm font-bold text-white shadow-md transition hover:bg-primary-dark sm:text-base"
+            >
+              {intro.cta.label}
+            </a>
+          ) : null
+        }
       </div>
     </div>
   </div>

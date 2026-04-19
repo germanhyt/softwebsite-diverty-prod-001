@@ -2,32 +2,30 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import FamilyHero from "../components/families/FamilyHero.astro";
-import FamilyNeuro from "../components/families/FamilyNeuro.astro";
-import HowItWorks from "../components/families/HowItWorks.astro";
-import FamilyPrograms from "../components/families/FamilyPrograms.astro";
-import FamilyDomicilio from "../components/families/FamilyDomicilio.astro";
-import FamilyBenefitsKids from "../components/families/FamilyBenefitsKids.astro";
-import FamilyStory from "../components/families/FamilyStory.astro";
-import FamilyParentsTestimonials from "../components/families/FamilyParentsTestimonials.astro";
-import FamilyFinalCta from "../components/families/FamilyFinalCta.astro";
+import HeroSection from "../components/inicio/HeroSection";
+import NeuroSection from "../components/inicio/NeuroSection";
+import HowItWorksSection from "../components/inicio/HowItWorksSection";
+import ProgramsSection from "../components/inicio/ProgramsSection";
+import DomicilioSection from "../components/inicio/DomicilioSection";
+import BenefitsSection from "../components/inicio/BenefitsSection";
+import StorySection from "../components/inicio/StorySection";
+import TestimonialsSection from "../components/inicio/TestimonialsSection";
+import FinalCtaSection from "../components/inicio/FinalCtaSection";
 import { familiesHomeSeo } from "../config/seoConfig";
 ---
 
 <Layout seo={familiesHomeSeo}>
-  <Header active="inicio" ctaLabel="Agenda una sesión →" />
+  <Header active="inicio" ctaLabel="Contáctanos" />
   <main>
-    <FamilyHero />
-    <FamilyNeuro />
-    <HowItWorks />
-    <FamilyPrograms />
-    <FamilyDomicilio />
-    <FamilyBenefitsKids />
-    <FamilyStory />
-    <FamilyParentsTestimonials />
-    <FamilyFinalCta />
+    <HeroSection />
+    <NeuroSection />
+    <HowItWorksSection client:load />
+    <ProgramsSection client:load />
+    <DomicilioSection />
+    <BenefitsSection />
+    <StorySection />
+    <TestimonialsSection />
+    <FinalCtaSection />
   </main>
-  <Footer
-    mission="Acompañamiento en neurodesarrollo y Montessori para familias. Terapias, programas y visitas a domicilio."
-  />
+  <Footer />
 </Layout>

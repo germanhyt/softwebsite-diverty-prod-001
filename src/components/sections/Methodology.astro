@@ -1,25 +1,42 @@
 ---
-import { methodology } from "../../data/estrategia";
+import { methodology } from "../../data/nosotrosTraining";
 ---
 
-<section class="bg-accent-orange py-16 text-white md:py-24" aria-labelledby="method-title">
+<section
+  class="bg-surface-peach py-16 md:py-24"
+  aria-labelledby="method-title"
+>
   <div class="container">
-    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-      <div>
-        <h2 id="method-title" class="mb-6 text-3xl sm:text-4xl">
-          {methodology.title}
-        </h2>
-        <p class="mb-6 text-lg leading-relaxed text-white/95">{methodology.body}</p>
-        <p class="text-lg font-semibold leading-relaxed text-white">{methodology.highlight}</p>
-      </div>
-      <img
-        src={methodology.illustration.src}
-        alt={methodology.illustration.alt}
-        width={900}
-        height={600}
-        class="w-full rounded-2xl object-cover shadow-xl ring-4 ring-white/20"
-        loading="lazy"
-      />
+    <h2
+      id="method-title"
+      class="mb-12 text-center text-3xl font-bold text-primary sm:mb-14 sm:text-4xl"
+    >
+      {methodology.title}
+    </h2>
+    <div class="grid gap-10 lg:grid-cols-2 lg:gap-12">
+      {
+        methodology.columns.map((col) => (
+          <div class="flex flex-col overflow-hidden rounded-[1.35rem] bg-white shadow-card ring-1 ring-primary/10">
+            <div class="aspect-[16/11] w-full overflow-hidden bg-primary/5">
+              <img
+                src={col.image.src}
+                alt={col.image.alt}
+                width={800}
+                height={550}
+                class="h-full w-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="rounded-b-[1.35rem] bg-accent-orange px-6 py-5 text-white sm:px-8 sm:py-6">
+              <h3 class="text-lg font-bold sm:text-xl">{col.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-white/95 sm:text-base">
+                {col.body}
+              </p>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

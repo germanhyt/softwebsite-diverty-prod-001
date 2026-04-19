@@ -45,7 +45,7 @@ export default {
           card: "#FFFFFF",
         },
         footer: {
-          DEFAULT: "#003359",
+          DEFAULT: "#0A518D",
         },
         hero: {
           green: "#1B593D",

@@ -12,15 +12,15 @@ const familiesDescription =
   "Acompañamiento en neurodesarrollo y metodología Montessori: terapias, programas para niños y visitas a domicilio. Agenda una evaluación en Diverty.";
 
 const estrategiaDescription =
-  "Cursos y capacitación profesional para docentes y especialistas del desarrollo infantil. Certificación, práctica guiada y comunidad Diverty.";
+  "Conoce la esencia de Perú Learn Easy: enfoque integral, impacto en la primera infancia y el equipo que impulsa Diverty.";
 
 const nosotrosDescription =
-  "Conoce la historia de Diverty, nuestra fundadora y el equipo que impulsa intervención de calidad para niñas y niños en Perú.";
+  "Cursos de capacitación profesional con enfoque práctico: programas, certificación, metodología y testimonios. Diverty — Perú Learn Easy.";
 
 export const seoConfig = {
   familiesTitle: `${siteConfig.name} — Neurodesarrollo y Montessori`,
-  estrategiaTitle: `${siteConfig.name} — Estrategia y capacitación`,
-  nosotrosTitle: `Quiénes somos | ${siteConfig.name}`,
+  estrategiaTitle: `${siteConfig.name} — Estrategia | Perú Learn Easy`,
+  nosotrosTitle: `${siteConfig.name} — Quiénes somos | Capacitación`,
   titleTemplate: `%s | ${siteConfig.name}`,
   familiesDescription,
   estrategiaDescription,

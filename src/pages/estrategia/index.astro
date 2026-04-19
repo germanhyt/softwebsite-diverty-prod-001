@@ -2,30 +2,19 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import Hero from "../../components/sections/Hero.astro";
-import Intro from "../../components/sections/Intro.astro";
-import Audience from "../../components/sections/Audience.astro";
-import Courses from "../../components/sections/Courses.astro";
-import Certification from "../../components/sections/Certification.astro";
-import Benefits from "../../components/sections/Benefits.astro";
-import Methodology from "../../components/sections/Methodology.astro";
-import Testimonials from "../../components/sections/Testimonials.astro";
-import FinalCta from "../../components/sections/FinalCta.astro";
+import EstrategiaHero from "../../components/estrategia/EstrategiaHero.astro";
+import EstrategiaSplitSection from "../../components/estrategia/EstrategiaSplitSection.astro";
+import EstrategiaStaff from "../../components/estrategia/EstrategiaStaff.astro";
+import { estrategiaSplitSections } from "../../data/estrategiaPage";
 import { estrategiaSeo } from "../../config/seoConfig";
 ---
 
 <Layout seo={estrategiaSeo}>
   <Header active="estrategia" ctaLabel="Contáctanos" />
-  <main>
-    <Hero />
-    <Intro />
-    <Audience />
-    <Courses />
-    <Certification />
-    <Benefits />
-    <Methodology />
-    <Testimonials />
-    <FinalCta />
+  <main class="overflow-x-hidden">
+    <EstrategiaHero />
+    {estrategiaSplitSections.map((block) => <EstrategiaSplitSection block={block} />)}
+    <EstrategiaStaff />
   </main>
-  <Footer mission="Capacitación profesional, certificación y comunidad para especialistas del desarrollo infantil." />
+  <Footer />
 </Layout>

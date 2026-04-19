@@ -1,13 +1,26 @@
-/** Contenido alineado a `src/assets/prototypes/home.jpg` — familias, neurodesarrollo y Montessori. */
+/** Contenido e imágenes alineados al prototipo en `src/assets/prototype-inicio/`. */
 
 import type { CourseTab } from "./estrategia";
+import imgHero from "../assets/prototype-inicio/inicio_seccion_hero_1.png";
+import imgEnfoque from "../assets/prototype-inicio/inicio_seccion_enfoque_1.webp";
+import imgComo1 from "../assets/prototype-inicio/inicio_seccion_como-funciona_1.webp";
+import imgComo2 from "../assets/prototype-inicio/inicio_seccion_como-funciona_2.webp";
+import imgComo3 from "../assets/prototype-inicio/inicio_seccion_como-funciona_3.webp";
+import imgComo4 from "../assets/prototype-inicio/inicio_seccion_como-funciona_4.webp";
+import imgComo5 from "../assets/prototype-inicio/inicio_seccion_como-funciona_5.webp";
+import imgProgramas from "../assets/prototype-inicio/inicio_seccion_nuestros-programas_1.webp";
+import imgDomicilio from "../assets/prototype-inicio/inicio_seccion_atencion-domicilio_1.webp";
+import imgBenefit1 from "../assets/prototype-inicio/inicio_seccion_beneficios-para-tu-hijo_1.webp";
+import imgBenefit2 from "../assets/prototype-inicio/inicio_seccion_beneficios-para-tu-hijo_2.webp";
+import imgBenefit3 from "../assets/prototype-inicio/inicio_seccion_beneficios-para-tu-hijo_3.webp";
+import imgHistoriaDecor from "../assets/prototype-inicio/inicio_seccion_nuestra-historia_1.png";
 
 export const familyHero = {
   title: "Acompañamos el desarrollo de tu hijo",
   body:
-    "Terapias y programas basados en neurodesarrollo y metodología Montessori, con especialistas que te acompañan en cada paso hacia una comunicación, autonomía y bienestar sólidos.",
+    "Brindamos terapia especializada enfocada en el desarrollo emocional, cognitivo y conductual de tu hijo, con un enfoque Montessori personalizado que respeta su ritmo único.",
   image: {
-    src: "https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=1000&q=80",
+    src: imgHero.src,
     alt: "Madre o terapeuta realizando actividad sensorial con un niño pequeño",
   },
 };
@@ -17,8 +30,8 @@ export const familyNeuro = {
   body:
     "Integramos principios del neurodesarrollo y ambientes preparados estilo Montessori para respetar los ritmos de cada niño. Observamos, ajustamos y celebramos avances con objetivos claros para la familia y el hogar.",
   illustration: {
-    src: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=900&q=80",
-    alt: "Material educativo y recursos para estimulación del aprendizaje",
+    src: imgEnfoque.src,
+    alt: "Ilustración sobre creatividad, aprendizaje y neurodesarrollo",
   },
 };
 
@@ -26,51 +39,87 @@ export type HowStep = {
   key: string;
   title: string;
   body: string;
-  palette: "sky" | "green" | "orange" | "blue" | "pink";
-  image?: { src: string; alt: string };
+  palette: "sky" | "green" | "orange" | "blue" | "aqua";
+  image: { src: string; alt: string };
 };
 
 export const howItWorks: HowStep[] = [
   {
     key: "1",
     title: "Entrevista inicial",
-    body: "Conocemos la historia de tu hijo o hija y tus objetivos (virtual).",
+    body: "Entrevista inicial con los padres. (virtual)",
     palette: "sky",
+    image: {
+      src: imgComo1.src,
+      alt: "Familia en entrevista inicial",
+    },
   },
   {
     key: "2",
     title: "Evaluación",
-    body: "Evaluación psicopedagógica presencial u online según el caso.",
+    body:
+      "Evaluación psicopedagógica presencial y a domicilio al menor (mayores de 18 meses) para diseñar el plan de intervención.",
     palette: "green",
+    image: {
+      src: imgComo2.src,
+      alt: "Evaluación con especialista",
+    },
   },
   {
     key: "3",
     title: "DivertyBox",
-    body: "Recibes materiales y guías para continuar el trabajo en casa.",
+    body:
+      "Envío de la DivertyBox con todos los materiales y recursos para el desarrollo de las sesiones.",
     palette: "orange",
     image: {
-      src: "https://images.unsplash.com/photo-1596464716127-f9a8759f8a1b?w=600&q=80",
-      alt: "Material didáctico para estimulación en casa",
+      src: imgComo3.src,
+      alt: "Material para trabajar en casa",
     },
   },
   {
     key: "4",
     title: "Sesiones",
-    body: "Inicio de sesiones personalizadas con tu especialista.",
+    body:
+      "Inicio de sesiones (todas las sesiones son brindadas a partir de 1 hora a más, dependiendo del plan solicitado) con retroalimentación.",
     palette: "blue",
+    image: {
+      src: imgComo4.src,
+      alt: "Sesión personalizada con niño",
+    },
   },
   {
     key: "5",
     title: "Seguimiento",
-    body: "Informe de progreso mensual y ajustes al plan.",
-    palette: "pink",
+    body:
+      "Informe de progreso mensual (se envía en archivo al contacto o correo de la familia).",
+    palette: "aqua",
+    image: {
+      src: imgComo5.src,
+      alt: "Seguimiento y acompañamiento",
+    },
   },
 ];
 
 export const familyPrograms: CourseTab[] = [
   {
+    id: "psicomotricidad",
+    label: "Psicomotricidad",
+    title: "Psicomotricidad",
+    benefits: [
+      "Coordinación, equilibrio y esquema corporal.",
+      "Regulación y preparación para aprendizajes escolares.",
+      "Plan de juego y movimiento acorde a la edad.",
+    ],
+    detail:
+      "Trabajamos la integración sensoriomotriz y las bases posturales para que tu hijo se mueva con seguridad, atención y disfrute.",
+    image: {
+      src: imgProgramas.src,
+      alt: "Especialista acompañando psicomotricidad con un niño",
+    },
+  },
+  {
     id: "lenguaje",
-    label: "Programa de lenguaje",
+    label: "Terapia de lenguaje",
     title: "Terapia de lenguaje",
     benefits: [
       "Habla y pronunciación adaptadas a la edad.",
@@ -80,50 +129,35 @@ export const familyPrograms: CourseTab[] = [
     detail:
       "Trabajamos habilidades de comunicación oral y prerequisitos del aprendizaje lector, con ejercicios prácticos y seguimiento cercano.",
     image: {
-      src: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=80",
-      alt: "Terapeuta de lenguaje trabajando con un niño",
+      src: imgProgramas.src,
+      alt: "Terapia de lenguaje con material lúdico",
     },
   },
   {
-    id: "estimulacion",
-    label: "Programa de estimulación",
-    title: "Programa de estimulación temprana",
+    id: "psicopedagogia",
+    label: "Psicopedagogía",
+    title: "Psicopedagogía",
     benefits: [
-      "Estimulación cognitiva y sensorial.",
-      "Rutinas de juego guiado en casa.",
-      "Indicadores observables de avance.",
+      "Aprendizaje lector, matemático y de estudio.",
+      "Estrategias según el perfil cognitivo del niño.",
+      "Coordinación con colegio y familia.",
     ],
     detail:
-      "Plan progresivo para potenciar atención, motricidad fina y resolución de problemas en las primeras etapas.",
+      "Acompañamos procesos de aprendizaje con evaluación formativa, ajustes metodológicos y objetivos claros para casa y aula.",
     image: {
-      src: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&q=80",
-      alt: "Niño en actividades de estimulación",
-    },
-  },
-  {
-    id: "integral",
-    label: "Programa integral",
-    title: "Programa integral",
-    benefits: [
-      "Coordinación entre especialistas.",
-      "Un solo plan compartido con la familia.",
-      "Flexibilidad presencial y seguimiento domiciliario.",
-    ],
-    detail:
-      "Cuando se requiere varias áreas a la vez, integramos objetivos y sesiones para evitar fragmentación y maximizar resultados.",
-    image: {
-      src: "https://images.unsplash.com/photo-1516627773781-a3631897b36b?w=800&q=80",
-      alt: "Sesión integral con niño y especialista",
+      src: imgProgramas.src,
+      alt: "Acompañamiento psicopedagógico",
     },
   },
 ];
 
 export const domicilio = {
   title: "Atención a domicilio",
-  body: "Llevamos la evaluación y las sesiones hasta tu hogar cuando la logística o el contexto del niño lo favorecen, sin perder calidad ni objetivos claros.",
+  body:
+    "Llevamos la atención hasta tu hogar, en un entorno cómodo y familiar para tu hijo.",
   image: {
-    src: "https://images.unsplash.com/photo-1609220136736-395140e45c89?w=1000&q=80",
-    alt: "Terapeuta realizando visita domiciliaria con una familia",
+    src: imgDomicilio.src,
+    alt: "Niño en actividad de aprendizaje personalizada",
   },
 };
 
@@ -131,61 +165,75 @@ export const benefitsKids = [
   {
     key: "focus",
     title: "Mejora la concentración",
-    text: "Rutinas y materiales que ayudan a regular la atención sostenida.",
+    text: "Desarrollar habilidades de atención y enfoque sostenido.",
     image: {
-      src: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80",
+      src: imgBenefit1.src,
       alt: "Niño concentrado en actividad educativa",
     },
   },
   {
     key: "emotion",
     title: "Desarrollo emocional",
-    text: "Acompañamos la regulación emocional y la confianza en sí mismos.",
+    text: "Desarrollar habilidades de atención y enfoque sostenido.",
     image: {
-      src: "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=600&q=80",
-      alt: "Niño sonriente en entorno seguro",
+      src: imgBenefit2.src,
+      alt: "Niño en entorno seguro y acogedor",
     },
   },
   {
     key: "independence",
     title: "Mayor independencia",
-    text: "Autonomía en tareas cotidianas acorde a su edad y posibilidades.",
+    text: "Fomenta la autonomía y la confianza en sí mismo.",
     image: {
-      src: "https://images.unsplash.com/photo-1502086223507-b74f2767ff3b?w=600&q=80",
-      alt: "Niño practicando autonomía en actividades",
+      src: imgBenefit3.src,
+      alt: "Niño practicando autonomía",
     },
   },
 ] as const;
 
 export const ourStory = {
-  title: "Nuestra historia",
+  title: "Nuestra Historia",
   body:
     "Nacimos de la necesidad de ofrecer intervenciones humanas, basadas en evidencia y cercanas a la familia. Hoy unimos terapia domiciliaria, formación de facilitadores y recursos tangibles para que el progreso continúe más allá de la consulta.",
+  decorImage: {
+    src: imgHistoriaDecor.src,
+    alt: "",
+  },
 };
 
-export const brandPillars = [
+export type BrandPillar = {
+  name: string;
+  text: string;
+  tone: "orange" | "navy";
+  href?: string;
+};
+
+export const brandPillars: BrandPillar[] = [
   {
     name: "Diverty",
     text: "Atención clínica y educativa centrada en el niño, con seguimiento domiciliario y coordinación con colegio y familia.",
+    tone: "orange",
   },
   {
-    name: "Lidology",
-    text: "Brazo de formación y liderazgo educativo: capacitamos a profesionales que replican buenas prácticas en todo el país.",
+    name: "Estrategia",
+    text: "Línea de formación y acompañamiento a instituciones: herramientas y rutas para escalar buenas prácticas con rigor y calidez.",
+    tone: "navy",
+    href: "/estrategia",
   },
-] as const;
+];
 
 export const parentsTestimonials = [
   {
-    name: "María González",
-    child: "Madre de Juan, 5 años",
+    name: "María Fernanda López",
+    child: "Madre de Tomás, 4 años",
     quote:
-      "En pocos meses vimos cómo Juan ganó confianza para expresarse. El equipo siempre nos explicó con claridad qué estábamos trabajando y por qué.",
+      "En pocos meses vimos más confianza al hablar y jugar. Siempre nos explicaron con claridad qué trabajábamos y cómo apoyar en casa.",
   },
   {
     name: "Carla Mendoza",
     child: "Madre de Lucía, 3 años",
     quote:
-      "La combinación de sesiones y material en casa hizo la diferencia. Lucía está más tranquila y nosotros sabemos cómo apoyarla día a día.",
+      "La combinación de sesiones y material en casa hizo la diferencia. Lucía está más tranquila y nosotros sabemos cómo acompañarla día a día.",
   },
   {
     name: "Patricia León",
@@ -198,5 +246,5 @@ export const parentsTestimonials = [
 export const familyFinalCta = {
   title: "Empieza hoy a potenciar el desarrollo de tu hijo",
   subtitle: "Agenda una evaluación sin compromiso y conoce cómo podemos ayudar a tu familia.",
-  button: "Agenda una sesión",
+  button: "Habla con una asesora",
 };

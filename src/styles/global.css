@@ -59,3 +59,27 @@
 .about-hero-swiper .swiper-pagination-bullet-active {
   background: #fff;
 }
+
+/* Programas inicio — tarjeta blanca a la misma altura que la imagen (desktop) */
+@media (min-width: 1024px) {
+  .programs-home-swiper.swiper {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .programs-home-swiper .swiper-wrapper {
+    height: 100%;
+    align-items: stretch;
+  }
+
+  .programs-home-swiper .swiper-slide {
+    height: auto;
+    min-height: 100%;
+    box-sizing: border-box;
+  }
+
+  .programs-home-swiper .swiper-slide .programs-slide-inner {
+    flex: 1 1 auto;
+    min-height: 100%;
+  }
+}

@@ -1,13 +1,15 @@
 ---
-import CourseTabs from "../react/CourseTabs";
-import { courses } from "../../data/estrategia";
+import CourseTabs from "../inicio/CourseTabs";
 ---
 
-<section id="cursos" class="scroll-mt-28 bg-primary py-16 text-white md:py-24" aria-labelledby="courses-title">
+<section id="cursos" class="scroll-mt-28 bg-primary py-14 text-white md:py-20" aria-labelledby="courses-title">
   <div class="container">
-    <h2 id="courses-title" class="mb-10 text-center text-3xl sm:mb-12 sm:text-4xl">
+    <h2 id="courses-title" class="mb-3 text-left text-2xl font-bold sm:mb-4 sm:text-3xl md:text-4xl">
       Cursos de capacitación
     </h2>
-    <CourseTabs courses={courses} client:visible />
+    <p class="mb-10 max-w-2xl text-left text-sm leading-relaxed text-white/90 sm:mb-12 sm:text-base">
+      Ocho módulos para fortalecer tu práctica con enfoque Montessori y evidencia actual.
+    </p>
+    <CourseTabs variant="sidebar" client:load />
   </div>
 </section>
