@@ -52,9 +52,9 @@ export const audience = {
 };
 
 export const certification = {
-  title: "Certificación que avala tu crecimiento",
+  title: "Certificación que valida tu crecimiento",
   body:
-    "Recibe un certificado oficial que respalda tu formación y refuerza tu perfil ante instituciones y familias, con contenidos alineados a la práctica real del aula y la consulta.",
+    "Recibe un certificado avalado por la Cámara de Comercio y fortalece tu perfil profesional.",
   badge: {
     src: imgCert.src,
     alt: "Participantes en capacitación Diverty",
@@ -106,8 +106,8 @@ export const testimonials = [
       src: imgTestimonial1.src,
       alt: "Retrato de María González",
     },
-    quote:
-      "El enfoque práctico me permitió implementar cambios inmediatos en mi consulta. El equipo de Diverty acompaña de verdad.",
+    quote: ""
+    // "El enfoque práctico me permitió implementar cambios inmediatos en mi consulta. El equipo de Diverty acompaña de verdad.",
   },
   {
     name: "Carla Ramírez",
@@ -116,8 +116,8 @@ export const testimonials = [
       src: imgTestimonial2.src,
       alt: "Retrato de Carla Ramírez",
     },
-    quote:
-      "Las sesiones en vivo y el material descargable son de altísima calidad. Recomiendo los cursos al 100%.",
+    quote: ""
+    // "Las sesiones en vivo y el material descargable son de altísima calidad. Recomiendo los cursos al 100%.",
   },
   {
     name: "Ana Martínez",
@@ -126,8 +126,8 @@ export const testimonials = [
       src: imgTestimonial3.src,
       alt: "Retrato de Ana Martínez",
     },
-    quote:
-      "Por fin una capacitación que respeta el ritmo del aula real. Salí con herramientas concretas y red de colegas.",
+    quote: ""
+    // "Por fin una capacitación que respeta el ritmo del aula real. Salí con herramientas concretas y red de colegas.",
   },
 ] as const;
 

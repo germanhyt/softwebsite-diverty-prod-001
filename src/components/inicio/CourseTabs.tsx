@@ -177,7 +177,7 @@ export default function CourseTabs({ courses: coursesProp, variant = "sidebar", 
             </article>
 
             <div className="absolute bottom-0 right-3 z-[2] w-[min(100%,17.5rem)] max-w-[90%] translate-y-[75%] sm:right-5 sm:w-[min(100%,19rem)] md:right-6 lg:w-[min(48%,17.5rem)] lg:max-w-[280px] lg:translate-y-[60%] xl:right-8">
-              <div className="overflow-hidden rounded-xl border-b-[4px] border-l-[4px] border-footer bg-white shadow-[4px_5px_0_0_rgba(10,81,141,0.3)] sm:rounded-[1rem]">
+              <div className="overflow-hidden rounded-xl  bg-white shadow-[4px_5px_0_0_rgba(10,81,141,0.3)] sm:rounded-[1rem]">
                 <img
                   src={active.image.src}
                   alt={active.image.alt}
