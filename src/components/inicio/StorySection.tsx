@@ -1,19 +1,28 @@
+import { motion, useReducedMotion } from "framer-motion";
 import { ourStory, brandPillars } from "../../data/familiesHome";
+import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
 export default function StorySection() {
+  const reduce = useReducedMotion();
+
   return (
-    <section className=" " aria-labelledby="story-title">
-      <div className="container bg-surface-peach py-16 md:py-24 rounded-[1.75rem]">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Historia */}
-          <div className="relative">
+    <section aria-labelledby="story-title">
+      <div className="container rounded-[1.75rem] bg-surface-peach py-16 md:py-24">
+        <motion.div
+          className="grid gap-12 lg:grid-cols-2 lg:gap-16"
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
+          viewport={defaultViewport}
+          variants={staggerChildren}
+        >
+          <motion.div className="relative" variants={fadeInUp}>
             <h2
               id="story-title"
-              className="mb-6 text-3xl font-bold text-primary sm:text-4xl"
+              className="mb-6 text-3xl font-bold text-black sm:text-4xl"
             >
               {ourStory.title}
             </h2>
-            <div className="mb-8 space-y-4 text-lg leading-relaxed text-primary/90 lg:max-w-xl">
+            <div className="mb-8 space-y-4 text-lg leading-relaxed text-black/90 lg:max-w-2xl">
               <p>{ourStory.intro}</p>
               <p>{ourStory.lead}</p>
             </div>
@@ -24,10 +33,12 @@ export default function StorySection() {
               loading="lazy"
               aria-hidden="true"
             />
-          </div>
+          </motion.div>
 
-          {/* Pilares de marca */}
-          <div className="flex flex-col gap-4">
+          <motion.div
+            className="flex flex-col gap-4"
+            variants={staggerChildren}
+          >
             {brandPillars.map((p) => {
               const baseClass =
                 "block rounded-[1.35rem] p-6 shadow-card transition sm:p-8";
@@ -43,22 +54,30 @@ export default function StorySection() {
                 </>
               );
 
-              return p.href ? (
-                <a
+              const card = p.href ? (
+                <motion.a
                   key={p.name}
                   href={p.href}
                   className={`${baseClass} ${colorClass}`}
+                  variants={fadeInUp}
+                  whileHover={reduce ? undefined : { y: -2 }}
                 >
                   {inner}
-                </a>
+                </motion.a>
               ) : (
-                <div key={p.name} className={`${baseClass} ${colorClass}`}>
+                <motion.div
+                  key={p.name}
+                  className={`${baseClass} ${colorClass}`}
+                  variants={fadeInUp}
+                >
                   {inner}
-                </div>
+                </motion.div>
               );
+
+              return card;
             })}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

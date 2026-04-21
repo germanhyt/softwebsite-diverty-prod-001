@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 
 import type { HowStep } from "../../data/familiesHome";
 import { howItWorks } from "../../data/familiesHome";
+import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
 /** Colores de caja de contenido alineados al prototipo */
 const BOX_BY_PALETTE: Record<
@@ -167,6 +169,7 @@ function ChevronIcon({ dir }: { dir: "left" | "right" }) {
 }
 
 export default function HowItWorksSection() {
+  const reduce = useReducedMotion();
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const steps = howItWorks;
 
@@ -188,22 +191,38 @@ export default function HowItWorksSection() {
       aria-labelledby="how-title"
     >
       <div className="container pb-12 md:pb-16">
-        <h2
+        <motion.h2
           id="how-title"
           className="mb-8 text-left text-3xl font-bold text-slate-900 sm:mb-10 sm:text-4xl"
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
+          viewport={defaultViewport}
+          variants={fadeInUp}
         >
           ¿Cómo funciona?
-        </h2>
+        </motion.h2>
 
-        {/* Desktop: rejilla 5 columnas, alineada al borde inferior (escalera) */}
-        <div className="hidden items-end gap-3 sm:grid sm:grid-cols-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 lg:gap-4">
+        <motion.div
+          className="hidden items-end gap-3 sm:grid sm:grid-cols-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 lg:gap-4"
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
+          viewport={defaultViewport}
+          variants={staggerChildren}
+        >
           {steps.map((step, index) => (
-            <HowStepCard key={step.key} step={step} index={index} layout="grid" />
+            <motion.div key={step.key} className="h-full" variants={fadeInUp}>
+              <HowStepCard step={step} index={index} layout="grid" />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Swiper solo &lt; sm: cards de tamaño fijo */}
-        <div className="relative w-full sm:hidden">
+        <motion.div
+          className="relative w-full sm:hidden"
+          initial={reduce ? false : { opacity: 0, y: 20 }}
+          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          viewport={defaultViewport}
+          transition={{ duration: reduce ? 0 : 0.5 }}
+        >
           <Swiper
             slidesPerView={1}
             spaceBetween={16}
@@ -243,10 +262,17 @@ export default function HowItWorksSection() {
           >
             <ChevronIcon dir="right" />
           </button>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="h-2 w-full bg-primary md:h-2.5" aria-hidden />
+      <motion.div
+        className="h-2 w-full origin-left bg-primary md:h-2.5"
+        aria-hidden
+        initial={reduce ? false : { scaleX: 0 }}
+        whileInView={reduce ? undefined : { scaleX: 1 }}
+        viewport={defaultViewport}
+        transition={{ duration: reduce ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
+      />
     </section>
   );
 }

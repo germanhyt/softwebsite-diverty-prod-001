@@ -17,15 +17,15 @@ import { familiesHomeSeo } from "../config/seoConfig";
 <Layout seo={familiesHomeSeo}>
   <Header active="inicio" ctaLabel="Contáctanos" />
   <main>
-    <HeroSection />
-    <NeuroSection />
+    <HeroSection client:load />
+    <NeuroSection client:load />
     <HowItWorksSection client:load />
     <ProgramsSection client:load />
-    <DomicilioSection />
-    <BenefitsSection />
-    <StorySection />
-    <TestimonialsSection />
-    <FinalCtaSection />
+    <DomicilioSection client:visible />
+    <BenefitsSection client:visible />
+    <StorySection client:visible />
+    <TestimonialsSection client:visible />
+    <FinalCtaSection client:visible />
   </main>
   <Footer />
 </Layout>

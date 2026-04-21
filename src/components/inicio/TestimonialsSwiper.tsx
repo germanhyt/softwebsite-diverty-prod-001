@@ -24,8 +24,8 @@ export default function TestimonialsSwiper({ items }: Props) {
               loading="lazy"
             />
             <div>
-              <div className="font-bold text-primary">{t.name}</div>
-              <div className="text-sm text-primary/75">{t.role}</div>
+              <div className="font-bold text-black">{t.name}</div>
+              <div className="text-sm text-black/75">{t.role}</div>
             </div>
           </div>
           {/* <p className="text-sm leading-relaxed text-primary/90 sm:text-base">“{t.quote}”</p> */}

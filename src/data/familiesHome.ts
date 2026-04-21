@@ -28,7 +28,7 @@ export const familyHero = {
 export const familyNeuro = {
   title: "Enfoque en neurodesarrollo y metodología Montessori",
   body:
-    "Integramos principios del neurodesarrollo y ambientes preparados estilo Montessori para respetar los ritmos de cada niño. Observamos, ajustamos y celebramos avances con objetivos claros para la familia y el hogar.",
+    "Aplicamos el enfoque en neurodesarrollo con los principios Montessori, a través de terapias especializadas para crear un ambiente de aprendizaje respetuoso donde tu hijo desarrolle habilidades a su propio ritmo, fortaleciendo su autoestima y amor por el aprendizaje. Desde la confianza y seguridad de tu hogar.",
   illustration: {
     src: imgEnfoque.src,
     alt: "Ilustración sobre creatividad, aprendizaje y neurodesarrollo",

@@ -2,9 +2,9 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import EstrategiaHero from "../../components/estrategia/EstrategiaHero.astro";
-import EstrategiaSplitSection from "../../components/estrategia/EstrategiaSplitSection.astro";
-import EstrategiaStaff from "../../components/estrategia/EstrategiaStaff.astro";
+import EstrategiaHero from "../../components/estrategia/EstrategiaHero";
+import EstrategiaSplitSection from "../../components/estrategia/EstrategiaSplitSection";
+import EstrategiaStaff from "../../components/estrategia/EstrategiaStaff";
 import { estrategiaSplitSections } from "../../data/estrategiaPage";
 import { nosotrosSeo } from "../../config/seoConfig";
 ---
@@ -12,9 +12,11 @@ import { nosotrosSeo } from "../../config/seoConfig";
 <Layout seo={nosotrosSeo}>
   <Header active="nosotros" ctaLabel="Contáctanos" />
   <main class="overflow-x-hidden">
-    <EstrategiaHero />
-    {estrategiaSplitSections.map((block) => <EstrategiaSplitSection block={block} />)}
-    <EstrategiaStaff />
+    <EstrategiaHero client:load />
+    {estrategiaSplitSections.map((block) => (
+      <EstrategiaSplitSection block={block} client:visible />
+    ))}
+    <EstrategiaStaff client:visible />
   </main>
   <Footer />
 </Layout>

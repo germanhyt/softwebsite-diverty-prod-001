@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
@@ -7,6 +8,7 @@ import {
   programCategories,
   type ProgramItem,
 } from "../../data/programsHome";
+import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
 /** Azul de sección y franja izquierda (~#1578C1) */
 const SECTION_BLUE = "#1578C1";
@@ -99,6 +101,7 @@ function ProgramContent({
 }
 
 export default function ProgramsSection() {
+  const reduce = useReducedMotion();
   const [categoryId, setCategoryId] = useState(programCategories[0]?.id ?? "");
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [nav, setNav] = useState({ isBeginning: true, isEnd: false });
@@ -146,20 +149,31 @@ export default function ProgramsSection() {
       aria-labelledby="programs-title"
     >
       <div className="container py-12 md:py-16 lg:py-20">
-        <h2
+        <motion.h2
           id="programs-title"
           className="mb-8 text-left text-3xl font-bold text-white sm:mb-10 sm:text-4xl lg:text-[2.5rem]"
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
+          viewport={defaultViewport}
+          variants={fadeInUp}
         >
           Nuestros programas
-        </h2>
+        </motion.h2>
 
-        <div
+        <motion.div
           id={`programs-panel-${active.id}`}
           role="tabpanel"
           aria-labelledby={`programs-tab-${active.id}`}
           className="flex flex-col gap-6 lg:grid lg:grid-cols-12 lg:items-stretch lg:gap-8"
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
+          viewport={defaultViewport}
+          variants={staggerChildren}
         >
-          <div className="col-span-7 order-1 flex h-full min-h-0 flex-col gap-5 lg:order-2 lg:min-h-[28rem] lg:gap-6">
+          <motion.div
+            className="col-span-7 order-1 flex h-full min-h-0 flex-col gap-5 lg:order-2 lg:min-h-[28rem] lg:gap-6"
+            variants={fadeInUp}
+          >
             <div
               className="flex flex-wrap gap-3"
               role="tablist"
@@ -275,9 +289,12 @@ export default function ProgramsSection() {
                 </button>
               ) : null}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="col-span-5 order-2 flex min-h-0 flex-col overflow-hidden rounded-[1.35rem] shadow-xl ring-1 ring-white/20 lg:order-1 lg:min-h-[28rem] lg:flex-1">
+          <motion.div
+            className="col-span-5 order-2 flex min-h-0 flex-col overflow-hidden rounded-[1.35rem] shadow-xl ring-1 ring-white/20 lg:order-1 lg:min-h-[28rem] lg:flex-1"
+            variants={fadeInUp}
+          >
             <img
               src={active.heroImage.src}
               alt={active.heroImage.alt}
@@ -286,8 +303,8 @@ export default function ProgramsSection() {
               className="h-full w-full object-cover "
               loading="lazy"
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

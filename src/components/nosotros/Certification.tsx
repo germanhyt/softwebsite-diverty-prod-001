@@ -1,12 +1,12 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { domicilio } from "../../data/familiesHome";
+import { certification } from "../../data/nosotrosTraining";
 import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
-export default function DomicilioSection() {
+export default function Certification() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="bg-[#FDEFE7] py-16 md:py-24" aria-labelledby="domicilio-title">
+    <section className="bg-[#FDEFE7] py-16 md:py-24" aria-labelledby="cert-title">
       <div className="container max-w-5xl md:max-w-[96rem]">
         <motion.div
           className="flex flex-col items-center gap-4 sm:flex-row sm:items-stretch"
@@ -20,10 +20,13 @@ export default function DomicilioSection() {
             variants={fadeInUp}
           >
             <img
-              src={domicilio.image.src}
-              alt={domicilio.image.alt}
+              src={certification.badge.src}
+              alt={certification.badge.alt}
+              width={800}
+              height={600}
               className="aspect-[4/3] w-full rounded-[1.5rem] object-cover shadow-xl sm:aspect-auto sm:h-full lg:rounded-[3.5rem]"
               loading="lazy"
+              decoding="async"
             />
           </motion.div>
 
@@ -33,21 +36,24 @@ export default function DomicilioSection() {
           >
             <div className="relative z-10 flex w-full sm:hidden sm:w-[45%] lg:w-[40%]">
               <img
-                src={domicilio.image.src}
-                alt={domicilio.image.alt}
+                src={certification.badge.src}
+                alt={certification.badge.alt}
+                width={800}
+                height={600}
                 className="aspect-[4/3] w-full rounded-[1.5rem] object-cover shadow-xl sm:aspect-auto sm:h-full lg:rounded-[3.5rem]"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div>
               <h2
-                id="domicilio-title"
+                id="cert-title"
                 className="mb-3 text-2xl font-bold leading-tight sm:text-xl lg:text-2xl"
               >
-                {domicilio.title}
+                {certification.title}
               </h2>
               <p className="max-w-md text-base leading-relaxed text-white/95 lg:text-lg">
-                {domicilio.body}
+                {certification.body}
               </p>
             </div>
           </motion.div>

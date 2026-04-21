@@ -24,7 +24,7 @@ export default function CtaAgenda({ label }: Props) {
         </span>
       </a> */}
 
-      <div className="mt-12 text-center md:mt-20">
+      <div className="mt-12 text-center md:mt-16">
         <a
           href="/#contacto"
           className="group inline-flex items-center gap-3 rounded-full bg-[#0A518D] px-10 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-[#084579] hover:shadow-2xl"
