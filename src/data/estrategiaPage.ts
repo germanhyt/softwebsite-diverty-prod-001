@@ -1,6 +1,7 @@
 /**
  * Contenido e imágenes alineados al prototipo `src/assets/prototype-estrategia/estrategia.jpg`.
- * (El archivo `estrategia.ts` conserva tipos y datos usados por Inicio y secciones legacy.)
+ * Se usa en la ruta **`/nosotros`** (Quiénes somos — historia, esencia y equipo).
+ * (`estrategia.ts` conserva tipos compartidos con Inicio.)
  */
 
 import imgHero from "../assets/prototype-estrategia/estrategia_section_hero-1.webp";

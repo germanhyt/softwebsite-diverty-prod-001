@@ -1,13 +1,13 @@
 /**
  * Tipo compartido con programas de la home (`familiesHome.ts`).
- * Contenido de capacitación y página Quiénes somos: `nosotrosTraining.ts`.
+ * Contenido de capacitación (página `/estrategia`): `nosotrosTraining.ts`.
  */
 
 export type CourseTab = {
   id: string;
   label: string;
   title: string;
-  /** Subtítulo (cursos de formación en `/nosotros`). */
+  /** Subtítulo (cursos de formación en `/estrategia`). */
   subtitle?: string;
   benefits: string[];
   /** Párrafo único de beneficios (lista apilada de cursos). */

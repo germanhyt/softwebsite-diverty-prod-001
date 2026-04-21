@@ -1,5 +1,6 @@
 /**
  * Contenido e imágenes — capacitación profesional (prototipo `prototype-quienes-somos/`).
+ * Componentes en `components/nosotros/` se montan en la ruta **`/estrategia`**.
  */
 
 import imgHero from "../assets/prototype-quienes-somos/nosotros_section_hero-1.png";

@@ -53,12 +53,10 @@ function HowStepCard({
   const n = index + 1;
   return (
     <article className="flex min-h-0 flex-col overflow-hidden rounded-[1.25rem] shadow-card">
-      <div className=" aspect-[4/5] w-full shrink-0 overflow-hidden rounded-t-[1.25rem] bg-primary/5">
+      <div className="aspect-[4/5]  w-full shrink-0 overflow-hidden rounded-t-[1.25rem] bg-primary/5">
         <img
           src={step.image.src}
           alt={step.image.alt}
-          width={400}
-          height={500}
           className="h-full w-full object-cover"
           loading="lazy"
         />

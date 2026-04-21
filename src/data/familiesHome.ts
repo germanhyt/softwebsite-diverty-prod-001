@@ -193,8 +193,8 @@ export const benefitsKids = [
 
 export const ourStory = {
   title: "Nuestra Historia",
-  body:
-    "Nacimos de la necesidad de ofrecer intervenciones humanas, basadas en evidencia y cercanas a la familia. Hoy unimos terapia domiciliaria, formación de facilitadores y recursos tangibles para que el progreso continúe más allá de la consulta.",
+  body: "En Perú Learn Easy creemos que la educación debe ir más allá de la teoría. Nacemos con el propósito de construir una formación integral, conectando distintas líneas de intervención bajo una misma visión: el desarrollo real de los niños y la preparación de profesionales capaces de generar impacto. A partir de esta visión, surgen dos propuestas que se complementan:",
+  
   decorImage: {
     src: imgHistoriaDecor.src,
     alt: "",
@@ -245,6 +245,6 @@ export const parentsTestimonials = [
 
 export const familyFinalCta = {
   title: "Empieza hoy a potenciar el desarrollo de tu hijo",
-  subtitle: "Agenda una evaluación sin compromiso y conoce cómo podemos ayudar a tu familia.",
+  subtitle: "Agenda una sesión de evaluación sin compromiso y conoce nuestro enfoque personalizado.",
   button: "Habla con una asesora",
 };

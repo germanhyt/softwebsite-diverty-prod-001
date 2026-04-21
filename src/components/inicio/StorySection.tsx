@@ -19,9 +19,7 @@ export default function StorySection() {
             <img
               src={ourStory.decorImage.src}
               alt=""
-              width={220}
-              height={140}
-              className="pointer-events-none mt-2 hidden w-44 max-w-full select-none lg:block"
+              className="pointer-events-none mt-2 hidden select-none lg:block"
               loading="lazy"
               aria-hidden="true"
             />
