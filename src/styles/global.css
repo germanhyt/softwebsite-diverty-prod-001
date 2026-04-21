@@ -60,6 +60,18 @@
   background: #fff;
 }
 
+/* ¿Cómo funciona? — slides a la altura del más alto; la tarjeta rellena con flex */
+.how-it-works-swiper.swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.how-it-works-swiper.swiper .swiper-slide {
+  display: flex !important;
+  height: auto;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
 /* Programas inicio — tarjeta blanca a la misma altura que la imagen (desktop) */
 @media (min-width: 1024px) {
   .programs-home-swiper.swiper {

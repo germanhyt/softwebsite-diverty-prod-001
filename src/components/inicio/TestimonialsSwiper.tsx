@@ -28,7 +28,7 @@ export default function TestimonialsSwiper({ items }: Props) {
               <div className="text-sm text-primary/75">{t.role}</div>
             </div>
           </div>
-          <p className="text-sm leading-relaxed text-primary/90 sm:text-base">“{t.quote}”</p>
+          {/* <p className="text-sm leading-relaxed text-primary/90 sm:text-base">“{t.quote}”</p> */}
         </article>
       ))}
     </div>

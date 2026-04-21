@@ -11,7 +11,7 @@ export default function HeroSection() {
       style={{ backgroundColor: HERO_ORANGE }}
       aria-labelledby="hero-title"
     >
-      <div className="relative z-10 overflow-hidden mt-20 lg:mt-0 ">
+      <div className="4xl:container relative z-10 overflow-hidden mt-20 lg:mt-0 ">
 
         <div className="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-8 lg:gap-x-12">
           {/* Foto recorte — sin marco; se integra al fondo naranja */}

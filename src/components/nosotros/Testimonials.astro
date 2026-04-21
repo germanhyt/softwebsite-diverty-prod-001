@@ -3,9 +3,16 @@ import TestimonialsSwiper from "../inicio/TestimonialsSwiper";
 import { testimonials } from "../../data/nosotrosTraining";
 ---
 
-<section id="testimonios" class="scroll-mt-28 bg-surface-cream pb-16 pt-4 md:pb-24" aria-labelledby="testimonials-title">
+<section
+  id="testimonios"
+  class="mt-20 scroll-mt-28 bg-surface-cream pb-16 pt-4 md:pb-24"
+  aria-labelledby="testimonials-title"
+>
   <div class="container">
-    <h2 id="testimonials-title" class="mb-10 text-center text-3xl text-primary sm:mb-12 sm:text-4xl">
+    <h2
+      id="testimonials-title"
+      class="mb-10 text-center text-3xl text-primary sm:mb-12 sm:text-4xl"
+    >
       Testimonios de profesionales
     </h2>
     <TestimonialsSwiper items={testimonials} client:visible />

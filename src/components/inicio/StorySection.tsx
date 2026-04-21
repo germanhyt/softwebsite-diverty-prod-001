@@ -13,9 +13,10 @@ export default function StorySection() {
             >
               {ourStory.title}
             </h2>
-            <p className="mb-8 text-lg leading-relaxed text-primary/90 lg:max-w-xl">
-              {ourStory.body}
-            </p>
+            <div className="mb-8 space-y-4 text-lg leading-relaxed text-primary/90 lg:max-w-xl">
+              <p>{ourStory.intro}</p>
+              <p>{ourStory.lead}</p>
+            </div>
             <img
               src={ourStory.decorImage.src}
               alt=""

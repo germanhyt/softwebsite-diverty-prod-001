@@ -232,7 +232,7 @@ export default function ProgramsSection() {
                 <button
                   type="button"
                   onClick={() => swiper?.slidePrev()}
-                  className="absolute left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-primary shadow-md transition hover:bg-slate-50 sm:left-4 sm:h-12 sm:w-12 lg:left-2 lg:-translate-x-1/2"
+                  className="absolute -left-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-primary shadow-md transition hover:bg-slate-50 sm:left-4 sm:h-12 sm:w-12 lg:left-2 lg:-translate-x-1/2"
                   aria-label="Programa anterior"
                 >
                   <svg
@@ -255,7 +255,7 @@ export default function ProgramsSection() {
                 <button
                   type="button"
                   onClick={() => swiper?.slideNext()}
-                  className="absolute right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-primary shadow-md transition hover:bg-slate-50 sm:right-4 sm:h-12 sm:w-12 lg:right-0 lg:translate-x-1/2"
+                  className="absolute -right-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-primary shadow-md transition hover:bg-slate-50 sm:right-4 sm:h-12 sm:w-12 lg:right-0 lg:translate-x-1/2"
                   aria-label="Siguiente programa"
                 >
                   <svg

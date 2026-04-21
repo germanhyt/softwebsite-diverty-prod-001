@@ -193,8 +193,9 @@ export const benefitsKids = [
 
 export const ourStory = {
   title: "Nuestra Historia",
-  body: "En Perú Learn Easy creemos que la educación debe ir más allá de la teoría. Nacemos con el propósito de construir una formación integral, conectando distintas líneas de intervención bajo una misma visión: el desarrollo real de los niños y la preparación de profesionales capaces de generar impacto. A partir de esta visión, surgen dos propuestas que se complementan:",
-  
+  intro:
+    "En Perú Learn Easy creemos que la educación debe ir más allá de la teoría. Nacemos con el propósito de construir una formación integral, conectando distintas líneas de intervención bajo una misma visión: el desarrollo real de los niños y la preparación de profesionales capaces de generar impacto.",
+  lead: "A partir de esta visión, surgen dos propuestas que se complementan:",
   decorImage: {
     src: imgHistoriaDecor.src,
     alt: "",
@@ -211,12 +212,12 @@ export type BrandPillar = {
 export const brandPillars: BrandPillar[] = [
   {
     name: "Diverty",
-    text: "Atención clínica y educativa centrada en el niño, con seguimiento domiciliario y coordinación con colegio y familia.",
+    text: "Nuestra propuesta enfocada en la infancia. A través de programas de intervención en el hogar, acompañamos a los niños en su desarrollo emocional, cognitivo, sensorial y académico, utilizando enfoques como el neurodesarrollo y la metodología Montessori. Más que sesiones, buscamos generar avances reales y sostenidos, adaptándonos a las necesidades de cada niño y al ritmo de cada familia.",
     tone: "orange",
   },
   {
     name: "Estrategia",
-    text: "Línea de formación y acompañamiento a instituciones: herramientas y rutas para escalar buenas prácticas con rigor y calidez.",
+    text: "Nuestro espacio de formación para profesionales. Aquí transformamos la experiencia en conocimiento aplicable. Brindamos capacitación con herramientas prácticas, basadas en evidencia, para fortalecer la intervención infantil en distintos contextos. El objetivo es claro: formar profesionales capaces de generar cambios reales en los niños con los que trabajan.",
     tone: "navy",
     href: "/estrategia",
   },
@@ -225,21 +226,21 @@ export const brandPillars: BrandPillar[] = [
 export const parentsTestimonials = [
   {
     name: "María Fernanda López",
-    child: "Madre de Tomás, 4 años",
+    child: "Mamá de Ian, Lima",
     quote:
-      "En pocos meses vimos más confianza al hablar y jugar. Siempre nos explicaron con claridad qué trabajábamos y cómo apoyar en casa.",
+      "Como papás estamos muy contentos con el servicio. Hemos visto avances en nuestro pequeño, especialmente en su comunicación y en cómo se relaciona con nosotros. Nos gusta mucho que el acompañamiento sea tan cercano y personalizado.",
   },
   {
-    name: "Carla Mendoza",
-    child: "Madre de Lucía, 3 años",
+    name: "Carlos Alberto Ramírez",
+    child: "Papá de Miguel, Arequipa",
     quote:
-      "La combinación de sesiones y material en casa hizo la diferencia. Lucía está más tranquila y nosotros sabemos cómo acompañarla día a día.",
+      "La experiencia ha sido muy positiva para nuestra familia. Las especialistas son muy profesionales y siempre nos explican cómo continuar el trabajo en casa. Nuestro hijo está más tranquilo, atento y participa más en las actividades.",
   },
   {
-    name: "Patricia León",
-    child: "Madre de Mateo, 7 años",
+    name: "Lucía Torres Sánchez",
+    child: "Mamá de Sofia, Chiclayo",
     quote:
-      "Profesionales muy dedicados y puntuales. El informe mensual nos ayudó a alinear con el colegio sin sobresaltos.",
+      "Estamos realmente agradecidos con el programa. Desde que empezamos, hemos notado cambios importantes en la conducta y en el lenguaje de nuestro pequeño. Además, nos sentimos acompañados como padres en todo el proceso, lo cual marca una gran diferencia.",
   },
 ] as const;
 
