@@ -1,20 +1,21 @@
 /**
- * Contenido e imágenes — capacitación profesional (prototipo `prototype-quienes-somos/`).
- * Componentes en `components/nosotros/` se montan en la ruta **`/estrategia`**.
+ * Contenido e imágenes — capacitación profesional (ruta **`/estrategia`**).
+ * Assets en `src/assets/prototype-estrategia/` (`estrategia_section_*`).
+ * Componentes en `components/nosotros/`.
  */
 
-import imgHero from "../assets/prototype-quienes-somos/nosotros_section_hero-1.png";
-import imgIntro from "../assets/prototype-quienes-somos/nosotros_section_formacion-profesionales-1.png";
-import imgAudience from "../assets/prototype-quienes-somos/nosotros_section_dirigido-1.png";
-import imgCert from "../assets/prototype-quienes-somos/nosotros_section_cerificacion-valida-1.png";
-import imgBenefitCert from "../assets/prototype-quienes-somos/nosotros_section_certificacion-1.png";
-import imgBenefitPractice from "../assets/prototype-quienes-somos/nosotros_section_aplicacion-practica-1.png";
-import imgBenefitGrowth from "../assets/prototype-quienes-somos/nosotros_section_mejora-prfofesional-1.png";
-import imgMethod1 from "../assets/prototype-quienes-somos/nosotros_section_como-desarrollan-cursos-1.png";
-import imgMethod2 from "../assets/prototype-quienes-somos/nosotros_section_como-desarrollan-cursos-2.png";
-import imgTestimonial1 from "../assets/prototype-quienes-somos/nosotros_section_testimonios-1.png";
-import imgTestimonial2 from "../assets/prototype-quienes-somos/nosotros_section_testimonios-1.png";
-import imgTestimonial3 from "../assets/prototype-quienes-somos/nosotros_section_testimonios-1.png";
+import imgHero from "../assets/prototype-estrategia/estrategia_section_hero-1.png";
+import imgIntro from "../assets/prototype-estrategia/estrategia_section_formacion-profesionales-1.png";
+import imgAudience from "../assets/prototype-estrategia/estrategia_section_dirigido-1.png";
+import imgCert from "../assets/prototype-estrategia/estrategia_section_cerificacion-valida-1.png";
+import imgBenefitCert from "../assets/prototype-estrategia/estrategia_section_certificacion-1.png";
+import imgBenefitPractice from "../assets/prototype-estrategia/estrategia_section_aplicacion-practica-1.png";
+import imgBenefitGrowth from "../assets/prototype-estrategia/estrategia_section_mejora-prfofesional-1.png";
+import imgMethod1 from "../assets/prototype-estrategia/estrategia_section_como-desarrollan-cursos-1.png";
+import imgMethod2 from "../assets/prototype-estrategia/estrategia_section_como-desarrollan-cursos-2.png";
+import imgTestimonial1 from "../assets/prototype-estrategia/estrategia_section_testimonios-1.png";
+import imgTestimonial2 from "../assets/prototype-estrategia/estrategia_section_testimonios-1.png";
+import imgTestimonial3 from "../assets/prototype-estrategia/estrategia_section_testimonios-1.png";
 
 export { trainingCourses } from "./trainingCourses";
 

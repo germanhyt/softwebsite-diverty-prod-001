@@ -1,17 +1,17 @@
 /**
- * Lista de cursos de capacitación (solo assets de cursos).
+ * Lista de cursos de capacitación (solo assets de cursos en `prototype-estrategia/`).
  * Importado directamente en el bundle del cliente (`CourseTabs`) para evitar depender
  * de la serialización de props Astro → React.
  */
 
-import imgCourse1 from "../assets/prototype-quienes-somos/nosotros_section_cursos_acomp-educativo-1.png";
-import imgCourse2 from "../assets/prototype-quienes-somos/nosotros_section_cursos_eval-perfil-cognitivo-1.png";
-import imgCourse3 from "../assets/prototype-quienes-somos/nosotros_section_cursos_intervencion-integ-sens-1.png";
-import imgCourse4 from "../assets/prototype-quienes-somos/nosotros_section_cursos_estion-emcional-conductual-1.png";
-import imgCourse5 from "../assets/prototype-quienes-somos/nosotros_section_cursos_estrategias-inter-ninios-neuroi-1.png";
-import imgCourse6 from "../assets/prototype-quienes-somos/nosotros_section_cursos_terapia-lenguaje-1.png";
-import imgCourse7 from "../assets/prototype-quienes-somos/nosotros_section_cursos_estimul-temprano-oportuna-1.png";
-import imgCourse8 from "../assets/prototype-quienes-somos/nosotros_section_cursos_int-centrada-ninio-1.png";
+import imgCourse1 from "../assets/prototype-estrategia/estrategia_section_cursos_acomp-educativo-1.png";
+import imgCourse2 from "../assets/prototype-estrategia/estrategia_section_cursos_eval-perfil-cognitivo-1.png";
+import imgCourse3 from "../assets/prototype-estrategia/estrategia_section_cursos_intervencion-integ-sens-1.png";
+import imgCourse4 from "../assets/prototype-estrategia/estrategia_section_cursos_estion-emcional-conductual-1.png";
+import imgCourse5 from "../assets/prototype-estrategia/estrategia_section_cursos_estrategias-inter-ninios-neuroi-1.png";
+import imgCourse6 from "../assets/prototype-estrategia/estrategia_section_cursos_terapia-lenguaje-1.png";
+import imgCourse7 from "../assets/prototype-estrategia/estrategia_section_cursos_estimul-temprano-oportuna-1.png";
+import imgCourse8 from "../assets/prototype-estrategia/estrategia_section_cursos_int-centrada-ninio-1.png";
 
 import type { CourseTab } from "./estrategia";
 

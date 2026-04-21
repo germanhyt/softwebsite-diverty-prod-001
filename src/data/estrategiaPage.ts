@@ -1,16 +1,15 @@
 /**
- * Contenido e imágenes alineados al prototipo `src/assets/prototype-estrategia/estrategia.jpg`.
- * Se usa en la ruta **`/nosotros`** (Quiénes somos — historia, esencia y equipo).
+ * Contenido e imágenes — página **Quiénes somos** (`/nosotros`).
+ * Assets en `src/assets/prototype-quienes-somos/` (`nosotros_section_*`, mock completo: `nosotros_institutional_mock.jpg`).
  * (`estrategia.ts` conserva tipos compartidos con Inicio.)
  */
 
-import imgHero from "../assets/prototype-estrategia/estrategia_section_hero-1.webp";
-import imgEsencia from "../assets/prototype-estrategia/estrategia_section_nuestra-escencia.png";
-import imgImpacto from "../assets/prototype-estrategia/estrategia_section_impacto-buscamos.png";
-import imgFundadora from "../assets/prototype-estrategia/estrategia_section_nuestra-fundadora.png";
-import imgStaffRocio from "../assets/prototype-estrategia/estrategia_section_staff-vilchez.png";
-import imgStaffNataly from "../assets/prototype-estrategia/estrategia_section_staff-nataly.png";
-import imgStaffSandra from "../assets/prototype-estrategia/estrategia_section_staff-sandra.png";
+import imgHero from "../assets/prototype-quienes-somos/nosotros_section_hero-1.webp";
+import imgEsencia from "../assets/prototype-quienes-somos/nosotros_section_nuestra-escencia.png";
+import imgImpacto from "../assets/prototype-quienes-somos/nosotros_section_impacto-buscamos.png";
+import imgFundadora from "../assets/prototype-quienes-somos/nosotros_section_nuestra-fundadora.png";
+import imgStaffNataly from "../assets/prototype-quienes-somos/nosotros_section_staff-nataly.png";
+import imgStaffSandra from "../assets/prototype-quienes-somos/nosotros_section_staff-sandra.png";
 
 export const estrategiaHero = {
   title: "Somos Perú Learn Easy",
@@ -28,6 +27,8 @@ export type EstrategiaSplitBlock = {
   paragraphs: string[];
   /** Firma opcional al final del bloque (p. ej. fundadora). */
   signature?: string;
+  /** Línea bajo la firma (p. ej. cargo). */
+  signatureRole?: string;
   image: { src: string; alt: string };
   /** Si true, la imagen va a la izquierda (segundo bloque del mock). */
   imageLeft: boolean;
@@ -38,8 +39,7 @@ export const estrategiaSplitSections: EstrategiaSplitBlock[] = [
     id: "esencia",
     title: "Nuestra esencia",
     paragraphs: [
-      "Creemos en una educación que mira al niño de forma integral: emociones, lenguaje, autonomía y vínculo con la familia.",
-      "Aplicamos principios de neurodesarrollo y ambientes inspirados en Montessori para respetar ritmos, fortalecer fortalezas y construir aprendizajes significativos.",
+      "Potenciar el desarrollo integral de la infancia y la excelencia profesional mediante programas de intervención y capacitación basados en neurodesarrollo y metodología Montessori, generando resultados reales y significativos.",
     ],
     image: {
       src: imgEsencia.src,
@@ -51,8 +51,7 @@ export const estrategiaSplitSections: EstrategiaSplitBlock[] = [
     id: "impacto",
     title: "Impacto que buscamos",
     paragraphs: [
-      "Aspiramos a ser un referente nacional en intervención y acompañamiento infantil temprano, acercando prácticas basadas en evidencia a hogares y centros educativos.",
-      "Medimos el éxito en familias más seguras, equipos coordinados y niños que avanzan con confianza en sus propias capacidades.",
+      "Ser la referencia nacional en intervención infantil y formación de especialistas, transformando la práctica profesional y preparando a los niños para desarrollarse plenamente en el mundo real.",
     ],
     image: {
       src: imgImpacto.src,
@@ -64,10 +63,14 @@ export const estrategiaSplitSections: EstrategiaSplitBlock[] = [
     id: "fundadora",
     title: "Nuestra fundadora",
     paragraphs: [
-      "La visión de Diverty nace de años de trabajo cercano con familias, escuelas y especialistas. Entendimos que el cambio sostenible ocurre cuando se unen diagnóstico claro, estrategias prácticas y un equipo que acompaña sin juzgar.",
-      "Hoy impulsamos Perú Learn Easy como espacio donde la excelencia pedagógica se encuentra con la calidez humana: formación, terapias y recursos que hablan el idioma de quien educa en el día a día.",
+      "En Diverty, creemos en el poder de una intervención infantil bien aplicada para generar un impacto real en el desarrollo de los niños.",
+      "A partir de esta experiencia en campo, nace Estrategia, una iniciativa enfocada en potenciar a los profesionales que trabajan con niños, brindándoles no solo conocimiento teórico, sino herramientas prácticas que puedan aplicar en su día a día.",
+      "Sabemos que la formación tradicional muchas veces no es suficiente. Por eso, nuestros programas están diseñados para transformar el conocimiento en acción, integrando enfoques como el neurodesarrollo y la metodología Montessori.",
+      "Todo lo que enseñamos parte de la experiencia real: lo que hemos vivido, probado y validado en Diverty en distintas regiones del país.",
+      "Esta propuesta forma parte de Perú Learn Easy, la organización que integra y potencia nuestras iniciativas educativas, asegurando una formación alineada a estándares de calidad y con visión de crecimiento.",
     ],
     signature: "Rocio Vilchez",
+    signatureRole: "CEO & Founder",
     image: {
       src: imgFundadora.src,
       alt: "Fundadora de Diverty en su espacio de trabajo con laptop y cuaderno",
@@ -84,19 +87,11 @@ export type StaffMember = {
 
 export const estrategiaStaff: StaffMember[] = [
   {
-    name: "Rocio Vilchez",
-    role: "CEO & Founder",
-    photo: {
-      src: imgStaffRocio.src,
-      alt: "Rocio Vilchez, CEO y fundadora",
-    },
-  },
-  {
-    name: "Nataly Huerto",
+    name: "Nataly Huerta",
     role: "Directora general",
     photo: {
       src: imgStaffNataly.src,
-      alt: "Nataly Huerto, directora general",
+      alt: "Nataly Huerta, directora general",
     },
   },
   {

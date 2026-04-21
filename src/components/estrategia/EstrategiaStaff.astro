@@ -3,24 +3,24 @@ import { estrategiaStaff, estrategiaStaffCta } from "../../data/estrategiaPage";
 ---
 
 <section
-  class="bg-surface-cream pb-16 pt-4 md:pb-24 md:pt-6"
-  aria-labelledby="estrategia-staff-title"
+  class="bg-[#FFF5F0] pb-16 pt-4 md:pb-24 md:pt-6"
+  aria-labelledby="nosotros-staff-title"
 >
   <div class="container">
     <h2
-      id="estrategia-staff-title"
+      id="nosotros-staff-title"
       class="text-center text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl"
     >
       Nuestro staff
     </h2>
 
     <ul
-      class="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:grid-cols-3"
+      class="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-12"
     >
       {
         estrategiaStaff.map((member) => (
           <li class="flex flex-col items-center text-center">
-            <div class="w-full max-w-[280px] overflow-hidden rounded-[1.15rem] shadow-card ring-1 ring-black/[0.06] sm:max-w-none">
+            <div class="w-full max-w-[300px] overflow-hidden rounded-[1.75rem] shadow-card ring-1 ring-black/[0.06] sm:max-w-none">
               <img
                 src={member.photo.src}
                 alt={member.photo.alt}
