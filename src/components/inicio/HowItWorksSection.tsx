@@ -42,7 +42,7 @@ const BOX_BY_PALETTE: Record<
 
 /** Swiper solo bajo `sm`: misma base; el área de imagen crece con `flex-1` para llenar el alto del slide. */
 const SWIPER_CARD_FIXED = {
-  content: "min-h-[13rem]",
+  content: "min-h-[8rem]",
 } as const;
 
 /**
