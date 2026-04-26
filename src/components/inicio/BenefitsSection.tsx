@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { benefitsKids } from "../../data/familiesHome";
+import { siteConfig } from "../../config/site.config";
 import { defaultViewport, fadeInUp, scaleIn, staggerChildren } from "../../lib/motion";
 
 export default function BenefitsSection() {
@@ -62,7 +63,9 @@ export default function BenefitsSection() {
           transition={{ duration: reduce ? 0 : 0.45 }}
         >
           <motion.a
-            href="/#contacto"
+            href={siteConfig.contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 rounded-full bg-[#0A518D] px-10 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:bg-[#084579] hover:shadow-2xl"
             whileHover={reduce ? undefined : { scale: 1.05 }}
             whileTap={reduce ? undefined : { scale: 0.98 }}

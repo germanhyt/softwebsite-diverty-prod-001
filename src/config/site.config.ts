@@ -1,6 +1,9 @@
 /**
  * Personalización central del cliente — mantener sincronizado con `public/robots.txt` (Sitemap absoluto).
  */
+const whatsappPrefilledMessage =
+  "Hola Diverty, quiero más información sobre sus programas y horarios.";
+
 export const siteConfig = {
   /** URL canónica sin barra final */
   origin: "https://www.diverty.pe",
@@ -14,7 +17,8 @@ export const siteConfig = {
     phone: "+51 915 913 451",
     /** Para enlaces `tel:` y wa.me */
     phoneE164: "+51915913451",
-    whatsapp: "https://wa.me/51915913451",
+    whatsappMessage: whatsappPrefilledMessage,
+    whatsapp: `https://wa.me/51915913451?text=${encodeURIComponent(whatsappPrefilledMessage)}`,
   },
   social: {
     facebook: "https://www.facebook.com/DIVERTY.PE/",

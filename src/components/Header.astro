@@ -56,7 +56,9 @@ const ctaShort = ctaLabel.replace(/\s*→\s*$/, "").trim();
       }
       <div class="w-full border-t border-slate-100 px-5 pb-6 pt-4 sm:px-6">
         <a
-          href="/#contacto"
+          href={siteConfig.contact.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
           class="block w-full rounded-full bg-primary px-6 py-4 text-center text-base font-bold text-white shadow-md transition hover:bg-primary-dark"
         >
           {ctaShort}
@@ -184,7 +186,9 @@ const ctaShort = ctaLabel.replace(/\s*→\s*$/, "").trim();
       </ul>
 
       <a
-        href="/#contacto"
+        href={siteConfig.contact.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
         class="w-full rounded-full bg-primary px-5 py-2.5 text-center text-sm font-bold text-white shadow-sm transition hover:bg-primary-dark sm:hidden"
       >
         {ctaShort}
@@ -192,7 +196,9 @@ const ctaShort = ctaLabel.replace(/\s*→\s*$/, "").trim();
     </div>
 
     <a
-      href="/#contacto"
+      href={siteConfig.contact.whatsapp}
+      target="_blank"
+      rel="noopener noreferrer"
       class="hidden shrink-0 rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white shadow-md transition hover:bg-primary-dark sm:inline-flex sm:text-base"
     >
       {ctaLabel}

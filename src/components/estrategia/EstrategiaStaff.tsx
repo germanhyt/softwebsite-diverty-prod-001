@@ -1,8 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  estrategiaStaff,
-  estrategiaStaffCta,
-} from "../../data/estrategiaPage";
+import { estrategiaStaff } from "../../data/estrategiaPage";
+import { siteConfig } from "../../config/site.config";
 import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
 export default function EstrategiaStaff() {
@@ -67,10 +65,12 @@ export default function EstrategiaStaff() {
           transition={{ duration: reduce ? 0 : 0.45, delay: reduce ? 0 : 0.12 }}
         >
           <a
-            href={estrategiaStaffCta.href}
+            href={siteConfig.contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-footer px-8 py-3.5 text-sm font-bold text-white shadow-md transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-footer focus-visible:ring-offset-2 sm:text-base"
           >
-            {estrategiaStaffCta.label}
+            Comunícate con una asesora
             <svg
               className="h-4 w-4 shrink-0"
               fill="none"
