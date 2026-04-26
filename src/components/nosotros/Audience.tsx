@@ -35,7 +35,7 @@ export default function Audience() {
               </motion.div>
               <div className="relative z-[1] -mt-9 px-4 pb-8 pt-0 sm:-mt-10 md:mt-0 md:flex md:min-h-[26rem] md:items-center md:px-8 md:pb-10 md:pt-10 lg:min-h-[28rem] lg:px-10">
                 <motion.div
-                  className="w-full rounded-[1.25rem] border-b-[6px] border-l-[6px] border-[#b94808] bg-accent-orange p-6 text-white shadow-[6px_10px_0_0_rgba(160,55,12,0.38)] sm:p-8 md:max-w-[min(42%,26rem)] md:p-9"
+                  className="w-full rounded-[2.25rem]  border-l-[6px] border-[#b94808] bg-accent-orange p-6 text-white sm:p-8 md:max-w-[min(42%,26rem)] md:p-9"
                   variants={fadeInUp}
                 >
                   <h2

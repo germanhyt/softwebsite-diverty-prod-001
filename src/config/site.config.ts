@@ -11,15 +11,24 @@ export const siteConfig = {
   lang: "es-PE" as const,
   contact: {
     email: "perulearneasy@gmail.com",
-    phone: "987 654 321",
+    phone: "+51 915 913 451",
     /** Para enlaces `tel:` y wa.me */
-    phoneE164: "+51987654321",
-    whatsapp: "https://wa.me/51987654321",
+    phoneE164: "+51915913451",
+    whatsapp: "https://wa.me/51915913451",
   },
   social: {
-    linkedin: "https://www.linkedin.com/company/diverty",
-    facebook: "https://www.facebook.com/diverty",
-    instagram: "https://www.instagram.com/diverty",
-    youtube: "https://www.youtube.com/@diverty",
+    facebook: "https://www.facebook.com/DIVERTY.PE/",
+    instagram: "https://www.instagram.com/diverty.pe/",
+    instagramEstrategia: "https://www.instagram.com/estrategia.peru/",
+    instagramStore: "https://www.instagram.com/divertystore/",
+    tiktok: "https://www.tiktok.com/@diverty.pe",
+  },
+  /** Texto junto al icono en el pie (diferenciar varias cuentas de Instagram). */
+  socialHandle: {
+    facebook: "DIVERTY.PE",
+    instagram: "@diverty.pe",
+    instagramEstrategia: "@estrategia.peru",
+    instagramStore: "@divertystore",
+    tiktok: "@diverty.pe",
   },
 } as const;

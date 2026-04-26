@@ -37,7 +37,7 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div
-            className="relative lg:absolute lg:right-[0rem] lg:top-[8rem] xl:right-[2rem] xl:top-[12rem] 2xl:right-[4rem] 2x:top-[10rem] 3xl:right-[8rem] 3xl:top-[14rem] sm:mr-10"
+            className="relative lg:absolute lg:right-[0rem] lg:top-[8rem] xl:right-[2rem] xl:top-[10rem] 2xl:right-[2rem] 2xl:top-[10rem] 3xl:right-[8rem] 3xl:top-[14rem] sm:mr-10"
             variants={fadeInUp}
           >
             <div className="container lg:px-0 lg:mx-0  sm:max-w-sm md:max-w-md lg:max-w-md xl:max-w-xl 2xl:max-w-2xl">

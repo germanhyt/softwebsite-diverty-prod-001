@@ -14,14 +14,14 @@ export default function Hero() {
     >
       <div>
         <motion.div
-          className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16"
+          className="grid items-center gap-10 lg:grid-cols-5 lg:gap-12 xl:gap-16"
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
           variants={staggerChildren}
         >
           <motion.div
-            className="relative order-2 flex justify-center lg:order-1 lg:justify-start"
+            className="relative order-2 flex justify-center lg:order-1 lg:justify-start lg:col-span-3"
             variants={fadeInUp}
           >
             <img
@@ -36,7 +36,7 @@ export default function Hero() {
             />
           </motion.div>
           <motion.div
-            className="container order-1 lg:mb-20 max-w-xl lg:mx-0 lg:max-w-lg lg:px-0 xl:max-w-xl 2xl:max-w-2xl lg:order-2"
+            className="container order-1 lg:mb-20 max-w-xl lg:mx-0 lg:max-w-lg lg:px-0 xl:max-w-lg 2xl:max-w-lg lg:order-2 lg:col-span-2"
             variants={fadeInUp}
           >
             <h1

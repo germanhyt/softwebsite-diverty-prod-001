@@ -98,38 +98,38 @@ function HowStepCard({
 
   return (
     <article
-      className={`flex w-full flex-col overflow-hidden rounded-[1.25rem] ${
+      className={`group flex w-full flex-col overflow-hidden  ${
         isSwiper ? "h-full min-h-0 flex-1" : ""
       } ${articleMin} ${layout === "grid" ? "h-full justify-end" : isSwiper ? "" : "justify-end"}`}
     >
       <div
         className={
           isSwiper
-            ? "mx-auto flex h-full min-h-0 w-full max-w-md flex-1 flex-col overflow-hidden rounded-[1.25rem]"
-            : "flex w-full flex-col overflow-hidden rounded-[1.25rem]"
+            ? "mx-auto flex h-full min-h-0 w-full max-w-md flex-1 flex-col "
+            : "flex w-full flex-col "
         }
       >
         <div
-          className={`relative w-full overflow-hidden rounded-t-[1.25rem] bg-primary/5 ${
+          className={`relative w-full rounded-t-[1.25rem] ${
             isSwiper ? imgMin : `shrink-0 ${imgMin}`
           }`}
         >
           <img
             src={step.image.src}
             alt={step.image.alt}
-            className="h-full min-h-0 w-full object-cover"
+            className="h-full min-h-0 w-full rounded-t-[1.25rem] object-cover translate-y-[12%] xl:translate-y-[10%] transition-transform duration-500 ease-out group-hover:translate-y-[3%]"
             loading="lazy"
           />
         </div>
         <div
-          className={`flex flex-col rounded-b-[1.25rem] px-4 py-4 sm:px-5 sm:py-5 ${contentMin} ${styles.box} ${
+          className={`flex flex-col rounded-t-[1.25rem] px-4 py-4 sm:px-5 sm:py-5 z-[10] ${contentMin} ${styles.box} ${
             isSwiper ? "shrink-0" : ""
           }`}
         >
           <div className="flex min-h-0 flex-1 flex-col justify-center gap-2">
             <div className="flex items-start gap-2.5 sm:gap-3">
               <span
-                className={`shrink-0 text-3xl font-bold leading-none sm:text-4xl ${styles.number}`}
+                className={`hidden xl:flex shrink-0 text-3xl font-bold leading-none xl:text-4xl ${styles.number}`}
                 aria-hidden
               >
                 {n}
@@ -190,7 +190,7 @@ export default function HowItWorksSection() {
       className="bg-[#FDF2E9] pb-0 pt-8 md:pt-10"
       aria-labelledby="how-title"
     >
-      <div className="container pb-12 md:pb-16">
+      <div className="container">
         <motion.h2
           id="how-title"
           className="mb-8 text-left text-3xl font-bold text-slate-900 sm:mb-10 sm:text-4xl"

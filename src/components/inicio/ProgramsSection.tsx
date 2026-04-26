@@ -222,7 +222,7 @@ export default function ProgramsSection() {
                   s.update();
                   syncNav(s);
                 }}
-                className="programs-home-swiper flex w-full flex-1 flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-card lg:h-full lg:min-h-0"
+                className="programs-home-swiper flex w-full flex-1 flex-col overflow-hidden rounded-[2.75rem] bg-white shadow-card lg:h-full lg:min-h-0"
               >
                 {items.map((item, index) => (
                   <SwiperSlide key={item.id} className="!h-auto">
