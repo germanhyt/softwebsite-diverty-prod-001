@@ -1,6 +1,11 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { benefits } from "../../data/estrategiaPage";
-import { defaultViewport, scaleIn, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeInUp,
+  scaleInSoft,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function Benefits() {
   const reduce = useReducedMotion();
@@ -14,10 +19,10 @@ export default function Benefits() {
         <motion.h2
           id="benefits-title"
           className="mb-12 text-center text-3xl text-black sm:mb-14 sm:text-4xl"
-          initial={reduce ? false : { opacity: 0, y: 20 }}
-          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          transition={{ duration: reduce ? 0 : 0.5 }}
+          variants={fadeInUp}
         >
           Beneficios de capacitarte con nosotros
         </motion.h2>
@@ -26,13 +31,13 @@ export default function Benefits() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
           {benefits.map((b) => (
             <motion.article
               key={b.key}
               className="overflow-hidden rounded-2xl bg-white text-center shadow-card ring-1 ring-primary/10"
-              variants={scaleIn}
+              variants={scaleInSoft}
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <img

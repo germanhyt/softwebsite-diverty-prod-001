@@ -8,7 +8,14 @@ import {
   programCategories,
   type ProgramItem,
 } from "../../data/programsHome";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeInUp,
+  slideInLeft,
+  slideInLeftSm,
+  slideInRight,
+  staggerLanding,
+} from "../../lib/motion";
 
 /** Azul de sección y franja izquierda (~#1578C1) */
 const SECTION_BLUE = "#1578C1";
@@ -102,6 +109,8 @@ function ProgramContent({
 
 export default function ProgramsSection() {
   const reduce = useReducedMotion();
+  const imgColumnVariants = reduce ? fadeInUp : slideInLeft;
+  const contentColumnVariants = reduce ? fadeInUp : slideInRight;
   const [categoryId, setCategoryId] = useState(programCategories[0]?.id ?? "");
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [nav, setNav] = useState({ isBeginning: true, isEnd: false });
@@ -155,7 +164,7 @@ export default function ProgramsSection() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={fadeInUp}
+          variants={reduce ? fadeInUp : slideInLeftSm}
         >
           Nuestros programas
         </motion.h2>
@@ -168,11 +177,11 @@ export default function ProgramsSection() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
           <motion.div
             className="col-span-7 order-1 flex h-full min-h-0 flex-col gap-5 lg:order-2 lg:min-h-[28rem] lg:gap-6"
-            variants={fadeInUp}
+            variants={contentColumnVariants}
           >
             <div
               className="flex flex-wrap gap-3"
@@ -293,7 +302,7 @@ export default function ProgramsSection() {
 
           <motion.div
             className="col-span-5 order-2 flex min-h-0 flex-col overflow-hidden rounded-[1.35rem] shadow-xl ring-1 ring-white/20 lg:order-1 lg:min-h-[28rem] lg:flex-1"
-            variants={fadeInUp}
+            variants={imgColumnVariants}
           >
             <img
               src={active.heroImage.src}

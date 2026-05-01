@@ -2,10 +2,18 @@ import { motion, useReducedMotion } from "framer-motion";
 import CtaAgenda from "../inicio/CtaAgenda";
 import { siteConfig } from "../../config/site.config";
 import { finalCta } from "../../data/estrategiaPage";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeInUp,
+  slideInLeftSm,
+  slideInRightSm,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function FinalCta() {
   const reduce = useReducedMotion();
+  const titleVariants = reduce ? fadeInUp : slideInLeftSm;
+  const subtitleVariants = reduce ? fadeInUp : slideInRightSm;
 
   return (
     <section
@@ -17,18 +25,18 @@ export default function FinalCta() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
           <motion.h2
             id="final-cta-title"
             className="mb-4 text-3xl text-black sm:text-4xl"
-            variants={fadeInUp}
+            variants={titleVariants}
           >
             {finalCta.title}
           </motion.h2>
           <motion.p
             className="mb-8 text-lg text-black/85"
-            variants={fadeInUp}
+            variants={subtitleVariants}
           >
             {finalCta.subtitle}
           </motion.p>

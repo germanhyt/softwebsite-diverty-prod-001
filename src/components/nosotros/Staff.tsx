@@ -1,10 +1,19 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { nosotrosStaff } from "../../data/nosotrosPage";
 import { siteConfig } from "../../config/site.config";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeIn,
+  fadeInUp,
+  slideInLeftSm,
+  slideInRightSm,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function Staff() {
   const reduce = useReducedMotion();
+  const memberVariants = (index: number) =>
+    reduce ? fadeIn : index % 2 === 0 ? slideInLeftSm : slideInRightSm;
 
   return (
     <section
@@ -15,10 +24,10 @@ export default function Staff() {
         <motion.h2
           id="nosotros-staff-title"
           className="text-center text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl"
-          initial={reduce ? false : { opacity: 0, y: 16 }}
-          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          transition={{ duration: reduce ? 0 : 0.45 }}
+          variants={fadeInUp}
         >
           Nuestro staff
         </motion.h2>
@@ -28,13 +37,13 @@ export default function Staff() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
-          {nosotrosStaff.map((member) => (
+          {nosotrosStaff.map((member, index) => (
             <motion.li
               key={member.name}
               className="flex flex-col items-center text-center"
-              variants={fadeInUp}
+              variants={memberVariants(index)}
             >
               <div className="w-full max-w-[300px] overflow-hidden rounded-[1.75rem] shadow-card ring-1 ring-black/[0.06] sm:max-w-none">
                 <img
@@ -59,10 +68,10 @@ export default function Staff() {
 
         <motion.div
           className="mt-14 flex justify-center md:mt-16"
-          initial={reduce ? false : { opacity: 0, y: 12 }}
-          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          transition={{ duration: reduce ? 0 : 0.45, delay: reduce ? 0 : 0.12 }}
+          variants={fadeInUp}
         >
           <a
             href={siteConfig.contact.whatsapp}

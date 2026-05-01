@@ -1,9 +1,17 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { domicilio } from "../../data/familiesHome";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeIn,
+  slideInLeft,
+  slideInRight,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function DomicilioSection() {
   const reduce = useReducedMotion();
+  const imgVariants = reduce ? fadeIn : slideInLeft;
+  const panelVariants = reduce ? fadeIn : slideInRight;
 
   return (
     <section className="bg-[#FDEFE7] py-16 md:py-24" aria-labelledby="domicilio-title">
@@ -13,11 +21,11 @@ export default function DomicilioSection() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
           <motion.div
             className="relative z-10 hidden w-full sm:flex sm:w-[45%] lg:w-[40%]"
-            variants={fadeInUp}
+            variants={imgVariants}
           >
             <img
               src={domicilio.image.src}
@@ -29,7 +37,7 @@ export default function DomicilioSection() {
 
           <motion.div
             className="relative my-6 flex w-full flex-col justify-center gap-6 rounded-[1.5rem] bg-[#2E8B57] px-8 py-4 text-white shadow-lg sm:-ml-12 sm:flex-1 sm:rounded-l-none sm:rounded-r-[3.5rem] sm:pl-20 sm:pr-16 lg:pl-24"
-            variants={fadeInUp}
+            variants={panelVariants}
           >
             <div className="relative z-10 flex w-full sm:hidden sm:w-[45%] lg:w-[40%]">
               <img

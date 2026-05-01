@@ -1,6 +1,12 @@
 import { motion, useReducedMotion } from "framer-motion";
 import type { NosotrosSplitBlock } from "../../data/nosotrosPage";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeInUp,
+  slideInLeftSm,
+  slideInRightSm,
+  staggerLanding,
+} from "../../lib/motion";
 
 type Props = { block: NosotrosSplitBlock };
 
@@ -8,6 +14,17 @@ export default function SplitSection({ block }: Props) {
   const reduce = useReducedMotion();
   const { title, paragraphs, signature, signatureRole, image, imageLeft } =
     block;
+
+  const textVariants = reduce
+    ? fadeInUp
+    : imageLeft
+      ? slideInRightSm
+      : slideInLeftSm;
+  const imageVariants = reduce
+    ? fadeInUp
+    : imageLeft
+      ? slideInLeftSm
+      : slideInRightSm;
 
   return (
     <section
@@ -26,9 +43,9 @@ export default function SplitSection({ block }: Props) {
             initial={reduce ? false : "hidden"}
             whileInView={reduce ? undefined : "visible"}
             viewport={defaultViewport}
-            variants={staggerChildren}
+            variants={staggerLanding}
           >
-            <motion.div className="min-w-0" variants={fadeInUp}>
+            <motion.div className="min-w-0" variants={textVariants}>
               <h2
                 id={`nosotros-${block.id}-title`}
                 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl"
@@ -51,7 +68,7 @@ export default function SplitSection({ block }: Props) {
                 ) : null}
               </div>
             </motion.div>
-            <motion.div className="min-w-0" variants={fadeInUp}>
+            <motion.div className="min-w-0" variants={imageVariants}>
               <div className="overflow-hidden rounded-[1.75rem] shadow-card ring-1 ring-black/[0.06]">
                 <img
                   src={image.src}

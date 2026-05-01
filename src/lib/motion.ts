@@ -41,3 +41,60 @@ export const scaleIn: Variants = {
     transition: { duration: 0.5, ease: easeOut },
   },
 };
+
+/** Entrada desde los lados — útil en heroes y layouts dos columnas. Con `prefers-reduced-motion`, usar `fadeIn`. */
+export const slideInLeft: Variants = {
+  hidden: { opacity: 0, x: -44 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.62, ease: easeOut },
+  },
+};
+
+export const slideInRight: Variants = {
+  hidden: { opacity: 0, x: 44 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.62, ease: easeOut },
+  },
+};
+
+/** Slide corto para tarjetas y pasos (menos recorrido). */
+export const slideInLeftSm: Variants = {
+  hidden: { opacity: 0, x: -26 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.52, ease: easeOut },
+  },
+};
+
+export const slideInRightSm: Variants = {
+  hidden: { opacity: 0, x: 26 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.52, ease: easeOut },
+  },
+};
+
+/** Stagger algo más pausado para landing familia / primera infancia. */
+export const staggerLanding: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.13, delayChildren: 0.14 },
+  },
+};
+
+/** Cards beneficios: escala suave + ligero desde abajo. */
+export const scaleInSoft: Variants = {
+  hidden: { opacity: 0, scale: 0.94, y: 18 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.52, ease: easeOut },
+  },
+};

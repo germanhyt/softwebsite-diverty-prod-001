@@ -1,9 +1,17 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { methodology } from "../../data/estrategiaPage";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeInUp,
+  slideInLeftSm,
+  slideInRightSm,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function Methodology() {
   const reduce = useReducedMotion();
+  const colVariants = (index: number) =>
+    reduce ? fadeInUp : index % 2 === 0 ? slideInLeftSm : slideInRightSm;
 
   return (
     <section className="container" aria-labelledby="method-title">
@@ -12,7 +20,7 @@ export default function Methodology() {
         initial={reduce ? false : "hidden"}
         whileInView={reduce ? undefined : "visible"}
         viewport={defaultViewport}
-        variants={staggerChildren}
+        variants={staggerLanding}
       >
         <motion.h2
           id="method-title"
@@ -31,13 +39,13 @@ export default function Methodology() {
 
         <motion.div
           className="mx-auto grid max-w-64 gap-10 md:max-w-2xl md:grid-cols-2 md:gap-12 lg:max-w-4xl 3xl:max-w-5xl"
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
-          {methodology.columns.map((col) => (
+          {methodology.columns.map((col, index) => (
             <motion.div
               key={col.title}
               className="flex flex-col overflow-hidden rounded-[1.35rem] shadow-card ring-1 ring-primary/10"
-              variants={fadeInUp}
+              variants={colVariants(index)}
             >
               <div className="aspect-[16/11] w-full overflow-hidden bg-primary/5">
                 <img

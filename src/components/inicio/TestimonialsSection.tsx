@@ -1,9 +1,18 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { parentsTestimonials } from "../../data/familiesHome";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeIn,
+  fadeInUp,
+  slideInLeftSm,
+  slideInRightSm,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function TestimonialsSection() {
   const reduce = useReducedMotion();
+  const cardVariants = (index: number) =>
+    reduce ? fadeIn : index % 2 === 0 ? slideInLeftSm : slideInRightSm;
 
   return (
     <section
@@ -26,13 +35,13 @@ export default function TestimonialsSection() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
-          {parentsTestimonials.map((t) => (
+          {parentsTestimonials.map((t, index) => (
             <motion.article
               key={t.name}
               className="flex h-full min-h-0 flex-col rounded-2xl bg-surface-card p-7 shadow-card sm:p-8"
-              variants={fadeInUp}
+              variants={cardVariants(index)}
             >
               <p className="mb-6 min-h-0 flex-1 text-sm leading-relaxed text-black/90 sm:text-base">
                 “{t.quote}”

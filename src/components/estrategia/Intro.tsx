@@ -1,10 +1,18 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { siteConfig } from "../../config/site.config";
 import { intro } from "../../data/estrategiaPage";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeIn,
+  slideInLeft,
+  slideInRight,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function Intro() {
   const reduce = useReducedMotion();
+  const mediaVariants = reduce ? fadeIn : slideInLeft;
+  const copyVariants = reduce ? fadeIn : slideInRight;
 
   return (
     <section
@@ -18,9 +26,9 @@ export default function Intro() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
-          <motion.div className="order-2 lg:order-1" variants={fadeInUp}>
+          <motion.div className="order-2 lg:order-1" variants={mediaVariants}>
             <img
               src={intro.illustration.src}
               alt={intro.illustration.alt}
@@ -30,7 +38,7 @@ export default function Intro() {
               loading="lazy"
             />
           </motion.div>
-          <motion.div className="order-1 lg:order-2" variants={fadeInUp}>
+          <motion.div className="order-1 lg:order-2" variants={copyVariants}>
             <h2
               id="intro-title"
               className="mb-6 text-3xl text-black sm:text-4xl"

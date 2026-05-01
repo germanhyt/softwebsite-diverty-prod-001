@@ -1,6 +1,12 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { audience } from "../../data/estrategiaPage";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeInUp,
+  slideInLeftSm,
+  slideInRightSm,
+  staggerLanding,
+} from "../../lib/motion";
 
 const fullBleed =
   "usePhotoBackground" in audience && audience.usePhotoBackground === true;
@@ -13,7 +19,7 @@ export default function Audience() {
       initial={reduce ? false : "hidden"}
       whileInView={reduce ? undefined : "visible"}
       viewport={defaultViewport}
-      variants={staggerChildren}
+      variants={staggerLanding}
     >
       {fullBleed ? (
         <div className="container">
@@ -21,7 +27,7 @@ export default function Audience() {
             <div className="relative md:min-h-[26rem] md:overflow-hidden md:rounded-[1.75rem] lg:min-h-[28rem]">
               <motion.div
                 className="relative h-52 w-full shrink-0 overflow-hidden rounded-2xl sm:h-56 md:absolute md:inset-0 md:h-full md:min-h-[26rem] md:rounded-2xl lg:min-h-[28rem]"
-                variants={fadeInUp}
+                variants={reduce ? fadeInUp : slideInLeftSm}
               >
                 <img
                   src={audience.photo.src}
@@ -36,7 +42,7 @@ export default function Audience() {
               <div className="relative z-[1] -mt-9 px-4 pb-8 pt-0 sm:-mt-10 md:mt-0 md:flex md:min-h-[26rem] md:items-center md:px-8 md:pb-10 md:pt-10 lg:min-h-[28rem] lg:px-10">
                 <motion.div
                   className="w-full rounded-[2.25rem]  border-l-[6px] border-[#b94808] bg-accent-orange p-6 text-white sm:p-8 md:max-w-[min(42%,26rem)] md:p-9"
-                  variants={fadeInUp}
+                  variants={reduce ? fadeInUp : slideInRightSm}
                 >
                   <h2
                     id="audience-title"
@@ -62,7 +68,7 @@ export default function Audience() {
             <div className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-14">
               <motion.div
                 className="order-2 flex flex-col justify-center rounded-2xl border-b-[6px] border-l-[6px] border-[#b94808] bg-accent-orange p-8 text-white shadow-[6px_10px_0_0_rgba(160,55,12,0.38)] sm:p-10 lg:order-1"
-                variants={fadeInUp}
+                variants={reduce ? fadeInUp : slideInLeftSm}
               >
                 <h2
                   id="audience-title"
@@ -78,7 +84,10 @@ export default function Audience() {
                   ))}
                 </ul>
               </motion.div>
-              <motion.div className="order-1 lg:order-2" variants={fadeInUp}>
+              <motion.div
+                className="order-1 lg:order-2"
+                variants={reduce ? fadeInUp : slideInRightSm}
+              >
                 <img
                   src={audience.photo.src}
                   alt={audience.photo.alt}

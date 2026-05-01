@@ -1,7 +1,12 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { benefitsKids } from "../../data/familiesHome";
 import { siteConfig } from "../../config/site.config";
-import { defaultViewport, fadeInUp, scaleIn, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeInUp,
+  scaleInSoft,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function BenefitsSection() {
   const reduce = useReducedMotion();
@@ -12,10 +17,10 @@ export default function BenefitsSection() {
         <motion.h2
           id="benefits-title"
           className="mb-12 text-center text-3xl font-bold text-[#2D2D2D] sm:text-4xl md:mb-16 md:text-5xl"
-          initial={reduce ? false : { opacity: 0, y: 20 }}
-          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          transition={{ duration: reduce ? 0 : 0.5 }}
+          variants={fadeInUp}
         >
           {benefitsKids ? "Beneficios para tu hijo" : "Cargando..."}
         </motion.h2>
@@ -25,13 +30,13 @@ export default function BenefitsSection() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
           {benefitsKids.map((b) => (
             <motion.article
               key={b.key}
               className="group flex flex-col overflow-hidden rounded-[2.5rem] bg-white p-2 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.15)]"
-              variants={scaleIn}
+              variants={scaleInSoft}
             >
               <div className="overflow-hidden rounded-[2rem]">
                 <img
@@ -57,10 +62,10 @@ export default function BenefitsSection() {
 
         <motion.div
           className="mt-16 text-center md:mt-24"
-          initial={reduce ? false : { opacity: 0, y: 16 }}
-          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          transition={{ duration: reduce ? 0 : 0.45 }}
+          variants={fadeInUp}
         >
           <motion.a
             href={siteConfig.contact.whatsapp}

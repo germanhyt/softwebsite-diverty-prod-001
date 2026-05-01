@@ -1,12 +1,20 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { familyHero } from "../../data/familiesHome";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeIn,
+  slideInLeft,
+  slideInRight,
+  staggerLanding,
+} from "../../lib/motion";
 
 /** Naranja del mock del hero (distinto al accent-orange de cards). */
 const HERO_ORANGE = "#FF8C42";
 
 export default function HeroSection() {
   const reduce = useReducedMotion();
+  const imgVariants = reduce ? fadeIn : slideInLeft;
+  const copyVariants = reduce ? fadeIn : slideInRight;
 
   return (
     <section
@@ -21,11 +29,11 @@ export default function HeroSection() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
           <motion.div
             className="relative order-2 col-span-2 flex justify-center lg:order-1 lg:justify-start"
-            variants={fadeInUp}
+            variants={imgVariants}
           >
             <img
               src={familyHero.image.src}
@@ -38,7 +46,7 @@ export default function HeroSection() {
 
           <motion.div
             className="relative lg:absolute lg:right-[0rem] lg:top-[8rem] xl:right-[2rem] xl:top-[10rem] 2xl:right-[2rem] 2xl:top-[10rem] 3xl:right-[8rem] 3xl:top-[14rem] sm:mr-10"
-            variants={fadeInUp}
+            variants={copyVariants}
           >
             <div className="container lg:px-0 lg:mx-0  sm:max-w-sm md:max-w-md lg:max-w-md xl:max-w-xl 2xl:max-w-2xl">
               <h1

@@ -1,10 +1,18 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { siteConfig } from "../../config/site.config";
 import { trainingHero } from "../../data/estrategiaPage";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeIn,
+  slideInLeft,
+  slideInRight,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function Hero() {
   const reduce = useReducedMotion();
+  const imgVariants = reduce ? fadeIn : slideInLeft;
+  const copyVariants = reduce ? fadeIn : slideInRight;
 
   return (
     <section
@@ -18,11 +26,11 @@ export default function Hero() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
           <motion.div
             className="relative order-2 col-span-2 flex justify-center lg:order-1 lg:justify-start"
-            variants={fadeInUp}
+            variants={imgVariants}
           >
             <img
               src={trainingHero.image.src}
@@ -38,12 +46,12 @@ export default function Hero() {
 
           <motion.div
             className="relative order-1 sm:mr-10 lg:absolute lg:right-[0rem] lg:top-[8rem] xl:right-[2rem] xl:top-[10rem] 2xl:right-[2rem] 2xl:top-[10rem] 3xl:right-[8rem] 3xl:top-[14rem]"
-            variants={fadeInUp}
+            variants={copyVariants}
           >
             <div className="container sm:max-w-sm md:max-w-md lg:mx-0 lg:max-w-md lg:px-0 xl:max-w-xl 2xl:max-w-2xl">
               <h1
                 id="hero-title"
-                className="relative mb-5 text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-4xl xl:text-5xl 2xl:text-[3.35rem]"
+                className="relative mb-5 text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-4xl xl:text-5xl xl:text-[3.35rem]"
               >
                 {siteConfig.tagline}
               </h1>

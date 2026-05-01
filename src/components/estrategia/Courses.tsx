@@ -1,9 +1,17 @@
 import { motion, useReducedMotion } from "framer-motion";
 import CourseTabs from "../inicio/CourseTabs";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeInUp,
+  slideInLeftSm,
+  slideInRightSm,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function Courses() {
   const reduce = useReducedMotion();
+  const titleVariants = reduce ? fadeInUp : slideInLeftSm;
+  const subtitleVariants = reduce ? fadeInUp : slideInRightSm;
 
   return (
     <section
@@ -16,18 +24,18 @@ export default function Courses() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
           <motion.h2
             id="courses-title"
             className="mb-3 text-left text-2xl font-bold sm:mb-4 sm:text-3xl md:text-4xl"
-            variants={fadeInUp}
+            variants={titleVariants}
           >
             Cursos de capacitación
           </motion.h2>
           <motion.p
             className="mb-10 max-w-2xl text-left text-sm leading-relaxed text-white/90 sm:mb-12 sm:text-base"
-            variants={fadeInUp}
+            variants={subtitleVariants}
           >
             Ocho módulos para fortalecer tu práctica con enfoque Montessori y
             evidencia actual.

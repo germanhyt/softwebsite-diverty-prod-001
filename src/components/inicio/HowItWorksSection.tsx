@@ -6,7 +6,14 @@ import "swiper/css";
 
 import type { HowStep } from "../../data/familiesHome";
 import { howItWorks } from "../../data/familiesHome";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeIn,
+  fadeInUp,
+  slideInLeftSm,
+  slideInRightSm,
+  staggerLanding,
+} from "../../lib/motion";
 
 /** Colores de caja de contenido alineados al prototipo */
 const BOX_BY_PALETTE: Record<
@@ -170,6 +177,8 @@ function ChevronIcon({ dir }: { dir: "left" | "right" }) {
 
 export default function HowItWorksSection() {
   const reduce = useReducedMotion();
+  const stepReveal = (index: number) =>
+    reduce ? fadeIn : index % 2 === 0 ? slideInLeftSm : slideInRightSm;
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const steps = howItWorks;
 
@@ -197,7 +206,7 @@ export default function HowItWorksSection() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={fadeInUp}
+          variants={reduce ? fadeInUp : slideInLeftSm}
         >
           ¿Cómo funciona?
         </motion.h2>
@@ -207,10 +216,10 @@ export default function HowItWorksSection() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
           {steps.map((step, index) => (
-            <motion.div key={step.key} className="h-full" variants={fadeInUp}>
+            <motion.div key={step.key} className="h-full" variants={stepReveal(index)}>
               <HowStepCard step={step} index={index} layout="grid" />
             </motion.div>
           ))}

@@ -1,13 +1,23 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { testimonials } from "../../data/estrategiaPage";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeIn,
+  fadeInUp,
+  slideInLeftSm,
+  slideInRightSm,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function Testimonials() {
   const reduce = useReducedMotion();
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const cardVariants = (index: number) =>
+    reduce ? fadeIn : index % 2 === 0 ? slideInLeftSm : slideInRightSm;
 
   useEffect(() => {
     const node = sectionRef.current;
@@ -62,7 +72,7 @@ export default function Testimonials() {
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
-          variants={staggerChildren}
+          variants={staggerLanding}
         >
           {testimonials.map((t, index) => {
             const isActive = activeIndex === index;
@@ -71,7 +81,7 @@ export default function Testimonials() {
               <motion.article
                 key={t.name}
                 className="flex h-full min-h-0 flex-col rounded-2xl bg-surface-card p-4 shadow-card sm:p-5"
-                variants={fadeInUp}
+                variants={cardVariants(index)}
               >
                 <div className="relative mb-4 overflow-hidden rounded-xl">
                   <div className="aspect-[9/16] w-full">
@@ -104,7 +114,6 @@ export default function Testimonials() {
                 </div>
                 <div className="mt-auto shrink-0">
                   <div className="font-bold text-black">{t.name}</div>
-                  {/* <div className="text-sm text-black/70">{t.role}</div> */}
                   <div className="text-sm text-black/70">{t.question}</div>
                 </div>
               </motion.article>

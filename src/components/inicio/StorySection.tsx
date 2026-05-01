@@ -1,9 +1,18 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ourStory, brandPillars } from "../../data/familiesHome";
-import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
+import {
+  defaultViewport,
+  fadeInUp,
+  slideInLeft,
+  slideInRight,
+  staggerChildren,
+  staggerLanding,
+} from "../../lib/motion";
 
 export default function StorySection() {
   const reduce = useReducedMotion();
+  const storyColVariants = reduce ? fadeInUp : slideInLeft;
+  const pillarsColVariants = reduce ? fadeInUp : slideInRight;
 
   return (
     <section aria-labelledby="story-title">
@@ -14,9 +23,9 @@ export default function StorySection() {
             initial={reduce ? false : "hidden"}
             whileInView={reduce ? undefined : "visible"}
             viewport={defaultViewport}
-            variants={staggerChildren}
+            variants={staggerLanding}
           >
-            <motion.div className="relative" variants={fadeInUp}>
+            <motion.div className="relative" variants={storyColVariants}>
               <h2
                 id="story-title"
                 className="mb-6 text-3xl font-bold text-black sm:text-4xl"
@@ -38,10 +47,11 @@ export default function StorySection() {
               </div>
             </motion.div>
 
-            <motion.div
-              className="flex flex-col gap-4"
-              variants={staggerChildren}
-            >
+            <motion.div variants={pillarsColVariants}>
+              <motion.div
+                className="flex flex-col gap-4"
+                variants={staggerChildren}
+              >
               {brandPillars.map((p) => {
                 const baseClass =
                   "block rounded-[1.35rem] p-6 shadow-card transition sm:p-8";
@@ -79,6 +89,7 @@ export default function StorySection() {
 
                 return card;
               })}
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
