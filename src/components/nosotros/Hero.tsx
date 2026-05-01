@@ -10,16 +10,16 @@ export default function Hero() {
       className="bg-hero-green text-white"
       aria-labelledby="nosotros-hero-title"
     >
-      <div className="sm:mx-0 sm:px-0 pt-28 md:pt-32 lg:pt-36 xl:pt-44">
+      <div className="sm:mx-0 sm:px-0 pt-28 md:pt-32 lg:pt-48 xl:pt-48">
         <motion.div
-          className="grid items-center gap-10 lg:grid-cols-8 lg:gap-12 xl:gap-16 overflow-hidden"
+          className="grid items-center gap-6 lg:grid-cols-8 lg:gap-12 xl:gap-16 overflow-hidden"
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
           variants={staggerChildren}
         >
           <motion.div
-            className="order-2 col-span-1 md:col-span-4 lg:col-span-5 lg:order-1"
+            className="order-2 col-span-1 lg:col-span-4 xl:col-span-5 lg:order-1"
             variants={fadeInUp}
           >
             <div className=" rounded-[1.25rem]">
@@ -34,7 +34,7 @@ export default function Hero() {
             </div>
           </motion.div>
           <motion.div
-            className="container lg:pr-4 lg:pl-0 lg:mx-0  order-1 md:col-span-4 lg:col-span-3 lg:order-2  lg:max-w-xl"
+            className="container lg:pr-4 lg:pl-0 lg:mx-0  order-1 lg:col-span-4 xl:col-span-3 lg:order-2  lg:max-w-xl"
             variants={fadeInUp}
           >
             <h1
