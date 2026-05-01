@@ -114,7 +114,7 @@ export const testimonials = [
     // "El enfoque práctico me permitió implementar cambios inmediatos en mi consulta. El equipo de Diverty acompaña de verdad.",
   },
   {
-    name: "Pilar Arce",
+    name: "Pilar Arana",
     role: "@divertystore",
     videoUrl:
       "https://res.cloudinary.com/dz0ajaf3i/video/upload/v1777169176/DIVERTY_VIDEOS/testimonio_3_r6ix0l.mov?_s=public-apps",
@@ -122,7 +122,7 @@ export const testimonials = [
       src: imgTestimonial2.src,
       alt: "Portada del testimonio en video de Diverty Store",
     },
-    question: "¿Cuál fue lo más valioso para ti este curso?",
+    question: "¿Qué fue lo más valioso para ti en este curso de capacitación?",
     // "Las sesiones en vivo y el material descargable son de altísima calidad. Recomiendo los cursos al 100%.",
   },
   {
@@ -132,9 +132,9 @@ export const testimonials = [
       "https://res.cloudinary.com/dz0ajaf3i/video/upload/v1777169176/DIVERTY_VIDEOS/testimonio_1_tshke5.mov?_s=public-apps",
     photo: {
       src: imgTestimonial3.src,
-      alt: "Cuál fue el mayor aprendizaje en este curso?",
+      alt: "¿Cuál fue el mayor aprendizaje en este curso?",
     },
-    question: "Cuál fue el mayor aprendizaje en este curso?",
+    question: "¿Cuál fue el mayor aprendizaje en este curso?",
     // "Por fin una capacitación que respeta el ritmo del aula real. Salí con herramientas concretas y red de colegas.",
   },
 ] as const;

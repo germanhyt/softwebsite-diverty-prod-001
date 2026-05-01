@@ -4,7 +4,7 @@
  * (`estrategia.ts` conserva tipos compartidos con Inicio.)
  */
 
-import imgHero from "../assets/prototype-quienes-somos/nosotros_section_hero-1.webp";
+import imgHero from "../assets/prototype-quienes-somos/nosotros_section_hero-1.png";
 import imgEsencia from "../assets/prototype-quienes-somos/nosotros_section_nuestra-escencia.png";
 import imgImpacto from "../assets/prototype-quienes-somos/nosotros_section_impacto-buscamos.png";
 import imgFundadora from "../assets/prototype-quienes-somos/nosotros_section_nuestra-fundadora.png";

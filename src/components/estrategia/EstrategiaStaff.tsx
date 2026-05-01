@@ -8,7 +8,7 @@ export default function EstrategiaStaff() {
 
   return (
     <section
-      className="bg-[#FFF5F0] mb-16 pt-4 md:mb-24 md:pt-6"
+      className="bg-[#FDF2E9] pb-16 pt-4 md:pb-24 md:pt-6"
       aria-labelledby="nosotros-staff-title"
     >
       <div className="container">

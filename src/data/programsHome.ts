@@ -3,7 +3,9 @@
  * Textos alineados al maquetado base (terapia, estimulación, integral).
  */
 
-import imgProgramas from "../assets/prototype-inicio/inicio_seccion_nuestros-programas_1.webp";
+import imgProgramasEstimulacion from "../assets/prototype-inicio/inicio_seccion_nuestros-programas_estimulacion.webp";
+import imgProgramasIntegral from "../assets/prototype-inicio/inicio_seccion_nuestros-programas_programa_integral.webp";
+import imgProgramasTerapia from "../assets/prototype-inicio/inicio_seccion_nuestros-programas_terapia.webp";
 
 export type ProgramBenefit = {
   label: string;
@@ -42,7 +44,7 @@ export const programCategories: ProgramCategory[] = [
     id: "terapia",
     label: "Programas de terapia",
     heroImage: {
-      src: imgProgramas.src,
+      src: imgProgramasTerapia.src,
       alt: "Especialista acompañando a un niño en terapia",
     },
     items: [
@@ -97,7 +99,7 @@ export const programCategories: ProgramCategory[] = [
     id: "estimulacion",
     label: "Programas de estimulación",
     heroImage: {
-      src: imgProgramas.src,
+      src: imgProgramasEstimulacion.src,
       alt: "Estimulación temprana con material lúdico",
     },
     items: [
@@ -121,7 +123,7 @@ export const programCategories: ProgramCategory[] = [
     id: "integral",
     label: "Programa integral",
     heroImage: {
-      src: imgProgramas.src,
+      src: imgProgramasIntegral.src,
       alt: "Programa integral Diverty",
     },
     items: [
