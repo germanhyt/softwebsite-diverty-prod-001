@@ -23,7 +23,7 @@ export default function HeroSection() {
       style={{ backgroundColor: HERO_ORANGE }}
       aria-labelledby="hero-title"
     >
-      <div className="sm:max-h-[calc(100vh+10rem)] 4xl:container relative z-10 mt-20 overflow-hidden lg:mt-0">
+      <div className="sm:max-h-[calc(100vh+50rem)] 4xl:container relative z-10 mt-20 overflow-hidden lg:mt-0">
         <motion.div
           className="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-8 lg:gap-x-12"
           initial={reduce ? false : "hidden"}
@@ -38,7 +38,7 @@ export default function HeroSection() {
             <img
               src={familyHero.image.src}
               alt={familyHero.image.alt}
-              className="relative z-[1] h-full w-full translate-y-[5%] 2xl:translate-y-[2%] xl:-translate-x-[2%] object-contain drop-shadow-xl lg:mt-10"
+              className="relative z-[1] w-full translate-y-[5%] 2xl:translate-y-[2%] xl:-translate-x-[2%] object-contain drop-shadow-xl lg:mt-10"
               loading="eager"
               fetchPriority="high"
             />

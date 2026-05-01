@@ -8,7 +8,7 @@
 import imgHero from "../assets/prototype-quienes-somos/nosotros_section_hero-1.png";
 import imgEsencia from "../assets/prototype-quienes-somos/nosotros_section_nuestra-escencia.png";
 import imgImpacto from "../assets/prototype-quienes-somos/nosotros_section_impacto-buscamos.png";
-import imgFundadora from "../assets/prototype-quienes-somos/nosotros_section_nuestra-fundadora.png";
+import imgFundadora from "../assets/prototype-quienes-somos/nosotros_section_nuestra-fundadora.webp";
 import imgStaffNataly from "../assets/prototype-quienes-somos/nosotros_section_staff-nataly.png";
 import imgStaffSandra from "../assets/prototype-quienes-somos/nosotros_section_staff-sandra.png";
 

@@ -20,7 +20,7 @@ export default function Hero() {
       className="relative overflow-hidden bg-primary pt-6 text-white"
       aria-labelledby="hero-title"
     >
-      <div className="relative z-10 mt-20 overflow-hidden sm:max-h-[calc(100vh+10rem)] lg:mt-0 4xl:container">
+      <div className="relative z-10 mt-20 overflow-hidden sm:max-h-[calc(100vh+50rem)] lg:mt-0 4xl:container">
         <motion.div
           className="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-8 lg:gap-x-12"
           initial={reduce ? false : "hidden"}
@@ -48,14 +48,14 @@ export default function Hero() {
             className="relative order-1 sm:mr-10 lg:absolute lg:right-[0rem] lg:top-[8rem] xl:right-[2rem] xl:top-[10rem] 2xl:right-[2rem] 2xl:top-[10rem] 3xl:right-[8rem] 3xl:top-[14rem]"
             variants={copyVariants}
           >
-            <div className="container sm:max-w-sm md:max-w-md lg:mx-0 lg:max-w-md lg:px-0 xl:max-w-xl 2xl:max-w-2xl">
+            <div className="container sm:max-w-sm md:max-w-md lg:mx-0 lg:max-w-lg lg:px-0 xl:max-w-xl 2xl:max-w-2xl">
               <h1
                 id="hero-title"
-                className="relative mb-5 text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-4xl xl:text-5xl xl:text-[3.35rem]"
+                className="relative mb-5 text-[2rem] font-bold sm:text-4xl lg:text-[2.1rem] xl:text-[3rem] 2xl:text-[3.35rem] leading-relaxed xl:leading-[1]"
               >
                 {siteConfig.tagline}
               </h1>
-              <p className="relative text-base font-normal leading-relaxed text-white/95 sm:text-lg">
+              <p className="relative text-base font-normal leading-relaxed text-white/95 sm:text-lg lg:text-base xl:text-lg">
                 Únete a profesionales que ya aplican lo aprendido en Diverty: sesiones
                 en vivo, práctica guiada y certificación con respaldo.
               </p>
