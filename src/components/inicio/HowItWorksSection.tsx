@@ -134,9 +134,9 @@ function HowStepCard({
           }`}
         >
           <div className="flex min-h-0 flex-1 flex-col justify-center gap-2">
-            <div className="flex items-start gap-2.5 sm:gap-3">
+            <div className="flex items-start gap-2.5 sm:gap-3 min-h-[11rem]">
               <span
-                className={`hidden xl:flex shrink-0 text-3xl font-bold leading-none xl:text-4xl ${styles.number}`}
+                className={`flex shrink-0 text-3xl font-bold leading-none xl:text-4xl ${styles.number}`}
                 aria-hidden
               >
                 {n}
