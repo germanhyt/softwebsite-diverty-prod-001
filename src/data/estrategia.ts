@@ -1,6 +1,6 @@
 /**
  * Tipo compartido con programas de la home (`familiesHome.ts`).
- * Contenido de capacitación (página `/estrategia`): `nosotrosTraining.ts`.
+ * Contenido de capacitación (página `/estrategia`): `estrategiaPage.ts`.
  */
 
 export type CourseTab = {

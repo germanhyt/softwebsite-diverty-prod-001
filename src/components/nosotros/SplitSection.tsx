@@ -1,10 +1,10 @@
 import { motion, useReducedMotion } from "framer-motion";
-import type { EstrategiaSplitBlock } from "../../data/estrategiaPage";
+import type { NosotrosSplitBlock } from "../../data/nosotrosPage";
 import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
-type Props = { block: EstrategiaSplitBlock };
+type Props = { block: NosotrosSplitBlock };
 
-export default function EstrategiaSplitSection({ block }: Props) {
+export default function SplitSection({ block }: Props) {
   const reduce = useReducedMotion();
   const { title, paragraphs, signature, signatureRole, image, imageLeft } =
     block;

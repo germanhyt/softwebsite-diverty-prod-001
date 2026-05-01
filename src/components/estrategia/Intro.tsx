@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { siteConfig } from "../../config/site.config";
-import { intro } from "../../data/nosotrosTraining";
+import { intro } from "../../data/estrategiaPage";
 import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
 export default function Intro() {

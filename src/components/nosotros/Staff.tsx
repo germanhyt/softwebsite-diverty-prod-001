@@ -1,9 +1,9 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { estrategiaStaff } from "../../data/estrategiaPage";
+import { nosotrosStaff } from "../../data/nosotrosPage";
 import { siteConfig } from "../../config/site.config";
 import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
-export default function EstrategiaStaff() {
+export default function Staff() {
   const reduce = useReducedMotion();
 
   return (
@@ -30,7 +30,7 @@ export default function EstrategiaStaff() {
           viewport={defaultViewport}
           variants={staggerChildren}
         >
-          {estrategiaStaff.map((member) => (
+          {nosotrosStaff.map((member) => (
             <motion.li
               key={member.name}
               className="flex flex-col items-center text-center"

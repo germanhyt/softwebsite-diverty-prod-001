@@ -1,6 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { siteConfig } from "../../config/site.config";
-import { trainingHero } from "../../data/nosotrosTraining";
+import { nosotrosHero } from "../../data/nosotrosPage";
 import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
 export default function Hero() {
@@ -8,46 +7,44 @@ export default function Hero() {
 
   return (
     <section
-      id="inicio"
-      className="bg-primary pt-28 text-white md:pt-36"
-      aria-labelledby="hero-title"
+      className="bg-hero-green text-white"
+      aria-labelledby="nosotros-hero-title"
     >
-      <div>
+      <div className="sm:mx-0 sm:px-0 pt-28 md:pt-32 lg:pt-36 xl:pt-44">
         <motion.div
-          className="grid items-center gap-10 lg:grid-cols-5 lg:gap-12 xl:gap-16"
+          className="grid items-center gap-10 lg:grid-cols-8 lg:gap-12 xl:gap-16 overflow-hidden"
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
           variants={staggerChildren}
         >
           <motion.div
-            className="relative order-2 flex justify-center lg:order-1 lg:justify-start lg:col-span-3"
+            className="order-2 col-span-1 md:col-span-4 lg:col-span-5 lg:order-1"
             variants={fadeInUp}
           >
-            <img
-              src={trainingHero.image.src}
-              alt={trainingHero.image.alt}
-              width={1200}
-              height={1000}
-              className="relative z-[1] w-full max-w-xl object-contain drop-shadow-lg lg:max-w-none"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-            />
+            <div className=" rounded-[1.25rem]">
+              <img
+                src={nosotrosHero.image.src}
+                alt={nosotrosHero.image.alt}
+                className="h-auto w-full object-cover transform  sm:translate-y-[2rem] lg:translate-y-[1rem] 3xl:translate-y-[2rem]"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </div>
           </motion.div>
           <motion.div
-            className="container order-1 lg:mb-20 max-w-xl lg:mx-0 lg:max-w-lg lg:px-0 xl:max-w-lg 2xl:max-w-lg lg:order-2 lg:col-span-2"
+            className="container lg:pr-4 lg:pl-0 lg:mx-0  order-1 md:col-span-4 lg:col-span-3 lg:order-2  lg:max-w-xl"
             variants={fadeInUp}
           >
             <h1
-              id="hero-title"
-              className="mb-6 text-3xl font-bold leading-tight sm:text-3xl lg:text-4xl"
+              id="nosotros-hero-title"
+              className="text-3xl font-bold leading-tight sm:text-3xl xl:text-[2.2rem] 3xl:text-[2.65rem] lg:leading-[1.12]"
             >
-              {siteConfig.tagline}
+              {nosotrosHero.title}
             </h1>
-            <p className="max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
-              Únete a profesionales que ya aplican lo aprendido en Diverty: sesiones
-              en vivo, práctica guiada y certificación con respaldo.
+            <p className="mt-5 text-base leading-relaxed text-white/95 sm:text-sm lg:text-lg 3xl:leading-[1.2]">
+              {nosotrosHero.body}
             </p>
           </motion.div>
         </motion.div>

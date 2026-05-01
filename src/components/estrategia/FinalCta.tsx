@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import CtaAgenda from "../inicio/CtaAgenda";
 import { siteConfig } from "../../config/site.config";
-import { finalCta } from "../../data/nosotrosTraining";
+import { finalCta } from "../../data/estrategiaPage";
 import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
 export default function FinalCta() {

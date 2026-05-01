@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { certification } from "../../data/nosotrosTraining";
+import { certification } from "../../data/estrategiaPage";
 import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
 export default function Certification() {

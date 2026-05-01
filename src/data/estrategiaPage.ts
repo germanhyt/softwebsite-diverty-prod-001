@@ -1,110 +1,146 @@
 /**
- * Contenido e imágenes — página **Quiénes somos** (`/nosotros`).
- * Assets en `src/assets/prototype-quienes-somos/` (`nosotros_section_*`, mock completo: `nosotros_institutional_mock.jpg`).
- * (`estrategia.ts` conserva tipos compartidos con Inicio.)
+ * Contenido e imágenes — capacitación profesional (ruta **`/estrategia`**).
+ * Assets en `src/assets/prototype-estrategia/` (`estrategia_section_*`).
+ * Componentes en `src/components/estrategia/`.
  */
 
-import imgHero from "../assets/prototype-quienes-somos/nosotros_section_hero-1.png";
-import imgEsencia from "../assets/prototype-quienes-somos/nosotros_section_nuestra-escencia.png";
-import imgImpacto from "../assets/prototype-quienes-somos/nosotros_section_impacto-buscamos.png";
-import imgFundadora from "../assets/prototype-quienes-somos/nosotros_section_nuestra-fundadora.png";
-import imgStaffNataly from "../assets/prototype-quienes-somos/nosotros_section_staff-nataly.png";
-import imgStaffSandra from "../assets/prototype-quienes-somos/nosotros_section_staff-sandra.png";
+import imgHero from "../assets/prototype-estrategia/estrategia_section_hero-1.png";
+import imgIntro from "../assets/prototype-estrategia/estrategia_section_formacion-profesionales-1.png";
+import imgAudience from "../assets/prototype-estrategia/estrategia_section_dirigido-1.png";
+import imgCert from "../assets/prototype-estrategia/estrategia_section_cerificacion-valida-1.png";
+import imgBenefitCert from "../assets/prototype-estrategia/estrategia_section_certificacion-1.png";
+import imgBenefitPractice from "../assets/prototype-estrategia/estrategia_section_aplicacion-practica-1.png";
+import imgBenefitGrowth from "../assets/prototype-estrategia/estrategia_section_mejora-prfofesional-1.png";
+import imgMethod1 from "../assets/prototype-estrategia/estrategia_section_como-desarrollan-cursos-1.png";
+import imgMethod2 from "../assets/prototype-estrategia/estrategia_section_como-desarrollan-cursos-2.png";
+import imgTestimonial1 from "../assets/prototype-estrategia/estrategia_section_testimonios-1.png";
+import imgTestimonial2 from "../assets/prototype-estrategia/estrategia_section_testimonios-1.png";
+import imgTestimonial3 from "../assets/prototype-estrategia/estrategia_section_testimonios-1.png";
 
-export const estrategiaHero = {
-  title: "Somos Perú Learn Easy",
-  body:
-    "Brindamos educación integral que integra neurodesarrollo, acompañamiento familiar y metodologías activas. Trabajamos para que cada niño y cada familia encuentren herramientas concretas, calidez y rigor en cada etapa del aprendizaje.",
+export { trainingCourses } from "./trainingCourses";
+
+export const trainingHero = {
   image: {
     src: imgHero.src,
-    alt: "Familia jugando con un rompecabezas en el hogar",
+    alt: "Profesional con carpeta Diverty sonriendo",
   },
 } as const;
 
-export type EstrategiaSplitBlock = {
-  id: string;
-  title: string;
-  paragraphs: string[];
-  /** Firma opcional al final del bloque (p. ej. fundadora). */
-  signature?: string;
-  /** Línea bajo la firma (p. ej. cargo). */
-  signatureRole?: string;
-  image: { src: string; alt: string };
-  /** Si true, la imagen va a la izquierda (segundo bloque del mock). */
-  imageLeft: boolean;
+export const intro = {
+  title: "Formación para profesionales como tú",
+  body:
+    "En Diverty diseñamos experiencias de aprendizaje que conectan teoría y práctica. Fortalece tus habilidades para acompañar el desarrollo infantil con herramientas actualizadas, evidencia y comunidad profesional.",
+  illustration: {
+    src: imgIntro.src,
+    alt: "Ilustración sobre salto y crecimiento profesional",
+  },
+  cta: { label: "Inscríbete" } as const,
 };
 
-export const estrategiaSplitSections: EstrategiaSplitBlock[] = [
-  {
-    id: "esencia",
-    title: "Nuestra esencia",
-    paragraphs: [
-      "Potenciar el desarrollo integral de la infancia y la excelencia profesional mediante programas de intervención y capacitación basados en neurodesarrollo y metodología Montessori, generando resultados reales y significativos.",
-    ],
-    image: {
-      src: imgEsencia.src,
-      alt: "Docente acompañando a dos niños en una actividad guiada",
-    },
-    imageLeft: false,
+export const audience = {
+  highlight: "Dirigido a profesionales y personas comprometidas con el desarrollo infantil.",
+  roles: [
+    "Coordinadores y profesionales de instituciones educativas que buscan mejorar la calidad de la intervención infantil.",
+    "Psicólogos, psicopedagogos y terapeutas de primera infancia.",
+    "Docentes de educación inicial y primaria interesados en metodologías innovadoras.",
+    "Estudiantes de educación y psicología.",
+    "Madres, padres y personas interesadas en conocer estrategias efectivas para el desarrollo integral de los niños.",
+  ],
+  photo: {
+    src: imgAudience.src,
+    alt: "Reunión profesional en sala de juntas",
   },
-  {
-    id: "impacto",
-    title: "Impacto que buscamos",
-    paragraphs: [
-      "Ser la referencia nacional en intervención infantil y formación de especialistas, transformando la práctica profesional y preparando a los niños para desarrollarse plenamente en el mundo real.",
-    ],
-    image: {
-      src: imgImpacto.src,
-      alt: "Madre sosteniendo a un niño sonriente",
-    },
-    imageLeft: true,
-  },
-  {
-    id: "fundadora",
-    title: "Nuestra fundadora",
-    paragraphs: [
-      "En Diverty, creemos en el poder de una intervención infantil bien aplicada para generar un impacto real en el desarrollo de los niños.",
-      "A partir de esta experiencia en campo, nace Estrategia, una iniciativa enfocada en potenciar a los profesionales que trabajan con niños, brindándoles no solo conocimiento teórico, sino herramientas prácticas que puedan aplicar en su día a día.",
-      "Sabemos que la formación tradicional muchas veces no es suficiente. Por eso, nuestros programas están diseñados para transformar el conocimiento en acción, integrando enfoques como el neurodesarrollo y la metodología Montessori.",
-      "Todo lo que enseñamos parte de la experiencia real: lo que hemos vivido, probado y validado en Diverty en distintas regiones del país.",
-      "Esta propuesta forma parte de Perú Learn Easy, la organización que integra y potencia nuestras iniciativas educativas, asegurando una formación alineada a estándares de calidad y con visión de crecimiento.",
-    ],
-    signature: "Rocio Vilchez",
-    signatureRole: "CEO & Founder",
-    image: {
-      src: imgFundadora.src,
-      alt: "Fundadora de Diverty en su espacio de trabajo con laptop y cuaderno",
-    },
-    imageLeft: false,
-  },
-];
-
-export type StaffMember = {
-  name: string;
-  role: string;
-  photo: { src: string; alt: string };
+  usePhotoBackground: true as const,
 };
 
-export const estrategiaStaff: StaffMember[] = [
-  {
-    name: "Nataly Huerta",
-    role: "Directora general",
-    photo: {
-      src: imgStaffNataly.src,
-      alt: "Nataly Huerta, directora general",
-    },
+export const certification = {
+  title: "Certificación que valida tu crecimiento",
+  body:
+    "Recibe un certificado avalado por la Cámara de Comercio y fortalece tu perfil profesional.",
+  badge: {
+    src: imgCert.src,
+    alt: "Participantes en capacitación Diverty",
   },
-  {
-    name: "Sandra Alvarado",
-    role: "Coordinadora general",
-    photo: {
-      src: imgStaffSandra.src,
-      alt: "Sandra Alvarado, coordinadora general",
-    },
-  },
-];
+};
 
-export const estrategiaStaffCta = {
-  label: "Comunícate con una asesora",
-  href: "/#contacto",
+export const benefits = [
+  {
+    key: "cert",
+    title: "Certificación",
+    text: "Diploma con valor institucional para tu hoja de vida.",
+    image: { src: imgBenefitCert.src, alt: "Certificación y logro académico" },
+  },
+  {
+    key: "practice",
+    title: "Aplicación práctica",
+    text: "Casos, talleres y plantillas listas para usar el próximo día.",
+    image: { src: imgBenefitPractice.src, alt: "Ideas y aplicación práctica" },
+  },
+  {
+    key: "growth",
+    title: "Mejora profesional",
+    text: "Actualización continua y red de contactos del sector.",
+    image: { src: imgBenefitGrowth.src, alt: "Crecimiento profesional" },
+  },
+] as const;
+
+export const methodology = {
+  title: "¿Cómo se desarrollan los cursos?",
+  columns: [
+    {
+      image: { src: imgMethod1.src, alt: "Participante en curso virtual con laptop" },
+      title: "Modalidad virtual en vivo",
+      body: "Sesiones sincrónicas con especialistas, espacios de consulta y material de apoyo para avanzar con estructura desde cualquier lugar.",
+    },
+    {
+      image: { src: imgMethod2.src, alt: "Taller presencial grupal" },
+      title: "Encuentros presenciales",
+      body: "Talleres prácticos donde se profundiza con dinámicas grupales, retroalimentación inmediata y redes entre colegas.",
+    },
+  ],
+} as const;
+
+export const testimonials = [
+  {
+    name: "Salma Bello",
+    role: "@diverty.pe",
+    videoUrl:
+      "https://res.cloudinary.com/dz0ajaf3i/video/upload/v1777169176/DIVERTY_VIDEOS/testimonio_2_nidtm6.mov?_s=public-apps",
+    photo: {
+      src: imgTestimonial1.src,
+      alt: "Portada del testimonio en video de Diverty",
+    },
+    question: "¿Qué te aportó esta capacitación?",
+    // "El enfoque práctico me permitió implementar cambios inmediatos en mi consulta. El equipo de Diverty acompaña de verdad.",
+  },
+  {
+    name: "Pilar Arana",
+    role: "@divertystore",
+    videoUrl:
+      "https://res.cloudinary.com/dz0ajaf3i/video/upload/v1777169176/DIVERTY_VIDEOS/testimonio_3_r6ix0l.mov?_s=public-apps",
+    photo: {
+      src: imgTestimonial2.src,
+      alt: "Portada del testimonio en video de Diverty Store",
+    },
+    question: "¿Qué fue lo más valioso para ti en este curso de capacitación?",
+    // "Las sesiones en vivo y el material descargable son de altísima calidad. Recomiendo los cursos al 100%.",
+  },
+  {
+    name: "Giianlla Orihuela",
+    role: "@estrategia.peru",
+    videoUrl:
+      "https://res.cloudinary.com/dz0ajaf3i/video/upload/v1777169176/DIVERTY_VIDEOS/testimonio_1_tshke5.mov?_s=public-apps",
+    photo: {
+      src: imgTestimonial3.src,
+      alt: "¿Cuál fue el mayor aprendizaje en este curso?",
+    },
+    question: "¿Cuál fue el mayor aprendizaje en este curso?",
+    // "Por fin una capacitación que respeta el ritmo del aula real. Salí con herramientas concretas y red de colegas.",
+  },
+] as const;
+
+export const finalCta = {
+  title: "Eleva tu práctica profesional",
+  subtitle: "Inscríbete en nuestros programas y potencia tu impacto en la niñez y adolescencia.",
+  button: "Inscríbete",
 } as const;

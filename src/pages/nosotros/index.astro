@@ -2,21 +2,21 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import EstrategiaHero from "../../components/estrategia/EstrategiaHero";
-import EstrategiaSplitSection from "../../components/estrategia/EstrategiaSplitSection";
-import EstrategiaStaff from "../../components/estrategia/EstrategiaStaff";
-import { estrategiaSplitSections } from "../../data/estrategiaPage";
+import Hero from "../../components/nosotros/Hero";
+import SplitSection from "../../components/nosotros/SplitSection";
+import Staff from "../../components/nosotros/Staff";
+import { nosotrosSplitSections } from "../../data/nosotrosPage";
 import { nosotrosSeo } from "../../config/seoConfig";
 ---
 
 <Layout seo={nosotrosSeo}>
   <Header active="nosotros" ctaLabel="Contáctanos" />
   <main class="overflow-x-hidden">
-    <EstrategiaHero client:load />
-    {estrategiaSplitSections.map((block) => (
-      <EstrategiaSplitSection block={block} client:visible />
+    <Hero client:load />
+    {nosotrosSplitSections.map((block) => (
+      <SplitSection block={block} client:visible />
     ))}
-    <EstrategiaStaff client:visible />
+    <Staff client:visible />
   </main>
   <Footer />
 </Layout>

@@ -12,11 +12,11 @@ const familiesDescription =
   "Acompañamiento en neurodesarrollo y metodología Montessori: terapias, programas para niños y visitas a domicilio. Agenda una evaluación en Diverty.";
 
 /** Contenido institucional (ruta `/nosotros`). */
-const estrategiaDescription =
+const nosotrosPageDescription =
   "Conoce la esencia de Perú Learn Easy: enfoque integral, impacto en la primera infancia y el equipo que impulsa Diverty.";
 
 /** Capacitación y cursos (ruta `/estrategia`). */
-const nosotrosDescription =
+const estrategiaPageDescription =
   "Cursos de capacitación profesional con enfoque práctico: programas, certificación, metodología y testimonios. Diverty — Perú Learn Easy.";
 
 export const seoConfig = {
@@ -25,8 +25,6 @@ export const seoConfig = {
   nosotrosTitle: `${siteConfig.name} — Quiénes somos | Perú Learn Easy`,
   titleTemplate: `%s | ${siteConfig.name}`,
   familiesDescription,
-  estrategiaDescription,
-  nosotrosDescription,
   twitterHandle: "@diverty",
 } as const;
 
@@ -50,12 +48,12 @@ export const familiesHomeSeo = buildPageSeo({
 
 export const estrategiaSeo = buildPageSeo({
   title: seoConfig.estrategiaTitle,
-  description: nosotrosDescription,
+  description: estrategiaPageDescription,
   path: "/estrategia",
 });
 
 export const nosotrosSeo = buildPageSeo({
   title: seoConfig.nosotrosTitle,
-  description: estrategiaDescription,
+  description: nosotrosPageDescription,
   path: "/nosotros",
 });

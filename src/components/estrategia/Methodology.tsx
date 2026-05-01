@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { methodology } from "../../data/nosotrosTraining";
+import { methodology } from "../../data/estrategiaPage";
 import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
 export default function Methodology() {

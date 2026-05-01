@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { audience } from "../../data/nosotrosTraining";
+import { audience } from "../../data/estrategiaPage";
 import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
 const fullBleed =

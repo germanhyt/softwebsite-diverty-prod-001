@@ -1,78 +1,111 @@
-/** Contenido alineado a `src/assets/prototypes/nosotros.jpg` — Quiénes somos. */
+/**
+ * Contenido e imágenes — **Quiénes somos** (`/nosotros`).
+ * Assets en `src/assets/prototype-quienes-somos/` (`nosotros_section_*`).
+ * Componentes en `src/components/nosotros/`.
+ * (`estrategia.ts` conserva tipos compartidos con Inicio.)
+ */
 
-export const aboutHero = {
-  /** Texto del prototipo (marca grupo); sustituir si unifican solo “DIVERTY”. */
+import imgHero from "../assets/prototype-quienes-somos/nosotros_section_hero-1.png";
+import imgEsencia from "../assets/prototype-quienes-somos/nosotros_section_nuestra-escencia.png";
+import imgImpacto from "../assets/prototype-quienes-somos/nosotros_section_impacto-buscamos.png";
+import imgFundadora from "../assets/prototype-quienes-somos/nosotros_section_nuestra-fundadora.png";
+import imgStaffNataly from "../assets/prototype-quienes-somos/nosotros_section_staff-nataly.png";
+import imgStaffSandra from "../assets/prototype-quienes-somos/nosotros_section_staff-sandra.png";
+
+export const nosotrosHero = {
   title: "Somos Perú Learn Easy",
   body:
-    "Somos un equipo peruano que une neurodesarrollo, metodología Montessori y formación permanente. Trabajamos para que cada niño y cada familia accedan a intervenciones coherentes, éticas y sostenibles en el tiempo.",
-  slides: [
-    {
-      src: "https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=1100&q=80",
-      alt: "Adulto y niño en sesión de aprendizaje con material educativo",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1100&q=80",
-      alt: "Especialista acompañando a un niño en actividad lúdica",
-    },
-  ] as const,
-};
-
-export const essence = {
-  title: "Nuestra esencia",
-  body:
-    "Creemos en el respeto por el ritmo evolutivo, en ambientes preparados y en la alianza genuina con las familias. Nuestra metodología combina observación clínica, evidencia internacional y calidez humana.",
+    "Brindamos educación integral que integra neurodesarrollo, acompañamiento familiar y metodologías activas. Trabajamos para que cada niño y cada familia encuentren herramientas concretas, calidez y rigor en cada etapa del aprendizaje.",
   image: {
-    src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1000&q=80",
-    alt: "Niñas leyendo en ambiente escolar",
+    src: imgHero.src,
+    alt: "Familia jugando con un rompecabezas en el hogar",
   },
+} as const;
+
+export type NosotrosSplitBlock = {
+  id: string;
+  title: string;
+  paragraphs: string[];
+  /** Firma opcional al final del bloque (p. ej. fundadora). */
+  signature?: string;
+  /** Línea bajo la firma (p. ej. cargo). */
+  signatureRole?: string;
+  image: { src: string; alt: string };
+  /** Si true, la imagen va a la izquierda (segundo bloque del mock). */
+  imageLeft: boolean;
 };
 
-export const impact = {
-  title: "Impacto que buscamos",
-  body:
-    "Ser referencia nacional en intervención temprana y acompañamiento educativo, con profesionales formados, continuidad domiciliaria y resultados medibles que dignifiquen a la niñez.",
-  image: {
-    src: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=1000&q=80",
-    alt: "Niños interactuando en aula",
-  },
-};
-
-export const founder = {
-  title: "Nuestra fundadora",
-  paragraphs: [
-    "Rocío impulsa una visión donde la terapia no termina en la consulta: se traduce en hábitos, vínculos y redes de apoyo en casa y en el colegio.",
-    "Desde Perú Learn Easy articulamos formación de equipos, protocolos clínicos y experiencias para familias, manteniendo siempre el foco en la dignidad del niño.",
-  ],
-  name: "Rocio Vilchez",
-  portrait: {
-    src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
-    alt: "Retrato de Rocio Vilchez, fundadora",
-  },
-};
-
-export const staff = [
+export const nosotrosSplitSections: NosotrosSplitBlock[] = [
   {
-    name: "Rocio Vilchez",
-    role: "CEO & Founder",
+    id: "esencia",
+    title: "Nuestra esencia",
+    paragraphs: [
+      "Potenciar el desarrollo integral de la infancia y la excelencia profesional mediante programas de intervención y capacitación basados en neurodesarrollo y metodología Montessori, generando resultados reales y significativos.",
+    ],
+    image: {
+      src: imgEsencia.src,
+      alt: "Docente acompañando a dos niños en una actividad guiada",
+    },
+    imageLeft: false,
+  },
+  {
+    id: "impacto",
+    title: "Impacto que buscamos",
+    paragraphs: [
+      "Ser la referencia nacional en intervención infantil y formación de especialistas, transformando la práctica profesional y preparando a los niños para desarrollarse plenamente en el mundo real.",
+    ],
+    image: {
+      src: imgImpacto.src,
+      alt: "Madre sosteniendo a un niño sonriente",
+    },
+    imageLeft: true,
+  },
+  {
+    id: "fundadora",
+    title: "Nuestra fundadora",
+    paragraphs: [
+      "En Diverty, creemos en el poder de una intervención infantil bien aplicada para generar un impacto real en el desarrollo de los niños.",
+      "A partir de esta experiencia en campo, nace Estrategia, una iniciativa enfocada en potenciar a los profesionales que trabajan con niños, brindándoles no solo conocimiento teórico, sino herramientas prácticas que puedan aplicar en su día a día.",
+      "Sabemos que la formación tradicional muchas veces no es suficiente. Por eso, nuestros programas están diseñados para transformar el conocimiento en acción, integrando enfoques como el neurodesarrollo y la metodología Montessori.",
+      "Todo lo que enseñamos parte de la experiencia real: lo que hemos vivido, probado y validado en Diverty en distintas regiones del país.",
+      "Esta propuesta forma parte de Perú Learn Easy, la organización que integra y potencia nuestras iniciativas educativas, asegurando una formación alineada a estándares de calidad y con visión de crecimiento.",
+    ],
+    signature: "Rocio Vilchez",
+    signatureRole: "CEO & Founder",
+    image: {
+      src: imgFundadora.src,
+      alt: "Fundadora de Diverty en su espacio de trabajo con laptop y cuaderno",
+    },
+    imageLeft: false,
+  },
+];
+
+export type NosotrosStaffMember = {
+  name: string;
+  role: string;
+  photo: { src: string; alt: string };
+};
+
+export const nosotrosStaff: NosotrosStaffMember[] = [
+  {
+    name: "Nataly Huerta",
+    role: "Directora general",
     photo: {
-      src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80",
-      alt: "Rocio Vilchez",
+      src: imgStaffNataly.src,
+      alt: "Nataly Huerta, directora general",
     },
   },
   {
     name: "Sandra Alvarado",
     role: "Coordinadora general",
     photo: {
-      src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80",
-      alt: "Sandra Alvarado",
+      src: imgStaffSandra.src,
+      alt: "Sandra Alvarado, coordinadora general",
     },
   },
-  {
-    name: "Nataly Huerta",
-    role: "Directora general",
-    photo: {
-      src: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=500&q=80",
-      alt: "Nataly Huerta",
-    },
-  },
-] as const;
+];
+
+export const nosotrosStaffCta = {
+  label: "Comunícate con una asesora",
+  href: "/#contacto",
+} as const;

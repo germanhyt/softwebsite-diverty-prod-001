@@ -148,7 +148,7 @@ export default function CourseTabs({ courses: coursesProp, variant = "sidebar", 
               id={`panel-${active.id}`}
               role="tabpanel"
               aria-labelledby={`tab-${active.id}`}
-              className="relative min-h-[44rem]  md:min-h-[30rem]	 z-[1] rounded-[2.35rem] border-l-[6px] border-footer bg-white px-5 pb-8 pt-6 sm:rounded-[2.75rem] sm:px-6 sm:pb-10 sm:pt-8 sm:pr-12 lg:pr-14"
+              className="relative min-h-[44rem]  md:min-h-[34rem] xl:min-h-[30rem]	 z-[1] rounded-[2.35rem] border-l-[6px] border-footer bg-white px-5 pb-8 pt-6 sm:rounded-[2.75rem] sm:px-6 sm:pb-10 sm:pt-8 sm:pr-12 lg:pr-14"
             >
               <div className="min-w-0 max-w-[42rem]">
                 <h3 className="mb-3 text-2xl font-bold text-neutral-900 sm:text-3xl">{active.title}</h3>
@@ -176,7 +176,9 @@ export default function CourseTabs({ courses: coursesProp, variant = "sidebar", 
               </div>
             </article>
 
-            <div className="absolute bottom-0 right-3 z-[2] w-[min(100%,17.5rem)] max-w-[90%] translate-y-[75%] sm:right-5 sm:w-[min(100%,19rem)] md:right-6 lg:w-[min(48%,22.5rem)] lg:max-w-[22rem] lg:translate-y-[60%] xl:right-8">
+            <div
+              className="absolute bottom-0 right-3 z-[2] w-[min(100%,17.5rem)] max-w-[90%] translate-y-[70%] sm:translate-y-[60%] 3xl:translate-y-[70%] sm:right-5 sm:w-[min(100%,19rem)] md:right-6 lg:w-[min(48%,22.5rem)] lg:max-w-[22rem] lg:translate-y-[60%] xl:right-8"
+            >
               <div className="overflow-hidden rounded-xl  bg-white shadow-[4px_5px_0_0_rgba(10,81,141,0.3)] sm:rounded-[1rem]">
                 <img
                   src={active.image.src}

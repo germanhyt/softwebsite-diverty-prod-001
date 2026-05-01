@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { testimonials } from "../../data/nosotrosTraining";
+import { testimonials } from "../../data/estrategiaPage";
 import { defaultViewport, fadeInUp, staggerChildren } from "../../lib/motion";
 
 export default function Testimonials() {

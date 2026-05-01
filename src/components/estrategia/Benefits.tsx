@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { benefits } from "../../data/nosotrosTraining";
+import { benefits } from "../../data/estrategiaPage";
 import { defaultViewport, scaleIn, staggerChildren } from "../../lib/motion";
 
 export default function Benefits() {
