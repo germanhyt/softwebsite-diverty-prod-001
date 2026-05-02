@@ -10,7 +10,7 @@ export default function Hero() {
       className="bg-hero-green text-white"
       aria-labelledby="nosotros-hero-title"
     >
-      <div className=" overflow-hidden sm:max-h-[calc(100vh+50rem)] sm:mx-0 sm:px-0 pt-28 md:pt-32 lg:pt-44 xl:pt-56">
+      <div className=" overflow-hidden sm:max-h-[calc(100vh+50rem)] sm:mx-0 sm:px-0 pt-28 lg:pt-0 ">
         <motion.div
           className=" grid items-center gap-8 lg:grid-cols-12 lg:gap-2 xl:gap-8 overflow-hidden  4xl:h-auto"
           initial={reduce ? false : "hidden"}
@@ -19,7 +19,7 @@ export default function Hero() {
           variants={staggerChildren}
         >
           <motion.div
-            className="order-2 col-span-1 lg:col-span-8 2xl:col-span-9 lg:order-1"
+            className="order-2 col-span-1 lg:col-span-8 2xl:col-span-9 lg:order-1  md:pt-32 lg:pt-[16rem] 2xl:pt-[22rem]"
             variants={fadeInUp}
           >
             <div className=" rounded-[1.25rem]">
@@ -34,12 +34,12 @@ export default function Hero() {
             </div>
           </motion.div>
           <motion.div
-            className="container sm:pr-4 sm:pl-0 lg:mx-0  order-1 lg:col-span-4  2xl:col-span-3 lg:order-2  lg:max-w-lg"
+            className="container sm:pr-4 sm:pl-0 lg:mx-0  order-1 lg:col-span-4  2xl:col-span-3 lg:order-2  lg:max-w-lg  lg:pt-28"
             variants={fadeInUp}
           >
             <h1
               id="nosotros-hero-title"
-              className="text-3xl font-bold leading-tight sm:text-3xl xl:text-[2.2rem] 3xl:text-[2.65rem] lg:leading-[1.12]"
+              className="text-3xl font-bold leading-tight sm:text-3xl xl:text-[2.5rem] 3xl:text-[3rem] lg:leading-[1.12]"
             >
               {nosotrosHero.title}
             </h1>
