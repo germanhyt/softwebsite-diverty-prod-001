@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import { siteConfig } from "../config/site.config";
 import type { PageSeo } from "../config/seoConfig";
-import { resolveCanonical } from "../config/seoConfig";
+import { resolveCanonical, seoConfig } from "../config/seoConfig";
 
 interface Props {
   seo: PageSeo;
@@ -16,8 +16,9 @@ const orgJsonLd = {
   "@type": "EducationalOrganization",
   name: siteConfig.name,
   url: siteConfig.origin,
-  description: seo.description,
+  description: seoConfig.organizationDescription,
   email: siteConfig.contact.email,
+  telephone: siteConfig.contact.phoneE164,
   sameAs: Object.values(siteConfig.social),
 };
 ---
@@ -37,6 +38,7 @@ const orgJsonLd = {
     <link rel="shortcut icon" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    {seo.noindex ? <meta name="robots" content="noindex, nofollow" /> : null}
 
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />
@@ -51,6 +53,7 @@ const orgJsonLd = {
     {seo.ogImage && <meta property="og:image" content={seo.ogImage} />}
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={seoConfig.twitterHandle} />
     <meta name="twitter:title" content={seo.title} />
     <meta name="twitter:description" content={seo.description} />
     {seo.ogImage && <meta name="twitter:image" content={seo.ogImage} />}

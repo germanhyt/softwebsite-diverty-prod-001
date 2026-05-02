@@ -19,12 +19,17 @@ const nosotrosPageDescription =
 const estrategiaPageDescription =
   "Cursos de capacitación profesional con enfoque práctico: programas, certificación, metodología y testimonios. Diverty — Perú Learn Easy.";
 
+/** Descripción estable de la organización (JSON-LD); no debe cambiar por página. */
+const organizationDescription =
+  "Perú Learn Easy — Diverty: neurodesarrollo, metodología Montessori, terapias y programas para niños; capacitación profesional Estrategia.";
+
 export const seoConfig = {
   familiesTitle: `${siteConfig.name} — Neurodesarrollo y Montessori`,
   estrategiaTitle: `${siteConfig.name} — Estrategia | Capacitación`,
   nosotrosTitle: `${siteConfig.name} — Quiénes somos | Perú Learn Easy`,
   titleTemplate: `%s | ${siteConfig.name}`,
   familiesDescription,
+  organizationDescription,
   twitterHandle: "@diverty",
 } as const;
 
