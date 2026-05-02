@@ -12,14 +12,14 @@ export default function Hero() {
     >
       <div className=" overflow-hidden sm:max-h-[calc(100vh+50rem)] sm:mx-0 sm:px-0 pt-28 lg:pt-0 ">
         <motion.div
-          className=" grid items-center gap-8 lg:grid-cols-12 lg:gap-2 xl:gap-8 overflow-hidden  4xl:h-auto"
+          className=" grid items-center gap-12 lg:grid-cols-12 lg:gap-2 xl:gap-8 overflow-hidden  4xl:h-auto 4xl:container"
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
           variants={staggerChildren}
         >
           <motion.div
-            className="order-2 col-span-1 lg:col-span-8 2xl:col-span-9 lg:order-1  md:pt-32 lg:pt-[16rem] 2xl:pt-[22rem]"
+            className="order-2 col-span-1 lg:col-span-8 2xl:col-span-9 lg:order-1  md:pt-2 lg:pt-[12rem] xl:pt-[18rem] 2xl:pt-[22rem]"
             variants={fadeInUp}
           >
             <div className=" rounded-[1.25rem]">
@@ -34,7 +34,7 @@ export default function Hero() {
             </div>
           </motion.div>
           <motion.div
-            className="container sm:pr-4 sm:pl-0 lg:mx-0  order-1 lg:col-span-4  2xl:col-span-3 lg:order-2  lg:max-w-lg  lg:pt-28"
+            className="container lg:pr-4 lg:pl-0 lg:mx-0  order-1 lg:col-span-4  2xl:col-span-3 lg:order-2  lg:max-w-lg  lg:pt-28"
             variants={fadeInUp}
           >
             <h1
