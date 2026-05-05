@@ -13,7 +13,7 @@ export const siteConfig = {
    * Imagen por defecto Open Graph/Twitter cuando la página no define `ogImage`.
    * Ideal: recurso horizontal ~1200×630 en `public/` y actualizar esta ruta.
    */
-  defaultShareImagePath: "/logo.png",
+  defaultShareImagePath: "/favicon.png",
   /**
    * GTM en `Layout`; GA4 debe dispararse desde GTM (etiqueta “Google Analytics:
    * etiqueta de Google” / GA4 Configuration con este measurement ID) para evitar

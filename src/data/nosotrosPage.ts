@@ -11,6 +11,7 @@ import imgImpacto from "../assets/prototype-quienes-somos/nosotros_section_impac
 import imgFundadora from "../assets/prototype-quienes-somos/nosotros_section_nuestra-fundadora.png";
 import imgStaffNataly from "../assets/prototype-quienes-somos/nosotros_section_staff-nataly.png";
 import imgStaffSandra from "../assets/prototype-quienes-somos/nosotros_section_staff-sandra.png";
+import imgStaffVillalobos from "../assets/prototype-quienes-somos/nosotros_section_staff-villalobos.jpg";
 
 export const nosotrosHero = {
   title: "Somos Perú Learn Easy",
@@ -101,6 +102,14 @@ export const nosotrosStaff: NosotrosStaffMember[] = [
     photo: {
       src: imgStaffSandra.src,
       alt: "Sandra Alvarado, coordinadora general",
+    },
+  },
+  {
+    name: "Valeria Villalobos",
+    role: "Coordinadora psicoterapeutica",
+    photo: {
+      src: imgStaffVillalobos.src,
+      alt: "Valeria Villalobos, coordinadora psicoterapeutica",
     },
   },
 ];

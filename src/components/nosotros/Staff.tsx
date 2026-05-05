@@ -33,7 +33,7 @@ export default function Staff() {
         </motion.h2>
 
         <motion.ul
-          className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-12"
+          className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-8 sm:gap-y-12"
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
