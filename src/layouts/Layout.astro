@@ -10,6 +10,13 @@ interface Props {
 
 const { seo } = Astro.props;
 const canonical = resolveCanonical(seo.path);
+const baseUrl = siteConfig.origin.replace(/\/$/, "");
+const absoluteShareImage = (() => {
+  const o = seo.ogImage;
+  if (o && /^https?:\/\//i.test(o)) return o;
+  if (o) return `${baseUrl}${o.startsWith("/") ? o : `/${o}`}`;
+  return `${baseUrl}${siteConfig.defaultShareImagePath}`;
+})();
 const gtmId = siteConfig.analytics.googleTagManagerId;
 const loadTagManager = import.meta.env.PROD && Boolean(gtmId);
 
@@ -17,7 +24,8 @@ const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   name: siteConfig.name,
-  url: siteConfig.origin,
+  url: resolveCanonical("/"),
+  logo: `${baseUrl}${siteConfig.defaultShareImagePath}`,
   description: seoConfig.organizationDescription,
   email: siteConfig.contact.email,
   telephone: siteConfig.contact.phoneE164,
@@ -64,13 +72,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={siteConfig.name} />
     <meta property="og:locale" content={siteConfig.lang} />
-    {seo.ogImage && <meta property="og:image" content={seo.ogImage} />}
+    <meta property="og:image" content={absoluteShareImage} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content={seoConfig.twitterHandle} />
     <meta name="twitter:title" content={seo.title} />
     <meta name="twitter:description" content={seo.description} />
-    {seo.ogImage && <meta name="twitter:image" content={seo.ogImage} />}
+    <meta name="twitter:image" content={absoluteShareImage} />
 
     <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
   </head>

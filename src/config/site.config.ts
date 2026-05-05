@@ -1,14 +1,19 @@
 /**
- * Personalización central del cliente. `robots.txt` se genera en build desde
- * `src/pages/robots.txt.ts` usando `origin` (no hace falta `public/robots.txt`).
+ * Personalización central del cliente. `public/robots.txt` va a `dist/` en build;
+ * mantener sincronizada la línea `Sitemap:` con este `origin`.
  */
 const whatsappPrefilledMessage =
   "Hola Diverty, quiero más información sobre sus programas y horarios.";
 
 export const siteConfig = {
-  /** URL canónica sin barra final */
+  /** URL absoluta sin barra final (canónicas construidas con `resolveCanonical`) */
   origin: "https://www.diverty.pe",
   name: "DIVERTY",
+  /**
+   * Imagen por defecto Open Graph/Twitter cuando la página no define `ogImage`.
+   * Ideal: recurso horizontal ~1200×630 en `public/` y actualizar esta ruta.
+   */
+  defaultShareImagePath: "/logo.png",
   /**
    * GTM en `Layout`; GA4 debe dispararse desde GTM (etiqueta “Google Analytics:
    * etiqueta de Google” / GA4 Configuration con este measurement ID) para evitar

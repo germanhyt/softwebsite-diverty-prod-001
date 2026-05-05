@@ -4,6 +4,7 @@ export type PageSeo = {
   title: string;
   description: string;
   path?: string;
+  /** URL absoluta (https…) o ruta desde la raíz (ej. `/og-cursos.png`). */
   ogImage?: string;
   noindex?: boolean;
 };
@@ -27,15 +28,22 @@ export const seoConfig = {
   familiesTitle: `${siteConfig.name} — Neurodesarrollo y Montessori`,
   estrategiaTitle: `${siteConfig.name} — Estrategia | Capacitación`,
   nosotrosTitle: `${siteConfig.name} — Quiénes somos | Perú Learn Easy`,
-  titleTemplate: `%s | ${siteConfig.name}`,
   familiesDescription,
   organizationDescription,
   twitterHandle: "@diverty",
 } as const;
 
+/**
+ * URL canónica absoluta coherente con `@astrojs/sitemap` por defecto: la raíz
+ * termina en `/`; el resto de rutas llevan `/` final (ej. `/estrategia/`).
+ */
 export function resolveCanonical(path = "/"): string {
-  const p = path.startsWith("/") ? path : `/${path}`;
-  return `${siteConfig.origin.replace(/\/$/, "")}${p}`;
+  const base = siteConfig.origin.replace(/\/$/, "");
+  let p = path.startsWith("/") ? path : `/${path}`;
+  if (p !== "/") {
+    p = p.replace(/\/+$/, "") + "/";
+  }
+  return `${base}${p}`;
 }
 
 export function buildPageSeo(overrides: Partial<PageSeo> & Pick<PageSeo, "title" | "description">): PageSeo {
