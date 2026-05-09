@@ -19,7 +19,7 @@ export default function Hero() {
           variants={staggerChildren}
         >
           <motion.div
-            className="order-2 col-span-1 lg:col-span-8 2xl:col-span-9 lg:order-1  md:pt-2 lg:pt-[12rem] xl:pt-[18rem] 2xl:pt-[22rem]"
+            className="order-2 col-span-1 lg:col-span-8 2xl:col-span-9 lg:order-1  md:pt-2 lg:pt-[10rem] xl:pt-[14rem] 2xl:pt-[14rem]"
             variants={fadeInUp}
           >
             <div className=" rounded-[1.25rem]">

@@ -142,9 +142,17 @@ export default function CourseTabs({ courses: coursesProp, variant = "sidebar", 
       </div>
 
       <div className="relative min-w-0 pr-7 sm:pr-8">
-        <div key={active.id} className="relative pb-[min(11rem,28vw)] sm:pb-24 md:pb-28 lg:pb-32">
-          <div className="relative w-full">
-            <article
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active.id}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+            className="relative pb-[min(11rem,28vw)] sm:pb-24 md:pb-28 lg:pb-32"
+          >
+            <div className="relative w-full">
+              <article
               id={`panel-${active.id}`}
               role="tabpanel"
               aria-labelledby={`tab-${active.id}`}
@@ -201,7 +209,8 @@ export default function CourseTabs({ courses: coursesProp, variant = "sidebar", 
               </svg>
             </button>
           </div>
-        </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );

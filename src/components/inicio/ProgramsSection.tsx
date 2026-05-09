@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
@@ -208,11 +208,21 @@ export default function ProgramsSection() {
             </div>
 
             <div className="relative flex min-h-0 flex-1 flex-col lg:min-h-0">
-              <Swiper
-                key={active.id}
-                slidesPerView={1}
-                spaceBetween={0}
-                autoHeight
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active.id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="flex w-full flex-1 flex-col lg:h-full lg:min-h-0"
+                >
+                  <Swiper
+                    key={`swiper-${active.id}`}
+                    slidesPerView={1}
+                    spaceBetween={0}
+                    speed={reduce ? 0 : 1200}
+                    autoHeight
                 watchOverflow={true}
                 observer={true}
                 observeParents={true}
@@ -297,21 +307,30 @@ export default function ProgramsSection() {
                   </svg>
                 </button>
               ) : null}
+                </motion.div>
+              </AnimatePresence>
             </div>
           </motion.div>
 
           <motion.div
-            className="col-span-5 order-2 flex min-h-0 flex-col overflow-hidden rounded-[1.35rem] shadow-xl ring-1 ring-white/20 lg:order-1 lg:min-h-[28rem] lg:flex-1"
+            className="col-span-5 order-2 flex min-h-0 flex-col overflow-hidden rounded-[1.35rem] shadow-xl ring-1 ring-white/20 lg:order-1 lg:min-h-[28rem] lg:flex-1 bg-[#0A518D]"
             variants={imgColumnVariants}
           >
-            <img
-              src={active.heroImage.src}
-              alt={active.heroImage.alt}
-              width={720}
-              height={900}
-              className="h-full w-full object-cover "
-              loading="lazy"
-            />
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={active.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                src={active.heroImage.src}
+                alt={active.heroImage.alt}
+                width={720}
+                height={900}
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </AnimatePresence>
           </motion.div>
         </motion.div>
       </div>

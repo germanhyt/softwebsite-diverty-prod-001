@@ -25,37 +25,41 @@ export default function HeroSection() {
     >
       <div className="sm:max-h-[calc(100vh+50rem)] 4xl:container relative z-10 mt-20 min-w-0 overflow-hidden lg:mt-0">
         <motion.div
-          className="grid min-w-0 grid-cols-1 gap-2 lg:grid-cols-5 lg:gap-4 lg:gap-x-4"
+          className="grid min-w-0 grid-cols-1 gap-2 lg:grid-cols-7 lg:gap-4 lg:gap-x-4"
           initial={reduce ? false : "hidden"}
           whileInView={reduce ? undefined : "visible"}
           viewport={defaultViewport}
           variants={staggerLanding}
         >
           <motion.div
-            className="relative order-2 col-span-3 flex min-w-0 justify-center lg:order-1 lg:justify-start"
+            className="relative order-2 col-span-5 flex min-w-0 justify-center lg:order-1 lg:justify-start"
             variants={imgVariants}
           >
             <img
               src={familyHero.image.src}
               alt={familyHero.image.alt}
-              className="relative z-[1] w-full max-w-full sm:w-[35rem] sm:max-w-none xl:w-[40rem] 2xl:w-[45rem] 3xl:w-[65rem] 4xl:w-full translate-y-[5%] 2xl:translate-y-[2%] xl:-translate-x-[2%] object-contain drop-shadow-xl lg:mt-16"
+              className="relative z-[1] w-full max -w-full sm:w-[35rem] sm:max-w-none lg:w-[40rem] xl:w-[50rem] 2xl:w-[65rem] 3xl:w-[75rem] 4xl:w-full translate-y-[5%] 2xl:translate-y-[2%] xl:-translate-x-[2%] object-contain drop-shadow-xl lg:mt-16"
               loading="eager"
               fetchPriority="high"
             />
           </motion.div>
 
           <motion.div
-            className="relative col-span-3 lg:absolute lg:right-[0rem] lg:top-[12rem] xl:right-[6rem] xl:top-[12rem] 2xl:right-[8rem] 2xl:top-[16rem] 3xl:right-[16rem] 3xl:top-[16rem] sm:mr-10"
+            className="
+            relative 
+            col-span-2 lg:absolute lg:right-[6rem] lg:top-[8rem] xl:right-[6rem] xl:top-[10rem] 2xl:right-[4rem] 2xl:top-[11rem] 3xl:right-[12rem] 3xl:top-[12rem] 
+            sm:mr-10
+            "
             variants={copyVariants}
           >
-            <div className="container lg:px-0 lg:mx-0  sm:max-w-sm md:max-w-md lg:max-w-md xl:max-w-xl 2xl:max-w-2xl 3xl:max-w-2xl ">
+            <div className="container lg:px-0 lg:mx-0  sm:max-w-sm md:max-w-md lg:max-w-sm xl:max-w-lg 2xl:max-w-xl 3xl:max-w-2xl ">
               <h1
                 id="hero-title"
-                className="relative mb-5 text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-4xl xl:text-5xl xl:text-[3.35rem] 3xl:text-6xl"
+                className="relative mb-2 xl:mb-5 text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-3xl xl:text-4xl  2xl:text-5xl 3xl:text-6xl"
               >
                 {familyHero.title}
               </h1>
-              <p className="relative text-base font-normal leading-relaxed text-white/95 sm:text-lg 3xl:text-xl">
+              <p className="relative text-base font-normal leading-relaxed text-white/95 sm:text-sm xl:text-base 3xl:text-xl">
                 {familyHero.body}
               </p>
             </div>

@@ -41,6 +41,11 @@
   background: #fff;
 }
 
+/* Swiper — Nuestros Programas */
+.programs-home-swiper {
+  --swiper-wrapper-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
 /* Testimonios — fondo crema */
 .testimonials-swiper .swiper-pagination-bullet {
   background: rgb(0 112 192 / 30%);
@@ -70,6 +75,17 @@
   height: auto;
   align-self: stretch;
   box-sizing: border-box;
+}
+
+/* Programas inicio — transición del carrusel más suave (duración vía prop `speed` en el componente) */
+.programs-home-swiper.swiper {
+  --swiper-wrapper-transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .programs-home-swiper.swiper {
+    --swiper-wrapper-transition-timing-function: linear;
+  }
 }
 
 /* Programas inicio — tarjeta blanca a la misma altura que la imagen (desktop) */

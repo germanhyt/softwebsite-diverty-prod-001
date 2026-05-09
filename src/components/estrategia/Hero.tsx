@@ -48,14 +48,14 @@ export default function Hero() {
             className="relative order-1 min-w-0 sm:mr-10 lg:absolute lg:right-[0rem] lg:top-[8rem] xl:right-[2rem] xl:top-[10rem] 2xl:right-[2rem] 2xl:top-[10rem] 3xl:right-[8rem] 3xl:top-[14rem]"
             variants={copyVariants}
           >
-            <div className="container sm:max-w-sm md:max-w-md lg:mx-0 lg:max-w-lg lg:px-0 xl:max-w-xl 2xl:max-w-2xl">
+            <div className="container sm:max-w-sm md:max-w-md lg:mx-0 lg:max-w-lg lg:px-0 xl:max-w-lg 2xl:max-w-2xl">
               <h1
                 id="hero-title"
-                className="relative mb-5 text-[2rem] font-bold sm:text-4xl lg:text-[2.1rem] xl:text-[3rem] 2xl:text-[3.35rem] leading-relaxed xl:leading-[1]"
+                className="relative mb-5 text-[2rem] font-bold sm:text-4xl lg:text-[2.1rem] xl:text-[2.5rem] 2xl:text-[3.35rem] leading-tight xl:leading-[1.05]"
               >
                 {siteConfig.tagline}
               </h1>
-              <p className="relative text-base font-normal leading-relaxed text-white/95 sm:text-lg lg:text-base xl:text-lg">
+              <p className="relative text-base font-normal leading-relaxed text-white/95 sm:text-lg lg:text-base xl:text-base 2xl:text-lg">
                 Únete a profesionales que ya aplican lo aprendido en Diverty: sesiones
                 en vivo, práctica guiada y certificación con respaldo.
               </p>

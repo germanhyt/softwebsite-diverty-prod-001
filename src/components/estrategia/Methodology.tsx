@@ -8,6 +8,7 @@ import {
   staggerLanding,
 } from "../../lib/motion";
 
+
 export default function Methodology() {
   const reduce = useReducedMotion();
   const colVariants = (index: number) =>
