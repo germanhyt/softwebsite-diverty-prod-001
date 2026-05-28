@@ -57,9 +57,9 @@ export const certification = {
   title: "Certificación que valida tu crecimiento",
   body:
     "Recibe un certificado avalado por la Cámara de Comercio y fortalece tu perfil profesional.",
-  badge: {
+  image: {
     src: imgCert.src,
-    alt: "Participantes en capacitación Diverty",
+    alt: "Participantes en capacitación Diverty con certificado",
   },
 };
 

@@ -2,6 +2,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useMemo, useState } from "react";
 import type { CourseTab } from "../../data/estrategia";
 import { trainingCourses as sidebarCourses } from "../../data/trainingCourses";
+import {
+  carouselPanelAnimate,
+  carouselPanelExit,
+  carouselPanelInitial,
+  carouselPanelTransition,
+} from "../../lib/motion";
 
 type Variant = "sidebar" | "families";
 
@@ -145,10 +151,10 @@ export default function CourseTabs({ courses: coursesProp, variant = "sidebar", 
         <AnimatePresence mode="wait">
           <motion.div
             key={active.id}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+            initial={carouselPanelInitial}
+            animate={carouselPanelAnimate}
+            exit={carouselPanelExit}
+            transition={carouselPanelTransition}
             className="relative pb-[min(11rem,28vw)] sm:pb-24 md:pb-28 lg:pb-32"
           >
             <div className="relative w-full">

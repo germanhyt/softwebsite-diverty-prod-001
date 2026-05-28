@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import type { Swiper as SwiperType } from "swiper";
-import "swiper/css";
-
 import {
   programCategories,
   type ProgramItem,
 } from "../../data/programsHome";
 import {
+  carouselPanelAnimate,
+  carouselPanelExit,
+  carouselPanelInitial,
+  carouselPanelTransition,
   defaultViewport,
   fadeInUp,
   slideInLeft,
@@ -112,34 +112,25 @@ export default function ProgramsSection() {
   const imgColumnVariants = reduce ? fadeInUp : slideInLeft;
   const contentColumnVariants = reduce ? fadeInUp : slideInRight;
   const [categoryId, setCategoryId] = useState(programCategories[0]?.id ?? "");
-  const [swiper, setSwiper] = useState<SwiperType | null>(null);
-  const [nav, setNav] = useState({ isBeginning: true, isEnd: false });
+  const [itemIndex, setItemIndex] = useState(0);
 
   const active = programCategories.find((c) => c.id === categoryId) ?? programCategories[0];
   const items = active?.items ?? [];
-
-  const syncNav = (s: SwiperType) => {
-    setNav({ isBeginning: s.isBeginning, isEnd: s.isEnd });
-  };
+  const currentItem = items[itemIndex];
 
   useEffect(() => {
-    if (!swiper) return;
-    swiper.update();
-    syncNav(swiper);
-    const t = window.setTimeout(() => {
-      swiper.update();
-      syncNav(swiper);
-    }, 120);
-    const onResize = () => {
-      swiper.update();
-      syncNav(swiper);
-    };
-    window.addEventListener("resize", onResize);
-    return () => {
-      window.clearTimeout(t);
-      window.removeEventListener("resize", onResize);
-    };
-  }, [swiper, items.length]);
+    setItemIndex(0);
+  }, [categoryId]);
+
+  const goPrev = useCallback(() => {
+    if (!items.length) return;
+    setItemIndex((i) => Math.max(0, i - 1));
+  }, [items.length]);
+
+  const goNext = useCallback(() => {
+    if (!items.length) return;
+    setItemIndex((i) => Math.min(items.length - 1, i + 1));
+  }, [items.length]);
 
   if (!active) return null;
 
@@ -148,7 +139,16 @@ export default function ProgramsSection() {
   const tabBtnActive =
     "rounded-full bg-accent-orange px-5 py-2.5 text-sm font-bold text-white shadow-md sm:px-7 sm:text-base";
 
-  const cardBodyPad = items.length > 1 ? "px-6 py-8 pr-14 sm:px-9 sm:py-10 sm:pr-20" : "px-6 py-8 sm:px-9 sm:py-10";
+  const cardBodyPad =
+    items.length > 1 ? "px-6 py-8 pr-14 sm:px-9 sm:py-10 sm:pr-20" : "px-6 py-8 sm:px-9 sm:py-10";
+
+  const panelMotion = reduce
+    ? { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 } }
+    : {
+        initial: carouselPanelInitial,
+        animate: carouselPanelAnimate,
+        exit: carouselPanelExit,
+      };
 
   return (
     <section
@@ -180,7 +180,7 @@ export default function ProgramsSection() {
           variants={staggerLanding}
         >
           <motion.div
-            className="col-span-7 order-1 flex h-full min-h-0 flex-col gap-5 lg:order-2 lg:min-h-[28rem] lg:gap-6"
+            className="order-1 col-span-7 flex h-full min-h-0 flex-col gap-5 lg:order-2 lg:min-h-[28rem] lg:gap-6"
             variants={contentColumnVariants}
           >
             <div
@@ -210,62 +210,33 @@ export default function ProgramsSection() {
             <div className="relative flex min-h-0 flex-1 flex-col lg:min-h-0">
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={active.id}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                  className="flex w-full flex-1 flex-col lg:h-full lg:min-h-0"
+                  key={`${active.id}-${currentItem?.id ?? itemIndex}`}
+                  {...panelMotion}
+                  transition={reduce ? { duration: 0 } : carouselPanelTransition}
+                  className="flex w-full flex-1 flex-col overflow-hidden rounded-[2.75rem] bg-white shadow-card lg:h-full lg:min-h-0"
                 >
-                  <Swiper
-                    key={`swiper-${active.id}`}
-                    slidesPerView={1}
-                    spaceBetween={0}
-                    speed={reduce ? 0 : 1200}
-                    autoHeight
-                watchOverflow={true}
-                observer={true}
-                observeParents={true}
-                resizeObserver={true}
-                breakpoints={{
-                  1024: {
-                    autoHeight: false,
-                  },
-                }}
-                onSwiper={(s) => {
-                  setSwiper(s);
-                  syncNav(s);
-                }}
-                onSlideChange={syncNav}
-                onBreakpoint={(s) => {
-                  s.update();
-                  syncNav(s);
-                }}
-                className="programs-home-swiper flex w-full flex-1 flex-col overflow-hidden rounded-[2.75rem] bg-white shadow-card lg:h-full lg:min-h-0"
-              >
-                {items.map((item, index) => (
-                  <SwiperSlide key={item.id} className="!h-auto">
+                  {currentItem ? (
                     <div className="programs-slide-inner flex min-h-0 flex-col lg:min-h-full">
                       <div className="program-card flex min-h-0 w-full flex-1 flex-row lg:min-h-[28rem]">
                         <div
-                          className="shrink-0 self-stretch w-2 sm:w-2.5"
+                          className="w-2 shrink-0 self-stretch sm:w-2.5"
                           style={{ backgroundColor: BORDER_ITEM_BLUE }}
                           aria-hidden
                         />
                         <div className={`min-w-0 flex-1 ${cardBodyPad}`}>
-                          <ProgramContent item={item} index={index} />
+                          <ProgramContent item={currentItem} index={itemIndex} />
                         </div>
                       </div>
                     </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+                  ) : null}
+                </motion.div>
+              </AnimatePresence>
 
-              {items.length > 1 && !nav.isBeginning ? (
+              {items.length > 1 && itemIndex > 0 ? (
                 <button
                   type="button"
-                  onClick={() => swiper?.slidePrev()}
-                  className="absolute -left-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-primary shadow-md transition hover:bg-slate-50 sm:left-4 sm:h-12 sm:w-12 lg:left-2 lg:-translate-x-1/2"
+                  onClick={goPrev}
+                  className="absolute -left-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-2 border-primary/35 bg-white text-primary shadow-md transition hover:bg-slate-50 sm:left-4 sm:h-12 sm:w-12 lg:left-2 lg:-translate-x-1/2"
                   aria-label="Programa anterior"
                 >
                   <svg
@@ -284,11 +255,11 @@ export default function ProgramsSection() {
                   </svg>
                 </button>
               ) : null}
-              {items.length > 1 && !nav.isEnd ? (
+              {items.length > 1 && itemIndex < items.length - 1 ? (
                 <button
                   type="button"
-                  onClick={() => swiper?.slideNext()}
-                  className="absolute -right-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-primary shadow-md transition hover:bg-slate-50 sm:right-4 sm:h-12 sm:w-12 lg:right-0 lg:translate-x-1/2"
+                  onClick={goNext}
+                  className="absolute -right-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-2 border-primary/35 bg-white text-primary shadow-md transition hover:bg-slate-50 sm:right-4 sm:h-12 sm:w-12 lg:right-0 lg:translate-x-1/2"
                   aria-label="Siguiente programa"
                 >
                   <svg
@@ -307,22 +278,20 @@ export default function ProgramsSection() {
                   </svg>
                 </button>
               ) : null}
-                </motion.div>
-              </AnimatePresence>
             </div>
           </motion.div>
 
           <motion.div
-            className="col-span-5 order-2 flex min-h-0 flex-col overflow-hidden rounded-[1.35rem] shadow-xl ring-1 ring-white/20 lg:order-1 lg:min-h-[28rem] lg:flex-1 bg-[#0A518D]"
+            className="order-2 col-span-5 flex min-h-0 flex-col overflow-hidden rounded-[1.35rem] bg-[#0A518D] shadow-xl ring-1 ring-white/20 lg:order-1 lg:min-h-[28rem] lg:flex-1"
             variants={imgColumnVariants}
           >
             <AnimatePresence mode="wait">
               <motion.img
                 key={active.id}
-                initial={{ opacity: 0 }}
+                initial={reduce ? false : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={reduce ? { duration: 0 } : carouselPanelTransition}
                 src={active.heroImage.src}
                 alt={active.heroImage.alt}
                 width={720}

@@ -22,7 +22,7 @@ const ctaShort = ctaLabel.replace(/\s*→\s*$/, "").trim();
 
 <header
   id="site-header"
-  class="pointer-events-none fixed inset-x-0 top-0 z-50 w-full pt-0 md:pt-6"
+  class="pointer-events-none fixed inset-x-0 top-0 z-50 w-full translate-y-0 pt-0 transition-transform duration-300 ease-out motion-reduce:transition-none md:pt-6"
 >
   <!-- Móvil: panel ancho completo bajo la barra (animación slide + fade) -->
   <div
@@ -208,18 +208,54 @@ const ctaShort = ctaLabel.replace(/\s*→\s*$/, "").trim();
 
 <script is:inline>
   (function () {
+    var header = document.getElementById("site-header");
     var panel = document.getElementById("mobile-nav-panel");
     var toggle = document.getElementById("mobile-nav-toggle");
     var barWrap = document.getElementById("mobile-nav-bar-wrap");
     var iconOpen = document.getElementById("mobile-nav-icon-open");
     var iconClose = document.getElementById("mobile-nav-icon-close");
-    if (!panel || !toggle || !barWrap || !iconOpen || !iconClose) return;
+    if (!header || !panel || !toggle || !barWrap || !iconOpen || !iconClose) return;
 
     var SCROLL_THRESHOLD = 10;
+    var lastScrollY = window.scrollY;
+    var headerVisible = true;
+
+    function isMenuOpen() {
+      return toggle.getAttribute("aria-expanded") === "true";
+    }
+
+    function setHeaderVisible(visible) {
+      if (headerVisible === visible) return;
+      headerVisible = visible;
+      if (visible) {
+        header.classList.remove("-translate-y-full");
+      } else {
+        header.classList.add("-translate-y-full");
+      }
+    }
+
+    function syncHeaderVisibility() {
+      if (isMenuOpen()) {
+        setHeaderVisible(true);
+        return;
+      }
+      var current = window.scrollY;
+      if (current <= SCROLL_THRESHOLD) {
+        setHeaderVisible(true);
+        lastScrollY = current;
+        return;
+      }
+      if (current > lastScrollY + 4) {
+        setHeaderVisible(true);
+      } else if (current < lastScrollY - 4) {
+        setHeaderVisible(false);
+      }
+      lastScrollY = current;
+    }
 
     function syncMobileChrome() {
       var scrolled = window.scrollY > SCROLL_THRESHOLD;
-      var menuOpen = toggle.getAttribute("aria-expanded") === "true";
+      var menuOpen = isMenuOpen();
       var darkIcon = scrolled || menuOpen;
       if (menuOpen || scrolled) {
         barWrap.classList.add("bg-white", "shadow-sm");
@@ -236,6 +272,7 @@ const ctaShort = ctaLabel.replace(/\s*→\s*$/, "").trim();
     }
 
     function onScroll() {
+      syncHeaderVisibility();
       syncMobileChrome();
     }
 
@@ -278,6 +315,7 @@ const ctaShort = ctaLabel.replace(/\s*→\s*$/, "").trim();
 
       document.body.style.overflow = open ? "hidden" : "";
 
+      syncHeaderVisibility();
       syncMobileChrome();
     }
 
@@ -297,6 +335,7 @@ const ctaShort = ctaLabel.replace(/\s*→\s*$/, "").trim();
     });
 
     window.addEventListener("scroll", onScroll, { passive: true });
+    syncHeaderVisibility();
     syncMobileChrome();
   })();
 </script>

@@ -88,6 +88,16 @@ export const staggerLanding: Variants = {
   },
 };
 
+/** Transición compartida entre pasarelas (Nuestros programas / Cursos de capacitación). */
+export const carouselPanelTransition = {
+  duration: 0.4,
+  ease: [0.25, 0.1, 0.25, 1] as const,
+};
+
+export const carouselPanelInitial = { opacity: 0, x: 20 };
+export const carouselPanelAnimate = { opacity: 1, x: 0 };
+export const carouselPanelExit = { opacity: 0, x: -20 };
+
 /** Cards beneficios: escala suave + ligero desde abajo. */
 export const scaleInSoft: Variants = {
   hidden: { opacity: 0, scale: 0.94, y: 18 },

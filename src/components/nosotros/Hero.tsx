@@ -10,7 +10,7 @@ export default function Hero() {
       className="bg-hero-green text-white"
       aria-labelledby="nosotros-hero-title"
     >
-      <div className=" overflow-hidden sm:max-h-[calc(100vh+50rem)] sm:mx-0 sm:px-0 pt-28 lg:pt-0 ">
+      <div className=" overflow-hidden sm:max-h-[calc(100vh+30rem)] sm:mx-0 sm:px-0 pt-28 lg:pt-0 ">
         <motion.div
           className=" grid items-center gap-12 lg:grid-cols-12 lg:gap-2 xl:gap-8 overflow-hidden  4xl:h-auto 4xl:container"
           initial={reduce ? false : "hidden"}
@@ -19,14 +19,14 @@ export default function Hero() {
           variants={staggerChildren}
         >
           <motion.div
-            className="order-2 col-span-1 lg:col-span-8 2xl:col-span-9 lg:order-1  md:pt-2 lg:pt-[10rem] xl:pt-[14rem] 2xl:pt-[14rem]"
+            className="order-2 col-span-1 lg:col-span-8 2xl:col-span-9 lg:order-1  md:pt-2 lg:pt-2 xl:pt-2 2xl:pt-4"
             variants={fadeInUp}
           >
             <div className=" rounded-[1.25rem]">
               <img
                 src={nosotrosHero.image.src}
                 alt={nosotrosHero.image.alt}
-                className="h-auto w-full object-cover transform  sm:translate-y-[2rem] lg:translate-y-[1rem] 3xl:translate-y-[2rem]"
+                className="h-auto w-full object-cover transform  sm:translate-y-[4rem] lg:translate-y-[3rem] 2xl:translate-y-[4.5rem] 3xl:translate-y-[5rem]"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"

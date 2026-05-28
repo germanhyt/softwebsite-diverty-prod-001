@@ -165,7 +165,7 @@ export const benefitsKids = [
   {
     key: "focus",
     title: "Mejora la concentración",
-    text: "Desarrollar habilidades de atención y enfoque sostenido.",
+    text: "Fortalece la atención, el enfoque y la capacidad de seguir tareas con mayor autonomía.",
     image: {
       src: imgBenefit1.src,
       alt: "Niño concentrado en actividad educativa",
@@ -174,7 +174,7 @@ export const benefitsKids = [
   {
     key: "emotion",
     title: "Desarrollo emocional",
-    text: "Desarrollar habilidades de atención y enfoque sostenido.",
+    text: "Potencia la expresión emocional, la empatía y la confianza en sus relaciones diarias.",
     image: {
       src: imgBenefit2.src,
       alt: "Niño en entorno seguro y acogedor",

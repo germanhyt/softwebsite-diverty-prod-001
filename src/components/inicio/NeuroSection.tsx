@@ -15,7 +15,7 @@ export default function NeuroSection() {
   const mediaVariants = reduce ? fadeIn : slideInRight;
 
   return (
-    <section className="bg-[#FDEFE7] py-16 md:py-20" aria-labelledby="neuro-title">
+    <section className="bg-[#FDEFE7]  py-16 md:py-20" aria-labelledby="neuro-title">
       <div className="container">
         <motion.div
           className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
