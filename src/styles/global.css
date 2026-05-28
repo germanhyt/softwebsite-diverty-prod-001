@@ -31,6 +31,13 @@
   }
 }
 
+@layer components {
+  /* Header: ocultar al subir scroll (clase toggled desde Header.astro) */
+  #site-header.is-scroll-hidden {
+    @apply -translate-y-full;
+  }
+}
+
 /* Swiper — hero sobre fondo azul */
 .hero-swiper .swiper-pagination-bullet {
   background: rgb(255 255 255 / 45%);

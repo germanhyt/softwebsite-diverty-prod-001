@@ -27,7 +27,7 @@ const ctaShort = ctaLabel.replace(/\s*→\s*$/, "").trim();
   <!-- Móvil: panel ancho completo bajo la barra (animación slide + fade) -->
   <div
     id="mobile-nav-panel"
-    class="pointer-events-none fixed inset-x-0 bottom-0 top-14 z-40 flex max-h-[calc(100dvh-3.5rem)] min-h-[calc(100dvh-3.5rem)] translate-y-[-100%] flex-col overflow-y-auto bg-white opacity-0 shadow-[0_8px_30px_rgb(0_0_0/0.08)] transition-[transform,opacity] duration-300 ease-out motion-reduce:duration-150 md:hidden"
+    class="pointer-events-none absolute inset-x-0 top-14 z-40 flex max-h-[calc(100dvh-3.5rem)] min-h-[calc(100dvh-3.5rem)] translate-y-[-100%] flex-col overflow-y-auto bg-white opacity-0 shadow-[0_8px_30px_rgb(0_0_0/0.08)] transition-[transform,opacity] duration-300 ease-out motion-reduce:duration-150 md:hidden"
     aria-hidden="true"
     inert
   >
@@ -67,10 +67,10 @@ const ctaShort = ctaLabel.replace(/\s*→\s*$/, "").trim();
     </nav>
   </div>
 
-  <!-- Móvil: barra fija ancho completo; sin fondo al inicio; blanco + sombra al scroll o con menú abierto -->
+  <!-- Móvil: barra dentro del header (se oculta junto al scroll) -->
   <div
     id="mobile-nav-bar-wrap"
-    class="pointer-events-auto fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow] duration-300 ease-out md:hidden"
+    class="pointer-events-auto relative z-50 w-full transition-[background-color,box-shadow] duration-300 ease-out md:hidden"
   >
     <!-- Clases usadas solo desde el script (Tailwind JIT) -->
     <span
@@ -227,11 +227,7 @@ const ctaShort = ctaLabel.replace(/\s*→\s*$/, "").trim();
     function setHeaderVisible(visible) {
       if (headerVisible === visible) return;
       headerVisible = visible;
-      if (visible) {
-        header.classList.remove("-translate-y-full");
-      } else {
-        header.classList.add("-translate-y-full");
-      }
+      header.classList.toggle("is-scroll-hidden", !visible);
     }
 
     function syncHeaderVisibility() {
