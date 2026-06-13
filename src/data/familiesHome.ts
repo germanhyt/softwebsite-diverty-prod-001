@@ -2,7 +2,7 @@
 
 import type { CourseTab } from "./estrategia";
 import imgHero from "../assets/prototype-inicio/inicio_seccion_hero_1.png";
-import imgEnfoque from "../assets/prototype-inicio/inicio_seccion_enfoque_1.webp";
+import imgEnfoque from "../assets/prototype-inicio/inicio_seccion_enfoque_1.png";
 import imgComo1 from "../assets/prototype-inicio/inicio_seccion_como-funciona_1.webp";
 import imgComo2 from "../assets/prototype-inicio/inicio_seccion_como-funciona_2.webp";
 import imgComo3 from "../assets/prototype-inicio/inicio_seccion_como-funciona_3.webp";

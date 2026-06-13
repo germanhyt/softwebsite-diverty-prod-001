@@ -23,6 +23,9 @@ export const nosotrosHero = {
   },
 } as const;
 
+/** Fondo peach de bandas tipo “Impacto que buscamos” / footer. */
+export const NOSOTROS_SECTION_BG_PEACH = "bg-[#FFF5F0]";
+
 export type NosotrosSplitBlock = {
   id: string;
   title: string;
@@ -34,6 +37,8 @@ export type NosotrosSplitBlock = {
   image: { src: string; alt: string };
   /** Si true, la imagen va a la izquierda (segundo bloque del mock). */
   imageLeft: boolean;
+  /** Clase Tailwind del fondo de la sección. */
+  sectionBgClass?: string;
 };
 
 export const nosotrosSplitSections: NosotrosSplitBlock[] = [
@@ -48,6 +53,7 @@ export const nosotrosSplitSections: NosotrosSplitBlock[] = [
       alt: "Docente acompañando a dos niños en una actividad guiada",
     },
     imageLeft: false,
+    sectionBgClass: NOSOTROS_SECTION_BG_PEACH,
   },
   {
     id: "impacto",
@@ -60,6 +66,7 @@ export const nosotrosSplitSections: NosotrosSplitBlock[] = [
       alt: "Madre sosteniendo a un niño sonriente",
     },
     imageLeft: true,
+    sectionBgClass: NOSOTROS_SECTION_BG_PEACH,
   },
   {
     id: "fundadora",
@@ -78,6 +85,7 @@ export const nosotrosSplitSections: NosotrosSplitBlock[] = [
       alt: "Fundadora de Diverty en su espacio de trabajo con laptop y cuaderno",
     },
     imageLeft: false,
+    sectionBgClass: NOSOTROS_SECTION_BG_PEACH,
   },
 ];
 

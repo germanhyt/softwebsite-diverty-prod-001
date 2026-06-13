@@ -1,5 +1,8 @@
 import { motion, useReducedMotion } from "framer-motion";
-import type { NosotrosSplitBlock } from "../../data/nosotrosPage";
+import {
+  NOSOTROS_SECTION_BG_PEACH,
+  type NosotrosSplitBlock,
+} from "../../data/nosotrosPage";
 import {
   defaultViewport,
   fadeInUp,
@@ -26,9 +29,11 @@ export default function SplitSection({ block }: Props) {
       ? slideInLeftSm
       : slideInRightSm;
 
+  const sectionBg = block.sectionBgClass ?? NOSOTROS_SECTION_BG_PEACH;
+
   return (
     <section
-      className="scroll-mt-28 bg-[#FFF5F0] py-14 md:py-20"
+      className={`scroll-mt-28 py-14 md:py-20 ${sectionBg}`}
       aria-labelledby={`nosotros-${block.id}-title`}
     >
       <div className="container">
