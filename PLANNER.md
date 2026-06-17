@@ -77,7 +77,11 @@ Basado en el package.json:
     "tailwindcss": "^3.4.18",
     "typescript": "^5.9.3",
   }" 
-Basado en el tailwind.config.ts:
+
+
+
+
+4) Basado en el tailwind.config.ts:
 - "import type { Config } from 'tailwindcss';
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
