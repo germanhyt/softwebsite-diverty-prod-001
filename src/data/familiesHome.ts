@@ -194,7 +194,7 @@ export const benefitsKids = [
 export const ourStory = {
   title: "Nuestra Historia",
   intro:
-    "En Perú Learn Easy creemos que la educación debe ir más allá de la teoría. Nacemos con el propósito de construir una formación integral, conectando distintas líneas de intervención bajo una misma visión: el desarrollo real de los niños y la preparación de profesionales capaces de generar impacto.",
+    "En Perú Learn Easy creemos que la educación debe ir más allá de la teoría. Nacemos con el propósito de construir una formación integral, conectando distintas líneas de intervención [...]",
   lead: "A partir de esta visión, surgen dos propuestas que se complementan:",
   decorImage: {
     src: imgHistoriaDecor.src,
@@ -212,12 +212,12 @@ export type BrandPillar = {
 export const brandPillars: BrandPillar[] = [
   {
     name: "Diverty",
-    text: "Nuestra propuesta enfocada en la infancia. A través de programas de intervención en el hogar, acompañamos a los niños en su desarrollo emocional, cognitivo, sensorial y académico, utilizando enfoques como el neurodesarrollo y la metodología Montessori. Más que sesiones, buscamos generar avances reales y sostenidos, adaptándonos a las necesidades de cada niño y al ritmo de cada familia.",
+    text: "Nuestra propuesta enfocada en la infancia. A través de programas de intervención en el hogar, acompañamos a los niños en su desarrollo emocional, cognitivo, sensorial y académico,[...]",
     tone: "orange",
   },
   {
     name: "Estrategia",
-    text: "Nuestro espacio de formación para profesionales. Aquí transformamos la experiencia en conocimiento aplicable. Brindamos capacitación con herramientas prácticas, basadas en evidencia, para fortalecer la intervención infantil en distintos contextos. El objetivo es claro: formar profesionales capaces de generar cambios reales en los niños con los que trabajan.",
+    text: "Nuestro espacio de formación para profesionales. Aquí transformamos la experiencia en conocimiento aplicable. Brindamos capacitación con herramientas prácticas, basadas en evidenci[...]",
     tone: "navy",
     href: "/estrategia",
   },
@@ -228,24 +228,24 @@ export const parentsTestimonials = [
     name: "María Fernanda López",
     child: "Mamá de Ian, Lima",
     quote:
-      "Como papás estamos muy contentos con el servicio. Hemos visto avances en nuestro pequeño, especialmente en su comunicación y en cómo se relaciona con nosotros. Nos gusta mucho que el acompañamiento sea tan cercano y personalizado.",
+      "Como papás estamos muy contentos con el servicio. Hemos visto avances en nuestro pequeño, especialmente en su comunicación y en cómo se relaciona con nosotros. Nos gusta mucho que el a[...]",
   },
   {
     name: "Carlos Alberto Ramírez",
     child: "Papá de Miguel, Arequipa",
     quote:
-      "La experiencia ha sido muy positiva para nuestra familia. Las especialistas son muy profesionales y siempre nos explican cómo continuar el trabajo en casa. Nuestro hijo está más tranquilo, atento y participa más en las actividades.",
+      "La experiencia ha sido muy positiva para nuestra familia. Las especialistas son muy profesionales y siempre nos explican cómo continuar el trabajo en casa. Nuestro hijo está más tranqui[...]",
   },
   {
     name: "Lucía Torres Sánchez",
     child: "Mamá de Sofia, Chiclayo",
     quote:
-      "Estamos realmente agradecidos con el programa. Desde que empezamos, hemos notado cambios importantes en la conducta y en el lenguaje de nuestro pequeño. Además, nos sentimos acompañados como padres en todo el proceso, lo cual marca una gran diferencia.",
+      "Estamos realmente agradecidos con el programa. Desde que empezamos, hemos notado cambios importantes en la conducta y en el lenguaje de nuestro pequeño. Además, nos sentimos acompañados[...]",
   },
 ] as const;
 
 export const familyFinalCta = {
   title: "Empieza hoy a potenciar el desarrollo de tu hijo",
-  subtitle: "Agenda una sesión de evaluación sin compromiso y conoce nuestro enfoque personalizado.",
+  subtitle: "Agenda una sesión de evaluación y conoce nuestro enfoque personalizado.",
   button: "Habla con una asesora",
 };
