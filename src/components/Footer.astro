@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from "../config/site.config";
 import brandLogo from "../assets/logo.png?url";
+import LibroReclamaciones from "./LibroReclamaciones";
 
 interface Props {
   /** Texto opcional bajo el logo (p. ej. página Nosotros). */
@@ -65,9 +66,7 @@ const socialRowClass =
           class="grid grid-cols-1 gap-12 sm:gap-14 md:grid-cols-3 md:gap-x-10 md:gap-y-0 lg:gap-x-14 xl:gap-x-20"
         >
           <div class="min-w-0">
-            <div
-              class="mb-4 text-base font-semibold tracking-tight md:text-lg"
-            >
+            <div class="mb-4 text-base font-semibold tracking-tight md:text-lg">
               Explora
             </div>
             <ul class="space-y-2.5 text-sm leading-relaxed text-white/95">
@@ -93,12 +92,11 @@ const socialRowClass =
                 >
               </li>
             </ul>
+
           </div>
 
           <div class="min-w-0">
-            <div
-              class="mb-4 text-base font-semibold tracking-tight md:text-lg"
-            >
+            <div class="mb-4 text-base font-semibold tracking-tight md:text-lg">
               Contacto
             </div>
             <ul class="space-y-2.5 text-sm leading-relaxed text-white/95">
@@ -122,9 +120,7 @@ const socialRowClass =
           </div>
 
           <div class="min-w-0">
-            <div
-              class="mb-4 text-base font-semibold tracking-tight md:text-lg"
-            >
+            <div class="mb-4 text-base font-semibold tracking-tight md:text-lg">
               Síguenos en nuestras redes
             </div>
             <ul class="flex list-none flex-col gap-0.5 p-0 sm:gap-1">
@@ -257,13 +253,17 @@ const socialRowClass =
           </div>
         </div>
       </div>
-      <p
-        class="mt-14 border-t border-white/20 pt-8 text-center text-xs leading-relaxed text-white/75 md:mt-16 md:pt-9"
+      <div
+        class="mx-auto mt-14 flex w-full max-w-6xl flex-col gap-5 border-t border-white/20 pt-8 md:mt-16 md:flex-row md:items-center md:justify-between md:gap-8 md:pt-9"
       >
-        © {new Date().getFullYear()}
-        {siteConfig.name}. Todos los derechos reservados.
-      </p>
+        <p class="text-xs leading-relaxed text-white/75">
+          © {new Date().getFullYear()}
+          {siteConfig.name}. Todos los derechos reservados.
+        </p>
+        <div class="w-full md:ml-auto md:w-auto">
+          <LibroReclamaciones client:visible />
+        </div>
+      </div>
     </div>
-    <div></div>
   </footer>
 </section>

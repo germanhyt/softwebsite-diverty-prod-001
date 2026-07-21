@@ -29,6 +29,11 @@
       scroll-behavior: auto;
     }
   }
+
+  body.libro-reclamaciones-open main,
+  body.libro-reclamaciones-open #site-header {
+    visibility: hidden;
+  }
 }
 
 @layer components {
