@@ -1,7 +1,6 @@
 ---
 import { siteConfig } from "../config/site.config";
 import brandLogo from "../assets/logo.png?url";
-import LibroReclamaciones from "./LibroReclamaciones";
 
 interface Props {
   /** Texto opcional bajo el logo (p. ej. página Nosotros). */
@@ -261,7 +260,26 @@ const socialRowClass =
           {siteConfig.name}. Todos los derechos reservados.
         </p>
         <div class="w-full md:ml-auto md:w-auto">
-          <LibroReclamaciones client:visible />
+          <a
+            href="/libro-de-reclamaciones/"
+            class="group flex min-h-[3.25rem] w-full items-center justify-between gap-4 rounded-xl bg-white/10 px-3 py-2.5 text-left outline-none ring-1 ring-white/20 transition hover:bg-white/15 hover:ring-white/40 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-footer md:max-w-sm"
+          >
+            <img
+              src="/libro-de-reclamaciones.png"
+              alt=""
+              class="h-11 w-11 shrink-0 rounded-lg object-cover ring-1 ring-white/35"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="flex min-w-0 flex-1 flex-col justify-between gap-1 text-left">
+              <span class="block text-sm font-semibold text-white">
+                Libro de Reclamaciones
+              </span>
+              <span class="block text-xs text-white/70">
+                Realiza tu reclamo o queja
+              </span>
+            </span>
+          </a>
         </div>
       </div>
     </div>

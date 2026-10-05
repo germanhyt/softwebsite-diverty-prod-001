@@ -70,3 +70,13 @@ export const nosotrosSeo = buildPageSeo({
   description: nosotrosPageDescription,
   path: "/nosotros",
 });
+
+/** Libro de Reclamaciones Virtual (ruta `/libro-de-reclamaciones`). */
+const reclamacionesPageDescription =
+  "Libro de Reclamaciones Virtual de Diverty. Registra tu reclamo o queja conforme a la Ley N.° 29571 — Código de Protección y Defensa del Consumidor.";
+
+export const reclamacionesSeo = buildPageSeo({
+  title: `${siteConfig.name} — Libro de Reclamaciones`,
+  description: reclamacionesPageDescription,
+  path: "/libro-de-reclamaciones",
+});

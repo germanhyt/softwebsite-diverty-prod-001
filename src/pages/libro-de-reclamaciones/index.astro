@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import LibroReclamaciones from "../../components/LibroReclamaciones";
+import { reclamacionesSeo } from "../../config/seoConfig";
+---
+
+<Layout seo={reclamacionesSeo}>
+  <Header ctaLabel="Contáctanos" />
+  <main class="overflow-x-hidden">
+    <section
+      class="bg-surface-cream pb-16 pt-28 md:pb-24 md:pt-32"
+      aria-labelledby="libro-reclamaciones-title"
+    >
+      <div class="container">
+        <LibroReclamaciones client:load />
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
