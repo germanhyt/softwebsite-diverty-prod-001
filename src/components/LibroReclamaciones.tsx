@@ -1,4 +1,11 @@
-import { useState, type FormEvent, type ReactNode } from "react";
+import {
+  useLayoutEffect,
+  useRef,
+  useState,
+  type FormEvent,
+  type ReactNode,
+} from "react";
+import { revealWizardStep } from "../lib/reclamaciones/scroll";
 import {
   claimTypes,
   documentTypes,
@@ -94,6 +101,22 @@ export default function LibroReclamaciones() {
     Partial<Record<keyof ReclamacionFormData, string>>
   >({});
   const [form, setForm] = useState<ReclamacionFormData>(emptyForm);
+  const wizardRef = useRef<HTMLDivElement>(null);
+  const skipScrollOnMount = useRef(true);
+
+  useLayoutEffect(() => {
+    if (skipScrollOnMount.current) {
+      skipScrollOnMount.current = false;
+      return;
+    }
+    const wizard = wizardRef.current;
+    if (!wizard) return;
+    const heading = wizard.querySelector("h1");
+    revealWizardStep(
+      wizard,
+      heading instanceof HTMLElement ? heading : null,
+    );
+  }, [step, submitted]);
 
   const setField = <K extends keyof ReclamacionFormData>(
     key: K,
@@ -175,7 +198,10 @@ export default function LibroReclamaciones() {
     ) : null;
 
   return (
-    <div className="mx-auto w-full max-w-2xl overflow-hidden rounded-2xl border-l-[6px] border-footer bg-white shadow-lg">
+    <div
+      ref={wizardRef}
+      className="mx-auto w-full max-w-2xl scroll-mt-28 overflow-hidden rounded-2xl border-l-[6px] border-footer bg-white shadow-lg md:scroll-mt-32"
+    >
       <header className="border-b border-neutral-100 bg-white px-5 pb-4 pt-5 sm:px-6">
         <div className="flex items-start gap-3">
           {usePngIcon ? (
@@ -196,7 +222,8 @@ export default function LibroReclamaciones() {
             </p>
             <h1
               id="libro-reclamaciones-title"
-              className="mt-0.5 text-lg font-bold tracking-tight text-footer sm:text-xl"
+              tabIndex={-1}
+              className="mt-0.5 text-lg font-bold tracking-tight text-footer outline-none sm:text-xl"
             >
               {submitted
                 ? reclamacionesCopy.confirmation.title
